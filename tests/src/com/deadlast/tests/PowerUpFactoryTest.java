@@ -1,11 +1,10 @@
 package com.deadlast.tests;
 
-import com.deadlast.entities.PowerUpFactory;
-import com.deadlast.game.DeadLast;
-import org.junit.jupiter.api.BeforeEach;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import com.deadlast.entities.PowerUpFactory;
 
 class PowerUpFactoryTest {
 

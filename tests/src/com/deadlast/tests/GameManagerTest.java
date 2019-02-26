@@ -16,7 +16,7 @@ class GameManagerTest {
 
     @BeforeEach
      public void setUp() {
-        GameManager manager  = GameManager.getInstance(null);
+        manager  = GameManager.getInstance(null);
     }
 
     @Test
