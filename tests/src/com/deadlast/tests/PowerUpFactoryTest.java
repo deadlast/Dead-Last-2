@@ -1,4 +1,4 @@
-package com.deadlast.test.com.deadlast.testing;
+package com.deadlast.tests;
 
 import com.deadlast.entities.PowerUpFactory;
 import com.deadlast.game.DeadLast;

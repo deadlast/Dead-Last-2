@@ -1,4 +1,4 @@
-package com.deadlast.test.com.deadlast.testing;
+package com.deadlast.tests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

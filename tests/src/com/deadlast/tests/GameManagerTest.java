@@ -1,4 +1,4 @@
-package com.deadlast.test.com.deadlast.testing;
+package com.deadlast.tests;
 
 import com.deadlast.entities.Enemy;
 import com.deadlast.game.GameManager;
