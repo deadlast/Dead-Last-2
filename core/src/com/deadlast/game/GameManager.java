@@ -87,7 +87,7 @@ public class GameManager implements Disposable {
 	
 	private int winLevel = 0;
 
-	private boolean minigame;
+	private boolean minigameActive;
 	private boolean pause;
 	private boolean bossEncounter;
 	private boolean bossDelFlag;
@@ -125,7 +125,7 @@ public class GameManager implements Disposable {
 	 * Creates/refreshes parameters required when a new level is loaded.
 	 */
 	public void loadLevel() {
-		if(minigame){
+		if(minigameActive){
 			levelNum = levels.length-1;
 		}
 		if (world != null) {
@@ -479,12 +479,12 @@ public class GameManager implements Disposable {
 		}
 	}
 
-	public void setMinigame() { 
-		minigame = true;
+	public void setMinigameActive(boolean minigameActive) { 
+		this.minigameActive = minigameActive;
 	}
 
-	public boolean getMinigame() {
-		return minigame;
+	public boolean isMinigameActive() {
+		return minigameActive;
 	}
 
 	/**

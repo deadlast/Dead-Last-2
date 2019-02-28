@@ -48,6 +48,7 @@ public class MenuScreen extends DefaultScreen {
 		playButton.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
+				GameManager.getInstance(game).setMinigameActive(false);
 				if (GameManager.getInstance(game).isGameRunning()) {
 					game.changeScreen(DeadLast.GAME);
 				} else {
@@ -76,7 +77,7 @@ public class MenuScreen extends DefaultScreen {
 		miniButton.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				GameManager.getInstance(game).setMinigame();
+				GameManager.getInstance(game).setMinigameActive(true);
 				if (GameManager.getInstance(game).isGameRunning()) {
 					game.changeScreen(DeadLast.GAME);
 				} else {
