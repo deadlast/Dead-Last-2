@@ -87,10 +87,10 @@ public class GameManager implements Disposable {
 	
 	private int winLevel = 0;
 
-	private boolean minigame = false;
-	private boolean pause = false;
-	private boolean bossEncounter = false;
-	private boolean bossDelFlag = false;
+	private boolean minigame;
+	private boolean pause;
+	private boolean bossEncounter;
+	private boolean bossDelFlag;
 	
 	private GameManager(DeadLast game) {
 		this.game = game;
@@ -479,9 +479,13 @@ public class GameManager implements Disposable {
 		}
 	}
 
-	public void setMinigame(){ minigame = true; }
+	public void setMinigame() { 
+		minigame = true;
+	}
 
-	public boolean getMinigame(){ return minigame; }
+	public boolean getMinigame() {
+		return minigame;
+	}
 
 	/**
 	 * Renders entities held by this game manager.
