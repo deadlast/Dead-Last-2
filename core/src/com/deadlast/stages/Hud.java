@@ -54,7 +54,7 @@ public class Hud implements Disposable {
 		topView.add(worldLabel).expandX().padTop(10);
 		topView.add(scoreLabel).expandX().padTop(10);
 
-		if(GameManager.getInstance(game).getMinigame()){
+		if(GameManager.getInstance(game).isMinigameActive()){
 			coinLabel = new Label("Coins Collected: ", skin);
 			coinValLabel = new Label(String.format("%02d",0),skin);
 			topView.add(coinLabel).expandX().padTop(10);
@@ -64,7 +64,7 @@ public class Hud implements Disposable {
 		topView.add(levelLabel).expandX();
 		topView.add(scoreValLabel).expandX();
 
-		if(GameManager.getInstance(game).getMinigame()){ topView.add(coinValLabel).expandX(); }
+		if(GameManager.getInstance(game).isMinigameActive()){ topView.add(coinValLabel).expandX(); }
 
 		stage.addActor(topView);
 		
@@ -116,7 +116,7 @@ public class Hud implements Disposable {
 	}
 
 	public void setCoinsCollected(int coinsCollected, DeadLast game){
-		if(GameManager.getInstance(game).getMinigame()) {
+		if(GameManager.getInstance(game).isMinigameActive()) {
 			coinValLabel.setText(String.format("%02d", coinsCollected));
 		}
 	}
