@@ -75,7 +75,7 @@ public class GameManager implements Disposable {
 	private Hud hud;
 	private RayHandler rayHandler;
 	
-	private int totalScore;
+	private int totalScore = 0;
 	
 	private String[] levels = {"Comp Sci","Law","Ron Cooke","Boss Level 1","Central Hall","Sports Hall","D Bar","Boss Level 1","Minigame"};
 	private Level level;
@@ -83,7 +83,7 @@ public class GameManager implements Disposable {
 	
 	private int score;
 	private float time;
-	private int oldHealth = 50;
+	
 	
 	private int winLevel = 0;
 
@@ -145,7 +145,7 @@ public class GameManager implements Disposable {
 		this.enemies = new ArrayList<>();
 		this.powerUps = new ArrayList<>();
 		
-		score = 0;
+		score = this.totalScore;
 		time = 0;
 		
 		level = new Level(game,levels[levelNum]);
@@ -160,13 +160,14 @@ public class GameManager implements Disposable {
 				.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/player.png"))))
 				.setBodyRadius(playerType.getBodyRadius())
 				.setInitialPosition(playerSpawn)
-				.setHealthStat(getHealth())
+				.setHealthStat(50)
 				.setSpeedStat(playerType.getSpeed())
 				.setStealthStat(playerType.getStealth())
 				.setStrengthStat(playerType.getStrength())
 				.build();
 		player.defineBody();
 		entities.add(player);
+		player.setHealth(player.getMaxHealth());
 		levelLoaded = true;
 	}
 	
@@ -178,7 +179,7 @@ public class GameManager implements Disposable {
 		debugRenderer.dispose();
 		rayHandler.dispose();
 		level.dispose();
-		totalScore += score;
+		totalScore = this.score;
 	}
 	
 	/**
@@ -213,7 +214,7 @@ public class GameManager implements Disposable {
 	}
 
 	public int getHealth(){
-		return oldHealth;
+		return player.getHealth();
 	}
 	
 	public PlayerType getPlayerType() {
@@ -467,14 +468,14 @@ public class GameManager implements Disposable {
 	
 	public void levelComplete() {
 		levelLoaded = false;
-		totalScore += score;
+		totalScore = score;
 		// clearLevel();
 		levelNum += 1;
 	}
 	
 	public void transferLevel() {
 		if (levelNum < levels.length -1) {
-			oldHealth = this.player.getHealth();
+			
 			loadLevel();
 		} else {
 			gameRunning  = false;
