@@ -50,24 +50,38 @@ public class CharacterScreen extends DefaultScreen {
 		//table.setDebug(true);
 		Skin skin = new Skin(Gdx.files.internal("ui/uiskin.json"));
 		
-		Label charTitle1 = new Label("Average Student", skin);
+		Label charTitle1 = new Label("Student", skin);
 		Label charTitle2 = new Label("Boxer", skin);
-		table.add(charTitle1).expandX(); //align(Align.left).width(Value.percentWidth(.45F, table));
-		table.add(charTitle2).expandX(); //align(Align.left).width(Value.percentWidth(.45F, table));
+		Label charTitle3 = new Label("\n Stealthy", skin);
+		Label charTitle4 = new Label("\n "+ "Runner", skin);
+		table.add(charTitle1).align(Align.center).width(Value.percentWidth(.10F, table));
+		table.add(charTitle2).align(Align.center).width(Value.percentWidth(.10F, table));
+		table.add(charTitle3).align(Align.center).width(Value.percentWidth(.10F, table));
+		table.add(charTitle4).align(Align.center).width(Value.percentWidth(.10F, table));
 		table.row();
 		
-		Image AvStudImage = new Image(new Texture("entities/player.png"));
-		table.add(AvStudImage);
-		Image BoxerImage = new Image(new Texture("entities/player.png"));
-		table.add(BoxerImage);
+		Image AvStudImage = new Image(new Texture("entities/student_front_view.png"));
+		table.add(AvStudImage).align(Align.center).height(Value.percentWidth(.30F, table));
+		Image BoxerImage = new Image(new Texture("entities/boxer_front_view.png"));
+		table.add(BoxerImage).align(Align.center).height(Value.percentWidth(.30F, table));
+		Image StealthyImage = new Image(new Texture("entities/ninja_front_view.png"));
+		table.add(StealthyImage).align(Align.center).height(Value.percentWidth(.30F, table));
+		Image RunnerImage = new Image(new Texture("entities/runner_front_view.png"));
+		table.add(RunnerImage).align(Align.center).height(Value.percentWidth(.30F, table));
 		table.row();
 		
 		Label char1Label = new Label("This lazy student has average stats for a character.", skin);
 		char1Label.setWrap(true);
-		table.add(char1Label).align(Align.left).width(Value.percentWidth(.45F, table));
+		table.add(char1Label).align(Align.center).width(Value.percentWidth(.10F,  table));//align(Align.left).width(Value.percentWidth(.45F, table));
 		Label char2Label = new Label("The boxer is tough and strong, but cannot run as fast and is less stealthy.", skin);
 		char2Label.setWrap(true);
-		table.add(char2Label).align(Align.left).width(Value.percentWidth(.45F, table));
+		table.add(char2Label).align(Align.center).width(Value.percentWidth(.10F, table));//.align(Align.left).width(Value.percentWidth(.45F, table));
+		Label char3Label = new Label("This student is an expert at sneaking past lecturers when late, and the same with zombies.", skin);
+		char3Label.setWrap(true);
+		table.add(char3Label).align(Align.center).width(Value.percentWidth(.10F, table));//.align(Align.left).width(Value.percentWidth(.45F, table));
+		Label char4Label = new Label("The runner has been running away from his problems all his life, so he's fast.", skin);
+		char4Label.setWrap(true);
+		table.add(char4Label).align(Align.center).width(Value.percentWidth(.10F, table));//.align(Align.left).width(Value.percentWidth(.45F, table));
 		table.row();
 		
 		TextButton char1Button = new TextButton("Select", skin);
@@ -97,30 +111,7 @@ public class CharacterScreen extends DefaultScreen {
 		});
 		
 		table.add(char2Button);
-
-		table.row();
-
-		Label charTitle3 = new Label("\n Stealthy", skin);
-		Label charTitle4 = new Label("\n "
-				+ "Runner", skin);
-		table.add(charTitle3).expandX(); //align(Align.left).width(Value.percentWidth(.45F, table));
-		table.add(charTitle4).expandX(); //align(Align.left).width(Value.percentWidth(.45F, table));
-		table.row();
 		
-		Image StealthyImage = new Image(new Texture("entities/zombie.png"));
-		table.add(StealthyImage);
-		Image RunnerImage = new Image(new Texture("entities/zombie.png"));
-		table.add(RunnerImage);
-		table.row();
-		
-		Label char3Label = new Label("This student is an expert at sneaking past lecturers when late, and the same with zombies.", skin);
-		char3Label.setWrap(true);
-		table.add(char3Label).align(Align.left).width(Value.percentWidth(.45F, table));
-		Label char4Label = new Label("The runner has been running away from his problems all his life, so he's fast.", skin);
-		char4Label.setWrap(true);
-		table.add(char4Label).align(Align.left).width(Value.percentWidth(.45F, table));
-		table.row();
-
 		TextButton char3Button = new TextButton("Select", skin);
 		char3Button.addListener(new ClickListener() {
 			@Override
@@ -140,6 +131,8 @@ public class CharacterScreen extends DefaultScreen {
 		});
 
 		table.add(char4Button);
+
+		table.row();
 		
 		stage.addActor(table);
 		stage.addActor(backButton);
