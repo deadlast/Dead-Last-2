@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="100" height="80" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="333">
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="100" height="80" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="344">
  <tileset firstgid="1" source="finaltileset.tsx"/>
  <layer id="1" name="Background" width="100" height="80">
   <data encoding="csv">
@@ -776,6 +776,36 @@
     <property name="entityType" value="REGEN"/>
    </properties>
    <point/>
+  </object>
+  <object id="333" x="2336" y="2112">
+   <polygon points="0,0 0,31.9991 3.97778,31.9984 3.97778,0.00148145"/>
+  </object>
+  <object id="334" x="2236.02" y="2111.98">
+   <polygon points="0,0 0,31.9991 3.97778,31.9984 3.97778,0.00148145"/>
+  </object>
+  <object id="335" x="1056" y="1664">
+   <polygon points="0,0 0,31.9991 3.97778,31.9984 3.97778,0.00148145"/>
+  </object>
+  <object id="336" x="956.021" y="1663.94">
+   <polygon points="0,0 0,31.9991 3.97778,31.9984 3.97778,0.00148145"/>
+  </object>
+  <object id="337" x="800" y="1120">
+   <polygon points="0,0 0,31.9991 3.97778,31.9984 3.97778,0.00148145"/>
+  </object>
+  <object id="338" x="700.05" y="1119.99">
+   <polygon points="0,0 0,31.9991 3.97778,31.9984 3.97778,0.00148145"/>
+  </object>
+  <object id="339" x="1152" y="832">
+   <polygon points="0,0 0,31.9991 3.97778,31.9984 3.97778,0.00148145"/>
+  </object>
+  <object id="340" x="1083.96" y="832.043">
+   <polygon points="0,0 0,31.9991 3.97778,31.9984 3.97778,0.00148145"/>
+  </object>
+  <object id="341" x="1184" y="224">
+   <polygon points="0,0 31.938,0 31.9318,4 0,4.01563"/>
+  </object>
+  <object id="343" x="1184.02" y="155.913">
+   <polygon points="0,0 31.938,0 31.9318,4 0,4.01563"/>
   </object>
  </objectgroup>
  <objectgroup id="7" name="Furniture">
