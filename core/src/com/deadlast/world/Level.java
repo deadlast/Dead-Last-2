@@ -59,7 +59,7 @@ public class Level implements Disposable {
 		MapLayer entityLayer = tiledMap.getLayers().get("Entities");
 		entityLayer.setVisible(false);
 		MapObjects entities = entityLayer.getObjects();
-		
+		System.out.println(levelName);
 		entities.forEach(e -> {
 			MapProperties props = e.getProperties();
 			String entityClass = props.get("entityClass", String.class);
@@ -94,7 +94,9 @@ public class Level implements Disposable {
 					enemySpawns.add(new SpawnPoint<Enemy.Type>(Enemy.Type.BOSS2, new Vector2(x,y)));
 					break;
 				default:
+					enemySpawns.add(new SpawnPoint<Enemy.Type>(Enemy.Type.FAST, new Vector2(x,y)));
 					break;
+					 
 				}
 			} else if (entityClass.equals("PowerUp")) {
 				switch(entityType) {
@@ -107,9 +109,13 @@ public class Level implements Disposable {
 				case "REGEN":
 					powerUpSpawns.add(new SpawnPoint<PowerUp.Type>(PowerUp.Type.REGEN, new Vector2(x,y)));
 					break;
+				case "STEALTH":
+					powerUpSpawns.add(new SpawnPoint<PowerUp.Type>(PowerUp.Type.STEALTH, new Vector2(x,y)));
+					break;
                 case "COIN":
                     powerUpSpawns.add(new SpawnPoint<PowerUp.Type>(PowerUp.Type.COIN, new Vector2(x,y)));
 				default:
+					powerUpSpawns.add(new SpawnPoint<PowerUp.Type>(PowerUp.Type.REGEN, new Vector2(x,y)));
 					break;
 				}
 			} else {
