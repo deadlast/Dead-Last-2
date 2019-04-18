@@ -103,6 +103,26 @@ public class EnemyFactory {
 					.setScoreValue(200)
 					.setBodyRadius(1.5f);
 			break;
+		case GOOSE:
+			//doesnt work atm
+			builder.setHealthStat(400)
+			.setSpeedStat(4)
+			.setStrengthStat(0)
+			.setDetectionStat(0)
+			.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/goose.png"))))
+			.setScoreValue(0)
+			.setBodyRadius(1.5f);
+			break;
+		case CURED:
+			//doesnt work atm
+			builder.setHealthStat(400)
+			.setSpeedStat(4)
+			.setStrengthStat(0)
+			.setDetectionStat(0)
+			.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/cured.png"))))
+			.setScoreValue(0)
+			.setBodyRadius(1.5f);
+			break;
 		default:
 			break;
 		}
