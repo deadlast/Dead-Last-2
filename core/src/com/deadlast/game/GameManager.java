@@ -70,7 +70,7 @@ public class GameManager implements Disposable {
 	
 	private int totalScore = 0;
 	
-	private String[] levels = {"Comp Sci","Law","Ron Cooke","Boss Level 1","Central Hall","Sports Hall","D Bar","Boss Level 2","Minigame"};
+	private String[] levels = {"Comp Sci","Hes East","DBar","Library","Under Lake","Central Hall","minigame"};
 	private Level level;
 	private int levelNum = 0;
 	
