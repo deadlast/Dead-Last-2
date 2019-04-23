@@ -5,7 +5,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
@@ -59,7 +61,18 @@ public class Player extends Mob {
 	 * The time until the player can next use the attack ability.
 	 */
 	private float attackCooldown = 0f;
-	
+	/**
+	 * The player's default sprite.
+	 */
+	private Sprite defaultSprite; 
+	/**
+	 * The sprite the player changes to when attacking.
+	 */
+	private Sprite attackSprite; 
+	/**
+	 * The sprite currently being rendered.
+	 */
+	private Sprite currentSprite; 
 	/**
 	 * Contains the enemies currently in range and in front of the player that will be
 	 * damaged when the attack ability is used.
@@ -80,14 +93,18 @@ public class Player extends Mob {
 	 * @param stealthStat	the player's normal stealth level
 	 */
 	public Player(
-			DeadLast game, Sprite sprite, float bRadius,
+			DeadLast game, Sprite defaultSprite, Sprite attackSprite, float bRadius,
 			Vector2 initialPos, int healthStat, int speedStat, int strengthStat, int stealthStat
 	) {
-		super(game, 0, sprite, bRadius, initialPos, healthStat, speedStat, strengthStat);
+		super(game, 0, defaultSprite, bRadius, initialPos, healthStat, speedStat, strengthStat);
+		this.attackSprite = attackSprite;
+		this.defaultSprite = defaultSprite;
+		this.sprite = defaultSprite;
 		this.stealthStat = stealthStat;
 		this.isHidden = true;
 		this.activePowerUps = new ConcurrentHashMap<>();
 		this.enemiesInRange = new HashSet<>();
+		
 		hud = new Hud(game);
 	}
 	
@@ -194,12 +211,16 @@ public class Player extends Mob {
 			}
 		}
 		if(attkCooldown){
+			this.sprite = attackSprite;
 			if(attackCooldown - delta <= 0){
 				this.hud.setCooldown(false);
 				attkCooldown = false;
 			} else {
 				attackCooldown -= delta;
 			}
+			
+		}else {
+			this.sprite = defaultSprite;
 		}
 		if (isAttacking) {
 			if (!attkCooldown) {
@@ -207,6 +228,7 @@ public class Player extends Mob {
 				attackCooldown = 1f;
 				this.hud.setCooldown(true);
 				attkCooldown = true;
+				this.sprite = attackSprite;
 			}
 		}
 	}
@@ -224,7 +246,8 @@ public class Player extends Mob {
 	public static class Builder {
 		
 		private DeadLast game;
-		private Sprite sprite;
+		private Sprite defaultSprite;
+		private Sprite attackSprite;
 		private float bRadius;
 		private Vector2 initialPos;
 		private int healthStat;
@@ -237,8 +260,9 @@ public class Player extends Mob {
 			return this;
 		}
 		
-		public Builder setSprite(Sprite sprite) {
-			this.sprite = sprite;
+		public Builder setSprites(String[] sprites) {
+			this.defaultSprite = new Sprite(new Texture(Gdx.files.internal(sprites[0])));
+			this.attackSprite = new Sprite(new Texture(Gdx.files.internal(sprites[1])));
 			return this;
 		}
 		
@@ -274,7 +298,7 @@ public class Player extends Mob {
 		
 		public Player build() {
 			return new Player(
-				game, sprite, bRadius, initialPos, healthStat, speedStat, strengthStat, stealthStat
+				game, defaultSprite, attackSprite, bRadius, initialPos, healthStat, speedStat, strengthStat, stealthStat
 			);
 		}
 

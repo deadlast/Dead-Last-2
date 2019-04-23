@@ -150,7 +150,7 @@ public class GameManager implements Disposable {
 
 		player = new Player.Builder()
 				.setGame(game)
-				.setSprite(new Sprite(new Texture(Gdx.files.internal(playerType.getSprite()))))
+				.setSprites(playerType.getSprites())
 				.setBodyRadius(playerType.getBodyRadius())
 				.setInitialPosition(playerSpawn)
 				.setHealthStat(50)
