@@ -98,6 +98,8 @@ public class Player extends Mob {
 	) {
 		super(game, 0, defaultSprite, bRadius, initialPos, healthStat, speedStat, strengthStat);
 		this.attackSprite = attackSprite;
+		attackSprite.setSize(bRadius * 2, bRadius * 2);
+		attackSprite.setOrigin(bRadius, bRadius);
 		this.defaultSprite = defaultSprite;
 		this.sprite = defaultSprite;
 		this.stealthStat = stealthStat;
