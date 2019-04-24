@@ -46,8 +46,6 @@ public class PowerUpFactory {
 			break;
 		case DOUBLE_DAMAGE:
 			break;
-		case CURE:
-			builder.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/blank_powerup.png"))));
 		default:
 			builder.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/blank_powerup.png"))));
 			break;
