@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="198">
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="199">
  <tileset firstgid="1" source="finaltileset.tsx"/>
  <layer id="1" name="Background" width="100" height="100">
   <data encoding="csv">
@@ -823,6 +823,9 @@
   </object>
   <object id="194" x="3136" y="1024">
    <polygon points="0,0 0,31.4286 33.1786,31.4286 33.1786,0"/>
+  </object>
+  <object id="198" x="3200" y="2240">
+   <polygon points="0,0 32,0 32,1088 0,1088"/>
   </object>
  </objectgroup>
  <objectgroup id="7" name="Furniture"/>
