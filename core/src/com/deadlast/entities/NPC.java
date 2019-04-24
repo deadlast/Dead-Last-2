@@ -36,7 +36,7 @@ public class NPC extends Mob {
 		b2body = world.createBody(bDef);
 		b2body.createFixture(fBodyDef).setUserData(FixtureType.NPC);
 		
-		coneLight = new ConeLight(gameManager.getRayHandler(), 7, Color.GRAY, 6, b2body.getPosition().x, b2body.getPosition().y, b2body.getAngle() + 90, 35);
+		coneLight = new ConeLight(gameManager.getRayHandler(), 7, Color.VIOLET, 3, b2body.getPosition().x, b2body.getPosition().y, b2body.getAngle() + 90, 35);
 		coneLight.attachToBody(b2body, 0, 0, 90);
 		
 		b2body.setUserData(this);
