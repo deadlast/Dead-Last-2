@@ -78,7 +78,7 @@ public class Enemy extends Mob {
 		shape.setRadius(this.bRadius);
 		fBodyDef.shape = shape;
 		fBodyDef.filter.categoryBits = Entity.ENEMY;
-		fBodyDef.filter.maskBits = Entity.BOUNDARY | Entity.PLAYER | Entity.PLAYER_MELEE;
+		fBodyDef.filter.maskBits = Entity.BOUNDARY | Entity.PLAYER | Entity.PLAYER_MELEE | Entity.NPC;
 		
 		// Create body and add fixtures
 		b2body = world.createBody(bDef);

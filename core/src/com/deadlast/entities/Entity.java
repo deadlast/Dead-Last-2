@@ -60,6 +60,7 @@ public abstract class Entity {
 	public static final int ENEMY_HEARING = 0x0020;
 	public static final int POWERUP = 0x0040;
 	public static final int END_ZONE = 0x0080;
+	public static final int NPC = 0x0100;
 	
 	
 	/**
