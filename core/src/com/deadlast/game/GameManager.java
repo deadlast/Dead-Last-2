@@ -58,6 +58,7 @@ public class GameManager implements Disposable {
 	private Vector2 playerSpawn;
 	private ArrayList<Entity> entities;
 	private ArrayList<Enemy> enemies;
+	private Enemy boss;
 	private ArrayList<Entity> powerUps;
 	private EnemyFactory enemyFactory;
 	private PowerUpFactory powerUpFactory;
@@ -69,14 +70,14 @@ public class GameManager implements Disposable {
 	private RayHandler rayHandler;
 	
 	private int totalScore = 0;
-	
-	private String[] levels = {"Comp Sci","Hes East","DBar","Library","Under Lake","Central Hall","minigame"};
+	//FIRST SHOULD BE COMPSCI
+	private String[] levels = {"DBar","Hes East","DBar","Library","Under Lake","Central Hall","minigame"};
 	private Level level;
 	private int levelNum = 0;
 	
 	private int score;
 	private float time;
-	
+
 	
 	private int winLevel = 0;
 
@@ -231,6 +232,7 @@ public class GameManager implements Disposable {
 		this.enemies.add(enemy);
 		this.entities.add(enemy);
 		if(type == Enemy.Type.BOSS || type == Enemy.Type.BOSS2){
+			this.boss = enemy;
 			bossEncounter = true;
 		}
 	}
@@ -364,11 +366,13 @@ public class GameManager implements Disposable {
 		List<Entity> deadEntities = entities.stream().filter(e -> (!e.isAlive() && !(e instanceof Player))).collect(Collectors.toList());
 		deadEntities.forEach(e -> {
 			if (e instanceof Mob) {
+				
 				((Mob)e).delete();
 			} else {
 				e.delete();
 			}
-			if(bossEncounter){
+			
+			if((bossEncounter) && e.equals(boss)){
 				bossDelFlag = true;
 			}
 		});
