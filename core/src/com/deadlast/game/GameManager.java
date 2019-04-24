@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -22,6 +23,7 @@ import com.deadlast.entities.Enemy;
 import com.deadlast.entities.EnemyFactory;
 import com.deadlast.entities.Entity;
 import com.deadlast.entities.Mob;
+import com.deadlast.entities.NPC;
 import com.deadlast.entities.Player;
 import com.deadlast.entities.PlayerType;
 import com.deadlast.entities.PowerUp;
@@ -84,6 +86,8 @@ public class GameManager implements Disposable {
 	private boolean pause;
 	private boolean bossEncounter;
 	private boolean bossDelFlag;
+	
+	private boolean npcCreationQueued;
 	
 	private GameManager(DeadLast game) {
 		this.game = game;
@@ -254,7 +258,17 @@ public class GameManager implements Disposable {
 	}
 	
 	/**
-	 * Adds a power-up to the list of power-up's and entitie
+	 * Adds a NPC to the list of entities.
+	 * @param initialPos the position to spawn the new NPC
+	 */
+	public void addNPC(Vector2 initialPos) {
+		NPC npc = new NPC(this.game, initialPos);
+		npc.defineBody();
+		this.entities.add(npc);
+	}
+	
+	/**
+	 * Adds a power-up to the list of power-up's and entities
 	 */
 	public void addPowerUp(PowerUp.Type type, Vector2 initialPos) {
 		PowerUp powerUp = powerUpFactory.get(type).setInitialPosition(initialPos).build();
@@ -456,6 +470,20 @@ public class GameManager implements Disposable {
 		}
 		if ((!controller.left && !controller.right) || (controller.left && controller.right )) {
 			player.getBody().setLinearVelocity(0, player.getBody().getLinearVelocity().y);
+		}
+		if (controller.isXDown) {
+			if (player.isPowerUpActive(PowerUp.Type.CURE)) {
+				System.out.println("Dispensing cure");
+				player.createEffectRadius(5, Color.GREEN, 0.5f);
+				player.removePowerUp(PowerUp.Type.CURE);
+				Vector2 playerPos = player.getPos();
+				enemies.forEach( e -> {
+					if ((e.getPos().sub(playerPos)).len2() <= 25) {
+						e.setAlive(false);
+						addNPC(e.getPos());
+					}
+				});
+			}
 		}
 	}
 	
