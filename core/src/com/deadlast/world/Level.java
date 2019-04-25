@@ -181,7 +181,7 @@ public class Level implements Disposable {
 	@Override
 	public void dispose() {
 		tiledMap.dispose();
-		endZone.delete();
+//		endZone.delete();
 	}
 	
 	

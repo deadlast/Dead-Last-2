@@ -68,14 +68,12 @@ public class GameManager implements Disposable {
 	
 	private Hud hud;
 	private RayHandler rayHandler;
-	
-	private int totalScore = 0;
-	//FIRST SHOULD BE COMPSCI
-	private String[] levels = {"DBar","Hes East","DBar","Library","Under Lake","Central Hall","minigame"};
+
+	private String[] levels = {"Comp Sci","Hes East","DBar","Library","Under Lake","Central Hall","minigame"};
 	private Level level;
 	private int levelNum = 0;
 	
-	private int score;
+	private int score = 0;
 	private float time;
 
 	
@@ -124,6 +122,7 @@ public class GameManager implements Disposable {
 		}
 		if (world != null) {
 			world.dispose();
+			
 		}
 		world = new World(Vector2.Zero, true);
 		world.setContactListener(new WorldContactListener());
@@ -139,7 +138,6 @@ public class GameManager implements Disposable {
 		this.enemies = new ArrayList<>();
 		this.powerUps = new ArrayList<>();
 		
-		score = this.totalScore;
 		time = 0;
 		
 		level = new Level(game,levels[levelNum]);
@@ -166,14 +164,23 @@ public class GameManager implements Disposable {
 	}
 	
 	public void clearLevel() {
+		System.out.println("CLEAR LEVEL ACCESSED");
 		levelLoaded = false;
+		System.out.println("LEVEL UNLOADED");
 		controller.down = controller.left = controller.right = controller.up = false;
-		levelNum = 0;
+		System.out.println("CONTROLLER RESET");
 		hud.dispose();
+		System.out.println("HUD DISPOSED");
 		debugRenderer.dispose();
+		System.out.println("DEBUG RENDERER DISPOSED");
 		rayHandler.dispose();
+		System.out.println("RAY HANDLER DISPOSED");
 		level.dispose();
-		totalScore = this.score;
+		System.out.println("LEVEL DISPOSED");
+		if (winLevel == -1) {
+			levelNum = 0;
+		}
+		
 	}
 	
 	/**
@@ -286,10 +293,12 @@ public class GameManager implements Disposable {
 		return rayHandler;
 	}
 	
-	public int getTotalScore() {
-		return totalScore;
+	public int getScore() {
+		return this.score;
 	}
-	
+	public void resetScore() {
+		this.score = 0;
+	}
 	public int getWinLevel() {
 		return winLevel;
 	}
@@ -464,19 +473,18 @@ public class GameManager implements Disposable {
 	}
 	
 	public void levelComplete() {
-		levelLoaded = false;
-		totalScore = score;
-		// clearLevel();
+//		levelLoaded = false;
+		clearLevel();
 		levelNum += 1;
 	}
 	
 	public void transferLevel() {
 		if (levelNum < levels.length -1) {
-			
 			loadLevel();
 		} else {
 			gameRunning  = false;
 			winLevel = 1;
+			this.levelNum = 0;
 			game.changeScreen(DeadLast.END);
 		}
 	}
@@ -508,6 +516,7 @@ public class GameManager implements Disposable {
 
 	@Override
 	public void dispose() {
+		
 		world.dispose();
 	}
 
