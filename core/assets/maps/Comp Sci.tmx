@@ -847,17 +847,10 @@
   <object id="338" x="700.05" y="1119.99">
    <polygon points="0,0 0,31.9991 3.97778,31.9984 3.97778,0.00148145"/>
   </object>
-  <object id="358" name="EnemySpawn3" type="Enemy.GOOSE" x="2765.33" y="2256">
+  <object id="358" name="EnemySpawn1" type="Enemy.BOMBER" x="2562.33" y="2227">
    <properties>
     <property name="entityClass" value="Enemy"/>
-    <property name="entityType" value="GOOSE"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="359" name="EnemySpawn3" type="Enemy.CURED" x="2692" y="2259.5">
-   <properties>
-    <property name="entityClass" value="Enemy"/>
-    <property name="entityType" value="CURED"/>
+    <property name="entityType" value="BOMBER"/>
    </properties>
    <point/>
   </object>

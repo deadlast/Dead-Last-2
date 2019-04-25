@@ -227,6 +227,7 @@ public class Player extends Mob {
 		if (isAttacking) {
 			if (!attkCooldown) {
 				enemiesInRange.forEach(e -> e.applyDamage(this.getStrength() * getDamageMultiplier()));
+				enemiesInRange.forEach(e -> e.knockback(this.getStrength()));
 				attackCooldown = 1f;
 				this.hud.setCooldown(true);
 				attkCooldown = true;
