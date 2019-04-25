@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="199">
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="232">
  <tileset firstgid="1" source="finaltileset.tsx"/>
  <layer id="1" name="Background" width="100" height="100">
   <data encoding="csv">
@@ -681,6 +681,83 @@
    <properties>
     <property name="entityClass" value="PowerUp"/>
     <property name="entityType" value="STEALTH"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="221" name="HEALTH" type="PowerUp.REGEN" x="1986.33" y="3844.33">
+   <properties>
+    <property name="entityClass" value="PowerUp"/>
+    <property name="entityType" value="REGEN"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="222" name="FAST" type="Enemy.FAST" x="2178.67" y="3646.67">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="FAST"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="223" name="NORMAL" type="Enemy.NORMAL" x="2145.67" y="3549">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="224" name="STEALTH" type="PowerUp.STEALTH" x="2064" y="3826.67">
+   <properties>
+    <property name="entityClass" value="PowerUp"/>
+    <property name="entityType" value="STEALTH"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="225" name="BOMBER" type="Enemy.BOMBER" x="2084" y="3554.67">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="BOMBER"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="226" name="JOCKEY" type="Enemy.JOCKEY" x="2122.67" y="3600">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="JOCKEY"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="227" name="DOUBLEPOINTS" type="PowerUp.DOUBLE_POINTS" x="2162.67" y="3841.33">
+   <properties>
+    <property name="entityClass" value="PowerUp"/>
+    <property name="entityType" value="DOUBLE_POINTS"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="228" name="HOARDLING" type="Enemy.HOARDLING" x="2069.33" y="3604">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="229" name="HEAVY" type="Enemy.HEAVY" x="2177.33" y="3561.33">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HEAVY"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="230" name="SPEED" type="PowerUp.SPEED" x="2120" y="3837.33">
+   <properties>
+    <property name="entityClass" value="PowerUp"/>
+    <property name="entityType" value="SPEED"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="231" name="DOUBLE_DAMAGE" type="PowerUp.DOUBLE_DAMAGE" x="2200" y="3848">
+   <properties>
+    <property name="entityClass" value="PowerUp"/>
+    <property name="entityType" value="DOUBLE_DAMAGE"/>
    </properties>
    <point/>
   </object>

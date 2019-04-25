@@ -50,9 +50,9 @@ public class EndScreen extends DefaultScreen {
 
 		String blurbText;
 		if (won) {
-			blurbText = "You have successfully escaped with all of your vital functions intact!";
+			blurbText = "You have successfully eliminated the zombie threat!";
 		} else {
-			blurbText = "u die";
+			blurbText = "You have died, and the zombie threat has begun expanding outside the University";
 		}
 		Label blurb = new Label(blurbText, skin);
 		table.add(blurb).align(Align.center).row();
