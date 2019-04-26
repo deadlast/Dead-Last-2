@@ -1,6 +1,10 @@
 package com.deadlast.screens;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
@@ -46,13 +50,13 @@ public class EndScreen extends DefaultScreen {
 			titleText = "You lost.";
 		}
 		Label title = new Label(titleText, skin);
-		table.add(title).align(Align.center).expandX().fillX().row();
+		table.add(title).align(Align.center).row();
 
 		String blurbText;
 		if (won) {
 			blurbText = "You have successfully eliminated the zombie threat!";
 		} else {
-			blurbText = "You have died, and the zombie threat has begun expanding outside the University";
+			blurbText = "You have been turned, and the zombie threat is rapidly expanding outside the University.";
 		}
 		Label blurb = new Label(blurbText, skin);
 		table.add(blurb).align(Align.center).row();
@@ -76,6 +80,15 @@ public class EndScreen extends DefaultScreen {
 		stage.addActor(table);
 
 		GameManager.getInstance(game).clearLevel();
+		
+		int score = GameManager.getInstance(game).getScore();
+		String dateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss dd-MM-yyyy"));
+		FileHandle file = Gdx.files.local("data/scores.csv");
+		if (file.exists()) {
+			file.writeString(score + "," + dateTime , true);
+		} else {
+			System.out.println("Warning: could not write to score file - file does not exist.");
+		}
 //		GameManager.getInstance(game).dispose();
 	}
 

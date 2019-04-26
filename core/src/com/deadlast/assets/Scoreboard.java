@@ -21,16 +21,12 @@ public class Scoreboard {
 	}
 	
 	/**
-	 * A scoreboard entry. Holds the name, score, and datetime of the entry.
+	 * A scoreboard entry. Holds the score, and datetime of the entry.
 	 * @author Xzytl
 	 *
 	 */
 	public class Entry implements Comparable<Entry> {
 		
-		/**
-		 * The name of the player.
-		 */
-		String name;
 		/**
 		 * The integer score the player achieved.
 		 */
@@ -42,12 +38,10 @@ public class Scoreboard {
 		
 		/**
 		 * Default class constructor.
-		 * @param name		the name of the player
 		 * @param score		the score achieved
 		 * @param dateTime	the time the score was achieved
 		 */
-		public Entry(String name, int score, String dateTime) {
-			this.name = name;
+		public Entry(int score, String dateTime) {
 			this.score = score;
 			this.dateTime = dateTime;
 		}
@@ -60,20 +54,15 @@ public class Scoreboard {
 		 */
 		public Entry(String line) throws IllegalArgumentException {
 			String[] vars = line.split(",");
-			if (vars.length != 3) {
+			if (vars.length != 2) {
 				throw new IllegalArgumentException("Bad argument length");
 			}
-			this.name = vars[0];
 			try {
-				this.score = Integer.parseInt(vars[1]);
+				this.score = Integer.parseInt(vars[0]);
 			} catch (NumberFormatException e) {
 				throw new IllegalArgumentException("Bad score parameter");
 			}
-			this.dateTime = vars[2];
-		}
-		
-		public String getName() {
-			return name;
+			this.dateTime = vars[1];
 		}
 		
 		public int getScore() {
@@ -94,7 +83,7 @@ public class Scoreboard {
 		
 		@Override
 		public String toString() {
-			return this.name + "," + this.score + "," + this.dateTime;
+			return this.score + "," + this.dateTime;
 		}
 
 		@Override
