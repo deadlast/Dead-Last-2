@@ -79,15 +79,12 @@ public class GameManager implements Disposable {
 	private int score;
 	private float time;
 	
-	
 	private int winLevel = 0;
 
 	private boolean minigameActive;
 	private boolean pause;
 	private boolean bossEncounter;
 	private boolean bossDelFlag;
-	
-	private boolean npcCreationQueued;
 	
 	private GameManager(DeadLast game) {
 		this.game = game;
