@@ -15,7 +15,7 @@ import box2dLight.ConeLight;
 public class NPC extends Mob {
 
 	public NPC(DeadLast game, Vector2 initialPos) {
-		super(game, 0, new Sprite(new Texture("entities/student.png")), 0.4f, initialPos, 10, 4, 2);
+		super(game, 0, new Sprite(new Texture("entities/student.png")), 0.4f, initialPos, 1, 4, 2);
 	}
 
 	@Override
@@ -30,7 +30,7 @@ public class NPC extends Mob {
 		shape.setRadius(this.bRadius);
 		fBodyDef.shape = shape;
 		fBodyDef.filter.categoryBits = Entity.NPC;
-		fBodyDef.filter.maskBits = Entity.BOUNDARY | Entity.PLAYER | Entity.ENEMY;
+		fBodyDef.filter.maskBits = Entity.BOUNDARY | Entity.PLAYER | Entity.ENEMY | Entity.PLAYER_MELEE;
 		
 		// Create body and add fixtures
 		b2body = world.createBody(bDef);
