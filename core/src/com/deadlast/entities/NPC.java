@@ -15,6 +15,10 @@ import box2dLight.ConeLight;
 public class NPC extends Mob {
 	
 	private float invulnerableTimer = 1f;
+	
+	public enum Type {
+		STUDENT;
+	}
 
 	public NPC(DeadLast game, Vector2 initialPos) {
 		super(game, -10, new Sprite(new Texture("entities/student.png")), 0.4f, initialPos, 1, 4, 2);
@@ -57,14 +61,15 @@ public class NPC extends Mob {
 			invulnerableTimer = 0;
 		}
 		Vector2 playerPos = gameManager.getPlayer().getPos();
-		if (gameManager.getPlayerType() != PlayerType.ZOMBIE) {
-			if ((this.getPos().sub(playerPos)).len2() <= 25) {
-				double angle = Math.toDegrees(Math.atan2(playerPos.y - b2body.getPosition().y, playerPos.x - b2body.getPosition().x)) - 90;
-				this.setAngle(angle);
+		Vector2 movementVector = playerPos.sub(b2body.getPosition()).nor();
+		if ((this.getPos().sub(playerPos)).len2() <= 36) {
+			double angle = Math.toDegrees(Math.atan2(playerPos.y - b2body.getPosition().y, playerPos.x - b2body.getPosition().x)) - 90;
+			if (gameManager.getPlayerType() == PlayerType.ZOMBIE) {
+				this.b2body.setLinearVelocity(-movementVector.x, -movementVector.y);
+				angle += 180;
 			}
-		} else {
-			this.b2body.setLinearVelocity(-(playerPos.x - b2body.getPosition().x), -(playerPos.y - b2body.getPosition().y));
-		}
+			this.setAngle(angle);
+		} 
 	}
 	
 	@Override

@@ -136,7 +136,8 @@ public class Enemy extends Mob {
 
 	public void followPlayer(){
 		Vector2 playerLoc = gameManager.getPlayer().getPos();
-		this.b2body.setLinearVelocity((playerLoc.x - b2body.getPosition().x), (playerLoc.y - b2body.getPosition().y));
+		Vector2 movementVector = playerLoc.sub(b2body.getPosition()).nor();
+		this.b2body.setLinearVelocity(movementVector.x * this.getSpeed(), movementVector.y * this.getSpeed());
 	}
 
 	public void roam(){
