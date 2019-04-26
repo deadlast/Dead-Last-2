@@ -2,25 +2,25 @@ package com.deadlast.entities;
 
 public enum PlayerType {
 	
-	TANK(0.5f, 100, 3, 8, 20, "entities/boxer.png"),
-	STEALTH(0.3f, 40, 4, 4, 90, "entities/ninja.png"),
-	RUNNER(0.3f, 30, 6, 4, 40, "entities/runner.png"),
-	STANDARD(0.4f, 50, 4, 5, 50, "entities/student.png");
+	TANK(0.5f, 100, 5, 8, 20, new String[] {"entities/boxer.png","entities/boxer_attack.png"}),
+	STEALTH(0.3f, 40, 6, 4, 90, new String[] {"entities/ninja.png","entities/ninja_attack.png"}),
+	RUNNER(0.3f, 30, 8, 4, 40, new String[] {"entities/runner.png","entities/runner_attack.png"}),
+	STANDARD(0.4f, 50, 6, 5, 50, new String[] {"entities/student.png","entities/student_attack.png"});
 	
 	float bodyRadius;
 	int health;
 	int speed;
 	int strength;
 	int stealth;
-	String sprite;
+	String[] sprites;
 	
-	PlayerType(float bodyRadius, int health, int speed, int strength, int stealth, String sprite) {
+	PlayerType(float bodyRadius, int health, int speed, int strength, int stealth, String[] sprites) {
 		this.bodyRadius = bodyRadius;
 		this.health = health;
 		this.speed = speed;
 		this.strength = strength;
 		this.stealth = stealth;
-		this.sprite = sprite;
+		this.sprites = sprites;
 	}
 	
 	public float getBodyRadius() {
@@ -43,8 +43,11 @@ public enum PlayerType {
 		return stealth;
 	}
 	
-	public String getSprite() {
-		return sprite;
+	public String[] getSprites() {
+		return sprites;
+	}
+	public String getDefaultSprite() {
+		return sprites[0];
 	}
 
 }
