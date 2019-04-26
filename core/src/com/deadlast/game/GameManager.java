@@ -71,7 +71,7 @@ public class GameManager implements Disposable {
 	private Hud hud;
 	private RayHandler rayHandler;
 
-	private String[] levels = {"Comp Sci","Hes East","DBar","Library","Under Lake","Central Hall","minigame", "Dead"};
+	private String[] levels = {"Comp Sci","Hes East","DBar","Library","Under Lake","Central Hall","minigame", "Infection"};
 	private Level level;
 	private int levelNum = 0;
 	
