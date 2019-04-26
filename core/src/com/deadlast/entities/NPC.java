@@ -63,7 +63,6 @@ public class NPC extends Mob {
 		Vector2 playerPos = gameManager.getPlayer().getPos();
 		System.out.println(this.getPos().sub(playerPos).len2());
 		if ((this.getPos().sub(playerPos)).len2() <= 36) {
-			System.out.println("In range");
 			double angle = Math.toDegrees(Math.atan2(playerPos.y - b2body.getPosition().y, playerPos.x - b2body.getPosition().x)) - 90;
 			if (gameManager.getPlayerType() == PlayerType.ZOMBIE) {
 				Vector2 movementVector = playerPos.sub(b2body.getPosition()).nor();
