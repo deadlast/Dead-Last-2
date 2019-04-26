@@ -1,6 +1,7 @@
 package com.deadlast.entities;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.math.Vector2;
@@ -10,9 +11,13 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.deadlast.game.DeadLast;
 import com.deadlast.world.FixtureType;
 
+import box2dLight.PointLight;
+
 public class PowerUp extends Entity {
 	
 	private Type type;
+	
+	private PointLight pointLight;
 	
 	public PowerUp(DeadLast game, int scoreValue, Sprite sprite, float bRadius, Vector2 initialPos, Type type) {
 		super(game, scoreValue, sprite, bRadius, initialPos);
@@ -50,14 +55,25 @@ public class PowerUp extends Entity {
 		b2body = world.createBody(bDef);
 		b2body.createFixture(fDef).setUserData(FixtureType.POWERUP);
 		b2body.setUserData(this);
+		
+		pointLight = new PointLight(gameManager.getRayHandler(), 32, Color.GOLD, 3, b2body.getPosition().x, b2body.getPosition().y);
+		pointLight.attachToBody(b2body);
 
 		shape.dispose();
 	}
-
+	
 	@Override
 	public void update(float delta) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	@Override
+	public void delete() {
+		super.delete();
+		if (pointLight != null) {
+			pointLight.remove(true);
+		}
 	}
 	
 	public static class Builder {

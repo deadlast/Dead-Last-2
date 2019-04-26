@@ -408,8 +408,9 @@ public class GameManager implements Disposable {
 		List<Entity> deadEntities = entities.stream().filter(e -> (!e.isAlive() && !(e instanceof Player))).collect(Collectors.toList());
 		deadEntities.forEach(e -> {
 			if (e instanceof Mob) {
-				
 				((Mob)e).delete();
+			} else if (e instanceof PowerUp) {
+				((PowerUp)e).delete();
 			} else {
 				e.delete();
 			}
