@@ -18,13 +18,12 @@ public class EndScreen extends DefaultScreen {
 	private Stage stage;
 
 	private boolean won;
-	private int finalScore;
+	
 	public EndScreen(DeadLast game) {
 		super(game);
 		stage = new Stage(new ScreenViewport());
 		won = GameManager.getInstance(game).getWinLevel() == 1 ? true : false;
-		this.finalScore = GameManager.getInstance(game).getScore();
-		
+
 	}
 
 	@Override
@@ -50,22 +49,21 @@ public class EndScreen extends DefaultScreen {
 
 		String blurbText;
 		if (won) {
-			blurbText = "You have successfully eliminated the zombie threat!";
+			blurbText = "You have successfully escaped with all of your vital functions intact!";
 		} else {
-			blurbText = "You have died, and the zombie threat has begun expanding outside the University";
+			blurbText = "Due to the forced cessation of several of your vital functions, you have ceased to be alive.";
 		}
 		Label blurb = new Label(blurbText, skin);
 		table.add(blurb).align(Align.center).row();
 
 
-		table.add(new Label("Your end score: " + this.finalScore,skin)).align(Align.center).row();
+		table.add(new Label("Your end score: " + GameManager.getInstance(game).getTotalScore(),skin)).align(Align.center).row();
 
 		
 		TextButton returnButton = new TextButton("Menu", skin);
 		returnButton.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				GameManager.getInstance(game).resetScore();
 				table.reset();
 				game.changeScreen(DeadLast.MENU);
 			}
@@ -76,7 +74,6 @@ public class EndScreen extends DefaultScreen {
 		stage.addActor(table);
 
 		GameManager.getInstance(game).clearLevel();
-//		GameManager.getInstance(game).dispose();
 	}
 
 	@Override

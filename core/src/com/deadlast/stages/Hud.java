@@ -27,6 +27,7 @@ public class Hud implements Disposable {
 	Label levelLabel;
 	Label coinValLabel;
 	Label healthValLabel;
+	Label cooldownLable;
 
 	public Hud(DeadLast game) {
 		viewport = new ExtendViewport(DeadLast.V_WIDTH, DeadLast.V_HEIGHT);
@@ -41,13 +42,19 @@ public class Hud implements Disposable {
 		Skin skin = new Skin(Gdx.files.internal("ui/uiskin.json"));
 		
 		//Label.LabelStyle labelStyle = new Label.LabelStyle(Color.WHITE);
+		Label timeLabel = new Label("Time:", skin);
 		timeValLabel = new Label(String.format("%03d", 0), skin);
+		Label scoreLabel = new Label("Score:", skin);
 		scoreValLabel = new Label(String.format("%04d", 0), skin);
+		Label worldLabel = new Label("Map:", skin);
 		levelLabel = new Label("Ron Cooke Hub", skin);
 		Label coinLabel;
+		
+		topView.add(timeLabel).expandX().padTop(10);
+		topView.add(worldLabel).expandX().padTop(10);
+		topView.add(scoreLabel).expandX().padTop(10);
 
-
-		if(GameManager.getInstance(game).isMinigameActive()){
+		if(GameManager.getInstance(game).getMinigame()){
 			coinLabel = new Label("Coins Collected: ", skin);
 			coinValLabel = new Label(String.format("%02d",0),skin);
 			topView.add(coinLabel).expandX().padTop(10);
@@ -57,7 +64,7 @@ public class Hud implements Disposable {
 		topView.add(levelLabel).expandX();
 		topView.add(scoreValLabel).expandX();
 
-		if(GameManager.getInstance(game).isMinigameActive()){ topView.add(coinValLabel).expandX(); }
+		if(GameManager.getInstance(game).getMinigame()){ topView.add(coinValLabel).expandX(); }
 
 		stage.addActor(topView);
 		
@@ -77,6 +84,9 @@ public class Hud implements Disposable {
 		centreView.center();
 		centreView.setFillParent(true);
 
+		cooldownLable = new Label("", skin);
+
+		centreView.add(cooldownLable).padBottom(70);
 
 		stage.addActor(centreView);
 	}
@@ -97,9 +107,16 @@ public class Hud implements Disposable {
 		levelLabel.setText(name);
 	}
 
+	public void setCooldown(boolean cooldown){
+		if(cooldown){
+			cooldownLable.setText("Attack on cooldown");
+		} else{
+			cooldownLable.setText("");
+		}
+	}
 
 	public void setCoinsCollected(int coinsCollected, DeadLast game){
-		if(GameManager.getInstance(game).isMinigameActive()) {
+		if(GameManager.getInstance(game).getMinigame()) {
 			coinValLabel.setText(String.format("%02d", coinsCollected));
 		}
 	}
