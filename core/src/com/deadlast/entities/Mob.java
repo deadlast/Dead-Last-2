@@ -156,5 +156,11 @@ public abstract class Mob extends Entity {
 			this.currentHealth -= damage;
 		}
 	}
+	
+	public void knockback( float strength) {
+		//HERE
+		this.getBody().applyForceToCenter(this.getBody().getLinearVelocity().scl(-1500f * strength), true);
+		
+	}
 
 }
