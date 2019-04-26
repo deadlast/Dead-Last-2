@@ -159,8 +159,8 @@ public abstract class Mob extends Entity {
 	
 	public void knockback( float strength) {
 		//HERE
-		this.getBody().applyForceToCenter(this.getBody().getLinearVelocity().scl(-1500f * strength), false);
-		System.out.println("KB accessed, force of " + this.getBody().getLinearVelocity().scl(-500f * strength).toString() + " applied" );
+		this.getBody().applyForceToCenter(this.getBody().getLinearVelocity().scl(-1500f * strength), true);
+		
 	}
 
 }
