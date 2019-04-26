@@ -483,12 +483,14 @@ public class GameManager implements Disposable {
 		}
 		if (controller.isXDown) {
 			if (player.isPowerUpActive(PowerUp.Type.CURE)) {
+				float effectRadius = 6;
 				System.out.println("Dispensing cure");
-				player.createEffectRadius(5, Color.GREEN, 0.5f);
+				player.createEffectRadius(effectRadius, Color.GREEN, 0.5f);
 				player.removePowerUp(PowerUp.Type.CURE);
 				Vector2 playerPos = player.getPos();
 				enemies.forEach( e -> {
-					if ((e.getPos().sub(playerPos)).len2() <= 25) {
+					// Using len2 removes the need to perform the slightly more computationally demanding square root function
+					if ((e.getPos().sub(playerPos)).len2() <= Math.pow(effectRadius, 2)) {
 						e.setAlive(false);
 						addNPC(e.getPos());
 					}
