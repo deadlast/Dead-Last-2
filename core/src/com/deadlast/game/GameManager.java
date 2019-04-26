@@ -30,6 +30,7 @@ import com.deadlast.entities.PowerUp;
 import com.deadlast.entities.PowerUpFactory;
 import com.deadlast.screens.GameScreen;
 import com.deadlast.stages.Hud;
+import com.deadlast.stages.PauseOverlay;
 import com.deadlast.world.Level;
 import com.deadlast.world.WorldContactListener;
 
@@ -69,6 +70,7 @@ public class GameManager implements Disposable {
 	private SpriteBatch batch;
 	
 	private Hud hud;
+	private PauseOverlay pauseOverlay;
 	private RayHandler rayHandler;
 
 	private String[] levels = {"Comp Sci","Hes East","DBar","Library","Under Lake","Central Hall","minigame", "Infection"};
@@ -81,7 +83,7 @@ public class GameManager implements Disposable {
 	private int winLevel = 0;
 
 	private boolean minigameActive;
-	private boolean pause;
+	private boolean paused;
 	private boolean bossEncounter;
 	private boolean bossDelFlag;
 	
@@ -134,6 +136,8 @@ public class GameManager implements Disposable {
 		
 		hud = new Hud(game);
 		
+		pauseOverlay = new PauseOverlay(game);
+		
 		this.entities = new ArrayList<>();
 		this.enemies = new ArrayList<>();
 		this.powerUps = new ArrayList<>();
@@ -168,19 +172,13 @@ public class GameManager implements Disposable {
 		if (!levelLoaded) {
 			return;
 		}
-		System.out.println("CLEAR LEVEL ACCESSED");
 		levelLoaded = false;
-		System.out.println("LEVEL UNLOADED");
 		controller.down = controller.left = controller.right = controller.up = false;
-		System.out.println("CONTROLLER RESET");
 		hud.dispose();
-		System.out.println("HUD DISPOSED");
+		pauseOverlay.dispose();
 		debugRenderer.dispose();
-		System.out.println("DEBUG RENDERER DISPOSED");
 		rayHandler.dispose();
-		System.out.println("RAY HANDLER DISPOSED");
 		level.dispose();
-		System.out.println("LEVEL DISPOSED");
 		if (winLevel == -1) {
 			levelNum = 0;
 		}
@@ -361,12 +359,12 @@ public class GameManager implements Disposable {
 	}
 
 	public void update(float delta) {
-		if(!gameRunning) return;
-		if(!levelLoaded) {
+		if (!gameRunning) return;
+		if (!levelLoaded) {
 			transferLevel();
 			return;
 		}
-		if(gameCamera == null || batch == null) return;
+		if (gameCamera == null || batch == null) return;
 		if (player.getHealth() <= 0) {
 			System.out.println("Player has died!");
 			winLevel = -1;
@@ -391,13 +389,13 @@ public class GameManager implements Disposable {
 				hud.setRemainingHumans(entities.size() - 1);
 			}
 		}
-		checkPause();
 		handleInput();
-		if(!pause){
-			// Step through the physics world simulation
-			world.step(1/60f, 6, 2);
-			time += delta;
+		if (paused) {
+			return;
 		}
+		// Step through the physics world simulation
+		world.step(1/60f, 6, 2);
+		time += delta;
 		// Centre the camera on the player character
 		gameCamera.position.x = player.getBody().getPosition().x;
 		gameCamera.position.y = player.getBody().getPosition().y;
@@ -436,17 +434,7 @@ public class GameManager implements Disposable {
 	}
 
 	public boolean isPaused(){
-		return pause;
-	}
-
-	public void checkPause(){
-		if(Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)){
-			if(pause){
-				pause = false;
-			} else{
-				pause = true;
-			}
-		}
+		return paused;
 	}
 	
 	/**
@@ -459,6 +447,14 @@ public class GameManager implements Disposable {
 		
 		if (Gdx.input.isKeyJustPressed(Input.Keys.N)) {
 			System.out.println("Player loc: " + player.getPos().x + "," + player.getPos().y);
+		}
+		
+		if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
+			paused = !paused;
+		}
+		
+		if (paused) {
+			return;
 		}
 		
 		float speed;
@@ -561,7 +557,11 @@ public class GameManager implements Disposable {
 		rayHandler.setCombinedMatrix(gameCamera);
 		rayHandler.updateAndRender();
 		tiledMapRenderer.render(level.getForegroundLayers());
-		hud.stage.draw();
+		if (!paused) {
+			hud.stage.draw();
+		} else {
+			pauseOverlay.stage.draw();
+		}
 	}
 
 	@Override
