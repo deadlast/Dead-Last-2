@@ -32,6 +32,10 @@ public class KeyboardController implements InputProcessor {
 	 */
 	public boolean isSpaceDown;
 	/**
+	 * Boolean representing whether or not the 'x' key is held down
+	 */
+	public boolean isXDown;
+	/**
 	 * {@link Vector2} representing the mouse pointer's current location on the screen
 	 */
 	public Vector2 mouseLocation = new Vector2();
@@ -67,6 +71,10 @@ public class KeyboardController implements InputProcessor {
 			break;
 		case Keys.SPACE:
 			isSpaceDown = true;
+			keyProcessed = true;
+			break;
+		case Keys.X:
+			isXDown = true;
 			keyProcessed = true;
 			break;
 		}
@@ -105,6 +113,11 @@ public class KeyboardController implements InputProcessor {
 		case Keys.SPACE:
 			isSpaceDown = false;
 			keyProcessed = true;
+			break;
+		case Keys.X:
+			isXDown = false;
+			keyProcessed = true;
+			break;
 		}
 		return keyProcessed;
 	}

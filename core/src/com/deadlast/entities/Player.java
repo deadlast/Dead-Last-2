@@ -22,6 +22,7 @@ import com.deadlast.world.FixtureType;
 import com.deadlast.world.WorldContactListener;
 
 import box2dLight.ConeLight;
+import box2dLight.PointLight;
 
 /**
  * This class represents the player character.
@@ -78,6 +79,9 @@ public class Player extends Mob {
 	 * damaged when the attack ability is used.
 	 */
 	private Set<Enemy> enemiesInRange;
+	
+	private PointLight effectRadius;
+	private double effectTimer;
 
 	private Hud hud;
 	
@@ -142,7 +146,7 @@ public class Player extends Mob {
 		FixtureDef fDef = new FixtureDef();
 		fDef.shape = shape;
 		fDef.filter.categoryBits = Entity.PLAYER;
-		fDef.filter.maskBits = Entity.BOUNDARY | Entity.ENEMY | Entity.POWERUP | Entity.ENEMY_HEARING | Entity.ENEMY_VISION | Entity.END_ZONE;
+		fDef.filter.maskBits = Entity.BOUNDARY | Entity.ENEMY | Entity.POWERUP | Entity.ENEMY_HEARING | Entity.ENEMY_VISION | Entity.END_ZONE | Entity.NPC;
 		
 		b2body = world.createBody(bDef);
 		b2body.createFixture(fDef).setUserData(FixtureType.PLAYER);
@@ -157,6 +161,20 @@ public class Player extends Mob {
 		b2body.setSleepingAllowed(false);
 
 		shape.dispose();
+	}
+	
+	public void createEffectRadius(float radius, Color color, double time) {
+		effectRadius = new PointLight(gameManager.getRayHandler(), 16, color, radius, b2body.getPosition().x, b2body.getPosition().y);
+		effectRadius.attachToBody(b2body);
+		effectTimer = time;
+	}
+	
+	public void removeEffectRadius() {
+		if (effectRadius != null) {
+			effectRadius.remove(true);
+			effectRadius = null;
+			effectTimer = 0;
+		}
 	}
 	
 	/**
@@ -190,6 +208,10 @@ public class Player extends Mob {
 	 */
 	public boolean isPowerUpActive(PowerUp.Type type) {
 		return activePowerUps.containsKey(type);
+	}
+	
+	public void removePowerUp(PowerUp.Type type) {
+		activePowerUps.remove(type);
 	}
 	
 	public void onEndZoneReached() {
@@ -232,8 +254,19 @@ public class Player extends Mob {
 				this.sprite = attackSprite;
 			}
 		}
+		if (effectRadius != null) {
+			if (effectTimer - delta <= 0) {
+				removeEffectRadius();
+			} else {
+				effectTimer -= delta;
+			}
+		}
 	}
 
+	/**
+	 * Calculates the player's current damage modifier
+	 * @return the damage multiplier
+	 */
 	public int getDamageMultiplier(){
 		if(this.isPowerUpActive(PowerUp.Type.DOUBLE_DAMAGE)){
 			return 2;
@@ -242,7 +275,17 @@ public class Player extends Mob {
 		}
 	}
 
-	public boolean getCooldown(){return this.attkCooldown;}
+	public boolean getCooldown() {
+		return this.attkCooldown;
+	}
+	
+	@Override
+	public void delete() {
+		super.delete();
+		if (effectRadius != null) {
+			effectRadius.remove(true);
+		}
+	}
 	
 	public static class Builder {
 		

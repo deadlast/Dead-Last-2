@@ -4,6 +4,7 @@ public enum FixtureType {
 	
 	ENEMY,
 	PLAYER,
+	NPC,
 	POWERUP,
 	HEARING_SENSOR,
 	VISUAL_SENSOR,
