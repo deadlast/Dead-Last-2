@@ -6,7 +6,7 @@ public enum PlayerType {
 	STEALTH(0.3f, 40, 6, 4, 90, new String[] {"entities/ninja.png","entities/ninja_attack.png"}),
 	RUNNER(0.3f, 30, 8, 4, 40, new String[] {"entities/runner.png","entities/runner_attack.png"}),
 	STANDARD(0.4f, 50, 6, 5, 50, new String[] {"entities/student.png","entities/student_attack.png"}),
-	ZOMBIE(0.4f, 100, 6, 8, 0, new String[] {"entities/student.png","entities/student_attack.png"});
+	ZOMBIE(0.4f, 100, 6, 8, 0, new String[] {"entities/normal_zombie.png","entities/normal_zombie.png"});
 	
 	float bodyRadius;
 	int health;
