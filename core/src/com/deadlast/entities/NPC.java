@@ -13,9 +13,11 @@ import com.deadlast.world.FixtureType;
 import box2dLight.ConeLight;
 
 public class NPC extends Mob {
+	
+	private float invulnerableTimer = 1f;
 
 	public NPC(DeadLast game, Vector2 initialPos) {
-		super(game, 0, new Sprite(new Texture("entities/student.png")), 0.4f, initialPos, 1, 4, 2);
+		super(game, -10, new Sprite(new Texture("entities/student.png")), 0.4f, initialPos, 1, 4, 2);
 	}
 
 	@Override
@@ -48,6 +50,12 @@ public class NPC extends Mob {
 	
 	@Override
 	public void update(float delta) {
+		super.update(delta);
+		if (invulnerableTimer - delta > 0) {
+			invulnerableTimer -= delta;
+		} else {
+			invulnerableTimer = 0;
+		}
 		Vector2 playerPos = gameManager.getPlayer().getPos();
 		if (gameManager.getPlayerType() != PlayerType.ZOMBIE) {
 			if ((this.getPos().sub(playerPos)).len2() <= 25) {
@@ -57,6 +65,14 @@ public class NPC extends Mob {
 		} else {
 			this.b2body.setLinearVelocity(-(playerPos.x - b2body.getPosition().x), -(playerPos.y - b2body.getPosition().y));
 		}
+	}
+	
+	@Override
+	public void applyDamage(int damage) {
+		if (invulnerableTimer > 0) {
+			return;
+		}
+		super.applyDamage(damage);
 	}
 
 }
