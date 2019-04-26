@@ -1,0 +1,49 @@
+package com.deadlast.entities;
+
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.physics.box2d.BodyDef;
+import com.badlogic.gdx.physics.box2d.CircleShape;
+import com.badlogic.gdx.physics.box2d.FixtureDef;
+import com.deadlast.game.DeadLast;
+import com.deadlast.world.FixtureType;
+
+import box2dLight.ConeLight;
+
+public class NPC extends Mob {
+
+	public NPC(DeadLast game, Vector2 initialPos) {
+		super(game, 0, new Sprite(new Texture("entities/student.png")), 0.4f, initialPos, 10, 4, 2);
+	}
+
+	@Override
+	public void defineBody() {
+		BodyDef bDef = new BodyDef();
+		bDef.type = BodyDef.BodyType.DynamicBody;
+		bDef.position.set(initialPos);
+		
+		// The physical body of the enemy
+		FixtureDef fBodyDef = new FixtureDef();
+		CircleShape shape = new CircleShape();
+		shape.setRadius(this.bRadius);
+		fBodyDef.shape = shape;
+		fBodyDef.filter.categoryBits = Entity.NPC;
+		fBodyDef.filter.maskBits = Entity.BOUNDARY | Entity.PLAYER | Entity.ENEMY;
+		
+		// Create body and add fixtures
+		b2body = world.createBody(bDef);
+		b2body.createFixture(fBodyDef).setUserData(FixtureType.NPC);
+		
+		coneLight = new ConeLight(gameManager.getRayHandler(), 7, Color.VIOLET, 3, b2body.getPosition().x, b2body.getPosition().y, b2body.getAngle() + 90, 35);
+		coneLight.attachToBody(b2body, 0, 0, 90);
+		
+		b2body.setUserData(this);
+
+		shape.dispose();
+		
+		b2body.setLinearDamping(5.0f);
+	}
+
+}
