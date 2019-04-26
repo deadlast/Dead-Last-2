@@ -493,6 +493,7 @@ public class GameManager implements Disposable {
 					if ((e.getPos().sub(playerPos)).len2() <= Math.pow(effectRadius, 2)) {
 						e.setAlive(false);
 						addNPC(e.getPos());
+						this.score += 30;
 					}
 				});
 			}
