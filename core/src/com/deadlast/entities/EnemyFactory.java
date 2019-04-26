@@ -1,8 +1,5 @@
 package com.deadlast.entities;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.deadlast.game.DeadLast;
 
 /**
@@ -36,7 +33,7 @@ public class EnemyFactory {
 					.setSpeedStat(6)
 					.setStrengthStat(10)
 					.setDetectionStat(9)
-					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/bomber_zombie.png"))))
+					.setSprite(null)
 					.setScoreValue(60)
 					.setBodyRadius(0.4f);
 			break;
@@ -45,7 +42,7 @@ public class EnemyFactory {
 				.setSpeedStat(10)
 				.setStrengthStat(5)
 				.setDetectionStat(7)
-				.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/fast_zombie.png"))))
+				.setSprite(null)
 				.setScoreValue(20)
 				.setBodyRadius(0.4f);
 			break;
@@ -54,7 +51,7 @@ public class EnemyFactory {
 				.setSpeedStat(6)
 				.setStrengthStat(10)
 				.setDetectionStat(9)
-				.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/heavy_zombie.png"))))
+				.setSprite(null)
 				.setScoreValue(50)
 				.setBodyRadius(0.75f);
 			break;
@@ -63,7 +60,7 @@ public class EnemyFactory {
 					.setSpeedStat(10)
 					.setStrengthStat(2)
 					.setDetectionStat(10)
-					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/hordling_zombie.png"))))
+					.setSprite(null)
 					.setScoreValue(5)
 					.setBodyRadius(0.2f);
 			break;
@@ -72,7 +69,7 @@ public class EnemyFactory {
 					.setSpeedStat(9)
 					.setStrengthStat(4)
 					.setDetectionStat(9)
-					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/jockey_zombie.png"))))
+					.setSprite(null)
 					.setScoreValue(80)
 					.setBodyRadius(0.6f);
 			break;
@@ -81,7 +78,7 @@ public class EnemyFactory {
 					.setSpeedStat(6)
 					.setStrengthStat(6)
 					.setDetectionStat(6)
-					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/normal_zombie.png"))))
+					.setSprite(null)
 					.setScoreValue(10)
 					.setBodyRadius(0.4f);
 			break;
@@ -90,7 +87,7 @@ public class EnemyFactory {
 					.setSpeedStat(2)
 					.setStrengthStat(4)
 					.setDetectionStat(10)
-					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/boss1.png"))))
+					.setSprite(null)
 					.setScoreValue(100)
 					.setBodyRadius(1.5f);
 			break;
@@ -99,29 +96,9 @@ public class EnemyFactory {
 					.setSpeedStat(4)
 					.setStrengthStat(3)
 					.setDetectionStat(10)
-					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/boss2.png"))))
+					.setSprite(null)
 					.setScoreValue(200)
 					.setBodyRadius(1.5f);
-			break;
-		case GOOSE:
-			//doesnt work atm
-			builder.setHealthStat(400)
-			.setSpeedStat(4)
-			.setStrengthStat(0)
-			.setDetectionStat(0)
-			.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/goose.png"))))
-			.setScoreValue(0)
-			.setBodyRadius(1.5f);
-			break;
-		case CURED:
-			//doesnt work atm
-			builder.setHealthStat(400)
-			.setSpeedStat(4)
-			.setStrengthStat(0)
-			.setDetectionStat(0)
-			.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/cured.png"))))
-			.setScoreValue(0)
-			.setBodyRadius(1.5f);
 			break;
 		default:
 			break;

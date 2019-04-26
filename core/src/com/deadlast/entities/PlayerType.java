@@ -1,7 +1,7 @@
 package com.deadlast.entities;
 
 public enum PlayerType {
-	
+
 	TANK(0.5f, 100, 5, 8, 20, new String[] {"entities/boxer.png","entities/boxer_attack.png"}),
 	STEALTH(0.3f, 40, 6, 4, 90, new String[] {"entities/ninja.png","entities/ninja_attack.png"}),
 	RUNNER(0.3f, 30, 8, 4, 40, new String[] {"entities/runner.png","entities/runner_attack.png"}),
@@ -13,15 +13,13 @@ public enum PlayerType {
 	int speed;
 	int strength;
 	int stealth;
-	String[] sprites;
 	
-	PlayerType(float bodyRadius, int health, int speed, int strength, int stealth, String[] sprites) {
+	PlayerType(float bodyRadius, int health, int speed, int strength, int stealth) {
 		this.bodyRadius = bodyRadius;
 		this.health = health;
 		this.speed = speed;
 		this.strength = strength;
 		this.stealth = stealth;
-		this.sprites = sprites;
 	}
 	
 	public float getBodyRadius() {
@@ -42,13 +40,6 @@ public enum PlayerType {
 	
 	public int getStealth() {
 		return stealth;
-	}
-	
-	public String[] getSprites() {
-		return sprites;
-	}
-	public String getDefaultSprite() {
-		return sprites[0];
 	}
 
 }

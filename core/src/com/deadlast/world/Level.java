@@ -64,6 +64,7 @@ public class Level implements Disposable {
 		MapLayer entityLayer = tiledMap.getLayers().get("Entities");
 		entityLayer.setVisible(false);
 		MapObjects entities = entityLayer.getObjects();
+
 		entities.forEach(e -> {
 			MapProperties props = e.getProperties();
 			String entityClass = props.get("entityClass", String.class);
@@ -98,9 +99,7 @@ public class Level implements Disposable {
 					enemySpawns.add(new SpawnPoint<Enemy.Type>(Enemy.Type.BOSS2, new Vector2(x, y)));
 					break;
 				default:
-					enemySpawns.add(new SpawnPoint<Enemy.Type>(Enemy.Type.FAST, new Vector2(x,y)));
 					break;
-					 
 				}
 			} else if (entityClass.equals("PowerUp")) {
 				switch (entityType) {
@@ -123,7 +122,6 @@ public class Level implements Disposable {
 					powerUpSpawns.add(new SpawnPoint<PowerUp.Type>(PowerUp.Type.CURE, new Vector2(x, y)));
 					break;
 				default:
-					powerUpSpawns.add(new SpawnPoint<PowerUp.Type>(PowerUp.Type.REGEN, new Vector2(x,y)));
 					break;
 				}
 			} else if (entityClass.equals("NPC")) {
@@ -189,7 +187,7 @@ public class Level implements Disposable {
 	@Override
 	public void dispose() {
 		tiledMap.dispose();
-//		endZone.delete();
+		endZone.delete();
 	}
 
 }

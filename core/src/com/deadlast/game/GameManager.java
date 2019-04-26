@@ -2,6 +2,7 @@ package com.deadlast.game;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import com.badlogic.gdx.Gdx;
@@ -11,6 +12,11 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.maps.MapLayer;
+import com.badlogic.gdx.maps.MapObject;
+import com.badlogic.gdx.maps.MapObjects;
+import com.badlogic.gdx.maps.MapProperties;
+import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMapRenderer;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Vector2;
@@ -32,6 +38,7 @@ import com.deadlast.screens.GameScreen;
 import com.deadlast.stages.Hud;
 import com.deadlast.stages.PauseOverlay;
 import com.deadlast.world.Level;
+import com.deadlast.world.MapBodyBuilder;
 import com.deadlast.world.WorldContactListener;
 
 import box2dLight.RayHandler;
@@ -61,7 +68,6 @@ public class GameManager implements Disposable {
 	private Vector2 playerSpawn;
 	private ArrayList<Entity> entities;
 	private ArrayList<Enemy> enemies;
-	private Enemy boss;
 	private ArrayList<Entity> powerUps;
 	private EnemyFactory enemyFactory;
 	private PowerUpFactory powerUpFactory;
@@ -74,10 +80,11 @@ public class GameManager implements Disposable {
 	private RayHandler rayHandler;
 
 	private String[] levels = {"Comp Sci","Hes East","DBar","Library","Under Lake","Central Hall","minigame", "Infection"};
+
 	private Level level;
 	private int levelNum = 0;
 	
-	private int score = 0;
+	private int score;
 	private float time;
 	
 	private int winLevel = 0;
@@ -86,6 +93,7 @@ public class GameManager implements Disposable {
 	private boolean paused;
 	private boolean bossEncounter;
 	private boolean bossDelFlag;
+
 	
 	private GameManager(DeadLast game) {
 		this.game = game;
@@ -120,7 +128,7 @@ public class GameManager implements Disposable {
 	 * Creates/refreshes parameters required when a new level is loaded.
 	 */
 	public void loadLevel() {
-		if(minigameActive){
+		if (minigameActive) {
 			levelNum = levels.length - 2;
 		}
 		if (world != null) {
@@ -142,6 +150,7 @@ public class GameManager implements Disposable {
 		this.enemies = new ArrayList<>();
 		this.powerUps = new ArrayList<>();
 		
+		score = 0;
 		time = 0;
 		
 		level = new Level(game,levels[levelNum]);
@@ -153,17 +162,16 @@ public class GameManager implements Disposable {
 
 		player = new Player.Builder()
 				.setGame(game)
-				.setSprites(playerType.getSprites())
+				.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/player.png"))))
 				.setBodyRadius(playerType.getBodyRadius())
 				.setInitialPosition(playerSpawn)
-				.setHealthStat(50)
+				.setHealthStat(getHealth())
 				.setSpeedStat(playerType.getSpeed())
 				.setStealthStat(playerType.getStealth())
 				.setStrengthStat(playerType.getStrength())
 				.build();
 		player.defineBody();
 		entities.add(player);
-		player.setHealth(player.getMaxHealth());
 		levelLoaded = true;
 	}
 	
@@ -182,7 +190,6 @@ public class GameManager implements Disposable {
 		if (winLevel == -1) {
 			levelNum = 0;
 		}
-		
 	}
 	
 	/**
@@ -217,7 +224,7 @@ public class GameManager implements Disposable {
 	}
 
 	public int getHealth(){
-		return player.getHealth();
+		return oldHealth;
 	}
 	
 	public PlayerType getPlayerType() {
@@ -241,7 +248,6 @@ public class GameManager implements Disposable {
 		this.enemies.add(enemy);
 		this.entities.add(enemy);
 		if(type == Enemy.Type.BOSS || type == Enemy.Type.BOSS2){
-			this.boss = enemy;
 			bossEncounter = true;
 		}
 	}
@@ -305,12 +311,10 @@ public class GameManager implements Disposable {
 		return rayHandler;
 	}
 	
-	public int getScore() {
-		return this.score;
+	public int getTotalScore() {
+		return totalScore;
 	}
-	public void resetScore() {
-		this.score = 0;
-	}
+	
 	public int getWinLevel() {
 		return winLevel;
 	}
@@ -412,8 +416,7 @@ public class GameManager implements Disposable {
 			} else {
 				e.delete();
 			}
-			
-			if((bossEncounter) && e.equals(boss)){
+			if(bossEncounter){
 				bossDelFlag = true;
 			}
 		});
@@ -430,7 +433,6 @@ public class GameManager implements Disposable {
 		this.hud.setTime((int)Math.round(Math.floor(time)));
 		this.hud.setHealth(this.player.getHealth());
 		this.hud.setScore(this.score);
-
 	}
 
 	public boolean isPaused(){
@@ -488,11 +490,7 @@ public class GameManager implements Disposable {
 		} else {
 			player.isAttacking(false);
 		}
-		if (controller.isMouse1Down) {
-			player.isAttacking(true);
-		} else {
-			player.isAttacking(false);
-		}
+		
 		if ((!controller.up && !controller.down) || (controller.up && controller.down)) {
 			player.getBody().setLinearVelocity(player.getBody().getLinearVelocity().x, 0);
 		}
@@ -519,8 +517,9 @@ public class GameManager implements Disposable {
 	}
 	
 	public void levelComplete() {
-//		levelLoaded = false;
-		clearLevel();
+		levelLoaded = false;
+		totalScore += score;
+		// clearLevel();
 		levelNum += 1;
 	}
 	
@@ -530,18 +529,13 @@ public class GameManager implements Disposable {
 		} else {
 			gameRunning = false;
 			winLevel = 1;
-			this.levelNum = 0;
 			game.changeScreen(DeadLast.END);
 		}
 	}
 
-	public void setMinigameActive(boolean minigameActive) { 
-		this.minigameActive = minigameActive;
-	}
+	public void setMinigame(){ minigame = true; }
 
-	public boolean isMinigameActive() {
-		return minigameActive;
-	}
+	public boolean getMinigame(){ return minigame; }
 
 	/**
 	 * Renders entities held by this game manager.

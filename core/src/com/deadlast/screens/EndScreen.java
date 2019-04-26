@@ -22,13 +22,12 @@ public class EndScreen extends DefaultScreen {
 	private Stage stage;
 
 	private boolean won;
-	private int finalScore;
+	
 	public EndScreen(DeadLast game) {
 		super(game);
 		stage = new Stage(new ScreenViewport());
 		won = GameManager.getInstance(game).getWinLevel() == 1 ? true : false;
-		this.finalScore = GameManager.getInstance(game).getScore();
-		
+
 	}
 
 	@Override
@@ -54,7 +53,7 @@ public class EndScreen extends DefaultScreen {
 
 		String blurbText;
 		if (won) {
-			blurbText = "You have successfully eliminated the zombie threat!";
+			blurbText = "You have successfully escaped with all of your vital functions intact!";
 		} else {
 			blurbText = "You have been turned, and the zombie threat is rapidly expanding outside the University.";
 		}
@@ -62,14 +61,13 @@ public class EndScreen extends DefaultScreen {
 		table.add(blurb).align(Align.center).row();
 
 
-		table.add(new Label("Your end score: " + this.finalScore,skin)).align(Align.center).row();
+		table.add(new Label("Your end score: " + GameManager.getInstance(game).getTotalScore(),skin)).align(Align.center).row();
 
 		
 		TextButton returnButton = new TextButton("Menu", skin);
 		returnButton.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
-				GameManager.getInstance(game).resetScore();
 				table.reset();
 				game.changeScreen(DeadLast.MENU);
 			}
@@ -80,7 +78,7 @@ public class EndScreen extends DefaultScreen {
 		stage.addActor(table);
 
 		GameManager.getInstance(game).clearLevel();
-		
+
 		int score = GameManager.getInstance(game).getScore();
 		String dateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss dd-MM-yyyy"));
 		FileHandle file = Gdx.files.local("data/scores.csv");

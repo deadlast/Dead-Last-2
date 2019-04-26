@@ -30,6 +30,7 @@ public class Hud implements Disposable {
 	
 	Label remainingHumansValLabel;
 
+
 	public Hud(DeadLast game) {
 		viewport = new ExtendViewport(DeadLast.V_WIDTH, DeadLast.V_HEIGHT);
 		batch = new SpriteBatch();
@@ -43,7 +44,9 @@ public class Hud implements Disposable {
 		Skin skin = new Skin(Gdx.files.internal("ui/uiskin.json"));
 		
 		//Label.LabelStyle labelStyle = new Label.LabelStyle(Color.WHITE);
+		Label timeLabel = new Label("Time:", skin);
 		timeValLabel = new Label(String.format("%03d", 0), skin);
+		Label scoreLabel = new Label("Score:", skin);
 		scoreValLabel = new Label(String.format("%04d", 0), skin);
 		levelLabel = new Label("Level", skin);
 		
@@ -78,6 +81,9 @@ public class Hud implements Disposable {
 		centreView.center();
 		centreView.setFillParent(true);
 
+		cooldownLable = new Label("", skin);
+
+		centreView.add(cooldownLable).padBottom(70);
 
 		stage.addActor(centreView);
 	}
@@ -97,9 +103,10 @@ public class Hud implements Disposable {
 	public void setLevelName(String name) {
 		levelLabel.setText(name);
 	}
-	
+
 	public void setRemainingHumans(int humansRemaining) {
 		remainingHumansValLabel.setText(Integer.toString(humansRemaining));
+
 	}
 	
 	@Override
