@@ -71,7 +71,7 @@ public class GameManager implements Disposable {
 	private Hud hud;
 	private RayHandler rayHandler;
 
-	private String[] levels = {"Comp Sci","Hes East","DBar","Library","Under Lake","Central Hall","minigame"};
+	private String[] levels = {"Comp Sci","Hes East","DBar","Library","Under Lake","Central Hall","minigame", "Dead"};
 	private Level level;
 	private int levelNum = 0;
 	
@@ -119,11 +119,10 @@ public class GameManager implements Disposable {
 	 */
 	public void loadLevel() {
 		if(minigameActive){
-			levelNum = levels.length-1;
+			levelNum = levels.length - 2;
 		}
 		if (world != null) {
 			world.dispose();
-			
 		}
 		world = new World(Vector2.Zero, true);
 		world.setContactListener(new WorldContactListener());
@@ -165,6 +164,10 @@ public class GameManager implements Disposable {
 	}
 	
 	public void clearLevel() {
+		// Needed to eliminate nasty unexplained crash with LibGDX/Box2D
+		if (!levelLoaded) {
+			return;
+		}
 		System.out.println("CLEAR LEVEL ACCESSED");
 		levelLoaded = false;
 		System.out.println("LEVEL UNLOADED");
@@ -267,7 +270,7 @@ public class GameManager implements Disposable {
 	 * Adds a NPC to the list of entities.
 	 * @param initialPos the position to spawn the new NPC
 	 */
-	public void addNPC(Vector2 initialPos) {
+	public void addNPC(NPC.Type type, Vector2 initialPos) {
 		NPC npc = new NPC(this.game, initialPos);
 		npc.defineBody();
 		this.entities.add(npc);
@@ -365,9 +368,28 @@ public class GameManager implements Disposable {
 		}
 		if(gameCamera == null || batch == null) return;
 		if (player.getHealth() <= 0) {
-			gameRunning  = false;
+			System.out.println("Player has died!");
 			winLevel = -1;
-			game.changeScreen(DeadLast.END);
+			if (!minigameActive) {
+				System.out.println("Clearing level");
+				clearLevel();
+				System.out.println("Setting death level");
+				this.levelNum = this.levels.length - 1;
+				this.playerType = PlayerType.ZOMBIE;
+				System.out.println("Loading death level");
+				loadLevel();
+			} else {
+				gameRunning = false;
+				game.changeScreen(DeadLast.END);
+			}
+		}
+		if (playerType == PlayerType.ZOMBIE) {
+			if (entities.size() == 1) {
+				gameRunning = false;
+				game.changeScreen(DeadLast.END);
+			} else {
+				hud.setRemainingHumans(entities.size() - 1);
+			}
 		}
 		checkPause();
 		handleInput();
@@ -409,7 +431,6 @@ public class GameManager implements Disposable {
 		this.hud.setTime((int)Math.round(Math.floor(time)));
 		this.hud.setHealth(this.player.getHealth());
 		this.hud.setScore(this.score);
-		this.hud.setCoinsCollected(this.score / 10, game);
 
 	}
 
@@ -492,7 +513,7 @@ public class GameManager implements Disposable {
 					// Using len2 removes the need to perform the slightly more computationally demanding square root function
 					if ((e.getPos().sub(playerPos)).len2() <= Math.pow(effectRadius, 2)) {
 						e.setAlive(false);
-						addNPC(e.getPos());
+						addNPC(NPC.Type.STUDENT, e.getPos());
 						this.score += 30;
 					}
 				});
@@ -507,10 +528,10 @@ public class GameManager implements Disposable {
 	}
 	
 	public void transferLevel() {
-		if (levelNum < levels.length -1) {
+		if (levelNum < levels.length - 2) {
 			loadLevel();
 		} else {
-			gameRunning  = false;
+			gameRunning = false;
 			winLevel = 1;
 			this.levelNum = 0;
 			game.changeScreen(DeadLast.END);
@@ -544,7 +565,6 @@ public class GameManager implements Disposable {
 
 	@Override
 	public void dispose() {
-		
 		world.dispose();
 	}
 
