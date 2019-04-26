@@ -36,7 +36,7 @@ public class EndScreen extends DefaultScreen {
 		table.center();
 		table.pad(15);
 		
-		table.setDebug(true);
+		// table.setDebug(true);
 		Skin skin = new Skin(Gdx.files.internal("ui/uiskin.json"));
 
 		String titleText;
