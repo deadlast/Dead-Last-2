@@ -41,17 +41,11 @@ public class Hud implements Disposable {
 		Skin skin = new Skin(Gdx.files.internal("ui/uiskin.json"));
 		
 		//Label.LabelStyle labelStyle = new Label.LabelStyle(Color.WHITE);
-		Label timeLabel = new Label("Time:", skin);
 		timeValLabel = new Label(String.format("%03d", 0), skin);
-		Label scoreLabel = new Label("Score:", skin);
 		scoreValLabel = new Label(String.format("%04d", 0), skin);
-		Label worldLabel = new Label("Map:", skin);
 		levelLabel = new Label("Ron Cooke Hub", skin);
 		Label coinLabel;
-		
-		topView.add(timeLabel).expandX().padTop(10);
-		topView.add(worldLabel).expandX().padTop(10);
-		topView.add(scoreLabel).expandX().padTop(10);
+
 
 		if(GameManager.getInstance(game).isMinigameActive()){
 			coinLabel = new Label("Coins Collected: ", skin);
