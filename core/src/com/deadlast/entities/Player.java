@@ -215,7 +215,6 @@ public class Player extends Mob {
 		if(attkCooldown){
 			this.sprite = attackSprite;
 			if(attackCooldown - delta <= 0){
-				this.hud.setCooldown(false);
 				attkCooldown = false;
 			} else {
 				attackCooldown -= delta;
@@ -229,7 +228,6 @@ public class Player extends Mob {
 				enemiesInRange.forEach(e -> e.applyDamage(this.getStrength() * getDamageMultiplier()));
 				enemiesInRange.forEach(e -> e.knockback(this.getStrength()));
 				attackCooldown = 1f;
-				this.hud.setCooldown(true);
 				attkCooldown = true;
 				this.sprite = attackSprite;
 			}

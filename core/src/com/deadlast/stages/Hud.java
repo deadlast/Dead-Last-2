@@ -27,7 +27,6 @@ public class Hud implements Disposable {
 	Label levelLabel;
 	Label coinValLabel;
 	Label healthValLabel;
-	Label cooldownLable;
 
 	public Hud(DeadLast game) {
 		viewport = new ExtendViewport(DeadLast.V_WIDTH, DeadLast.V_HEIGHT);
@@ -84,9 +83,6 @@ public class Hud implements Disposable {
 		centreView.center();
 		centreView.setFillParent(true);
 
-		cooldownLable = new Label("", skin);
-
-		centreView.add(cooldownLable).padBottom(70);
 
 		stage.addActor(centreView);
 	}
@@ -107,13 +103,6 @@ public class Hud implements Disposable {
 		levelLabel.setText(name);
 	}
 
-	public void setCooldown(boolean cooldown){
-		if(cooldown){
-			cooldownLable.setText("Attack on cooldown");
-		} else{
-			cooldownLable.setText("");
-		}
-	}
 
 	public void setCoinsCollected(int coinsCollected, DeadLast game){
 		if(GameManager.getInstance(game).isMinigameActive()) {
