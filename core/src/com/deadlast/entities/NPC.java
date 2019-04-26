@@ -45,5 +45,18 @@ public class NPC extends Mob {
 		
 		b2body.setLinearDamping(5.0f);
 	}
+	
+	@Override
+	public void update(float delta) {
+		Vector2 playerPos = gameManager.getPlayer().getPos();
+		if (gameManager.getPlayerType() != PlayerType.ZOMBIE) {
+			if ((this.getPos().sub(playerPos)).len2() <= 25) {
+				double angle = Math.toDegrees(Math.atan2(playerPos.y - b2body.getPosition().y, playerPos.x - b2body.getPosition().x)) - 90;
+				this.setAngle(angle);
+			}
+		} else {
+			this.b2body.setLinearVelocity(-(playerPos.x - b2body.getPosition().x), -(playerPos.y - b2body.getPosition().y));
+		}
+	}
 
 }
