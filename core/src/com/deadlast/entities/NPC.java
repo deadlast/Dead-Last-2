@@ -13,9 +13,15 @@ import com.deadlast.world.FixtureType;
 import box2dLight.ConeLight;
 
 public class NPC extends Mob {
+	
+	private float invulnerableTimer = 1f;
+	
+	public enum Type {
+		STUDENT;
+	}
 
 	public NPC(DeadLast game, Vector2 initialPos) {
-		super(game, 0, new Sprite(new Texture("entities/student.png")), 0.4f, initialPos, 10, 4, 2);
+		super(game, -10, new Sprite(new Texture("entities/student.png")), 0.4f, initialPos, 1, 4, 2);
 	}
 
 	@Override
@@ -30,7 +36,7 @@ public class NPC extends Mob {
 		shape.setRadius(this.bRadius);
 		fBodyDef.shape = shape;
 		fBodyDef.filter.categoryBits = Entity.NPC;
-		fBodyDef.filter.maskBits = Entity.BOUNDARY | Entity.PLAYER | Entity.ENEMY;
+		fBodyDef.filter.maskBits = Entity.BOUNDARY | Entity.PLAYER | Entity.ENEMY | Entity.PLAYER_MELEE;
 		
 		// Create body and add fixtures
 		b2body = world.createBody(bDef);
@@ -44,6 +50,34 @@ public class NPC extends Mob {
 		shape.dispose();
 		
 		b2body.setLinearDamping(5.0f);
+	}
+	
+	@Override
+	public void update(float delta) {
+		super.update(delta);
+		if (invulnerableTimer - delta > 0) {
+			invulnerableTimer -= delta;
+		} else {
+			invulnerableTimer = 0;
+		}
+		Vector2 playerPos = gameManager.getPlayer().getPos();
+		if ((this.getPos().sub(playerPos)).len2() <= 36) {
+			double angle = Math.toDegrees(Math.atan2(playerPos.y - b2body.getPosition().y, playerPos.x - b2body.getPosition().x)) - 90;
+			if (gameManager.getPlayerType() == PlayerType.ZOMBIE) {
+				Vector2 movementVector = playerPos.sub(b2body.getPosition()).nor();
+				this.b2body.setLinearVelocity(-movementVector.x, -movementVector.y);
+				angle += 180;
+			}
+			this.setAngle(angle);
+		} 
+	}
+	
+	@Override
+	public void applyDamage(int damage) {
+		if (invulnerableTimer > 0) {
+			return;
+		}
+		super.applyDamage(damage);
 	}
 
 }

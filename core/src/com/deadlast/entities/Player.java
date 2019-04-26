@@ -78,7 +78,7 @@ public class Player extends Mob {
 	 * Contains the enemies currently in range and in front of the player that will be
 	 * damaged when the attack ability is used.
 	 */
-	private Set<Enemy> enemiesInRange;
+	private Set<Mob> mobsInRange;
 	
 	private PointLight effectRadius;
 	private double effectTimer;
@@ -109,7 +109,7 @@ public class Player extends Mob {
 		this.stealthStat = stealthStat;
 		this.isHidden = true;
 		this.activePowerUps = new ConcurrentHashMap<>();
-		this.enemiesInRange = new HashSet<>();
+		this.mobsInRange = new HashSet<>();
 		
 		hud = new Hud(game);
 	}
@@ -186,19 +186,19 @@ public class Player extends Mob {
 	}
 	
 	/**
-	 * Called by {@link WorldContactListener} when an enemy enters the player's effective melee zone.
-	 * @param enemy
+	 * Called by {@link WorldContactListener} when a {@link Mob} enters the player's effective melee zone.
+	 * @param mob
 	 */
-	public void onMeleeRangeEntered(Enemy enemy) {
-		this.enemiesInRange.add(enemy);
+	public void onMeleeRangeEntered(Mob mob) {
+		this.mobsInRange.add(mob);
 	}
 	
 	/**
-	 * Called by {@link WorldContactListener} when an enemy leaves the player's effective melee zone.
-	 * @param enemy
+	 * Called by {@link WorldContactListener} when a {@link Mob} leaves the player's effective melee zone.
+	 * @param mob
 	 */
-	public void onMeleeRangeLeft(Enemy enemy) {
-		this.enemiesInRange.remove(enemy);
+	public void onMeleeRangeLeft(Mob mob) {
+		this.mobsInRange.remove(mob);
 	}
 	
 	/**
@@ -247,8 +247,8 @@ public class Player extends Mob {
 		}
 		if (isAttacking) {
 			if (!attkCooldown) {
-				enemiesInRange.forEach(e -> e.applyDamage(this.getStrength() * getDamageMultiplier()));
-				enemiesInRange.forEach(e -> e.knockback(this.getStrength()));
+				mobsInRange.forEach(m -> m.applyDamage(this.getStrength() * getDamageMultiplier()));
+				mobsInRange.forEach(m -> m.knockback(this.getStrength()));
 				attackCooldown = 1f;
 				attkCooldown = true;
 				this.sprite = attackSprite;

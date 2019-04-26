@@ -154,7 +154,7 @@ public class BodyFactory {
 		fDef.shape = polyShape;
 		fDef.isSensor = true;
 		fDef.filter.categoryBits = Entity.PLAYER_MELEE;
-		fDef.filter.maskBits = Entity.ENEMY;
+		fDef.filter.maskBits = Entity.ENEMY | Entity.NPC;
 		body.createFixture(fDef).setUserData(FixtureType.MELEE_SENSOR);;
 		polyShape.dispose();
 	}

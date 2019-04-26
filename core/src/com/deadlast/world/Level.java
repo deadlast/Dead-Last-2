@@ -3,6 +3,7 @@ package com.deadlast.world;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.maps.MapLayer;
 import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.MapProperties;
@@ -12,6 +13,7 @@ import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Disposable;
 import com.deadlast.entities.Enemy;
+import com.deadlast.entities.NPC;
 import com.deadlast.entities.PowerUp;
 import com.deadlast.game.DeadLast;
 import com.deadlast.game.GameManager;
@@ -30,6 +32,7 @@ public class Level implements Disposable {
 	private Vector2 playerSpawn;
 	private List<SpawnPoint<Enemy.Type>> enemySpawns;
 	private List<SpawnPoint<PowerUp.Type>> powerUpSpawns;
+	private List<SpawnPoint<NPC.Type>> npcSpawns;
 
 	private GameManager gameManager;
 
@@ -46,6 +49,7 @@ public class Level implements Disposable {
 		this.gameManager = GameManager.getInstance(game);
 		enemySpawns = new ArrayList<>();
 		powerUpSpawns = new ArrayList<>();
+		npcSpawns = new ArrayList<>();
 		parseMap();
 	}
 
@@ -112,16 +116,18 @@ public class Level implements Disposable {
 				case "STEALTH":
 					powerUpSpawns.add(new SpawnPoint<PowerUp.Type>(PowerUp.Type.STEALTH, new Vector2(x,y)));
 					break;
-        case "COIN":
-          powerUpSpawns.add(new SpawnPoint<PowerUp.Type>(PowerUp.Type.COIN, new Vector2(x,y)));
-          break;
+				case "COIN":
+					powerUpSpawns.add(new SpawnPoint<PowerUp.Type>(PowerUp.Type.COIN, new Vector2(x,y)));
+					break;
 				case "CURE":
 					powerUpSpawns.add(new SpawnPoint<PowerUp.Type>(PowerUp.Type.CURE, new Vector2(x, y)));
-          break;
+					break;
 				default:
 					powerUpSpawns.add(new SpawnPoint<PowerUp.Type>(PowerUp.Type.REGEN, new Vector2(x,y)));
 					break;
 				}
+			} else if (entityClass.equals("NPC")) {
+				npcSpawns.add(new SpawnPoint<NPC.Type>(NPC.Type.STUDENT, new Vector2(x, y)));
 			} else {
 				return;
 			}
@@ -130,13 +136,14 @@ public class Level implements Disposable {
 		float playerSpawnY = playerSpawnObj.getRectangle().y;
 		playerSpawn = new Vector2(playerSpawnX / 32, playerSpawnY / 32);
 
-		float endZoneX = levelExitObj.getRectangle().x;
-		float endZoneY = levelExitObj.getRectangle().y;
-		float endZoneHeight = levelExitObj.getRectangle().height;
-		float endZoneWidth = levelExitObj.getRectangle().width;
-		endZone = new LevelEndZone(game, endZoneX / 32, endZoneY / 32, endZoneHeight / 32, endZoneWidth / 32);
-		endZone.defineBody();
-
+		if (levelExitObj != null) {
+			float endZoneX = levelExitObj.getRectangle().x;
+			float endZoneY = levelExitObj.getRectangle().y;
+			float endZoneHeight = levelExitObj.getRectangle().height;
+			float endZoneWidth = levelExitObj.getRectangle().width;
+			endZone = new LevelEndZone(game, endZoneX / 32, endZoneY / 32, endZoneHeight / 32, endZoneWidth / 32);
+			endZone.defineBody();
+		}
 		MapBodyBuilder.buildBodies(tiledMap, gameManager.getWorld(), "Walls");
 		MapBodyBuilder.buildBodies(tiledMap, gameManager.getWorld(), "Furniture");
 	}
@@ -148,6 +155,7 @@ public class Level implements Disposable {
 	public TiledMap load() {
 		enemySpawns.forEach(es -> gameManager.addEnemy(es.getType(), es.getSpawnLocation()));
 		powerUpSpawns.forEach(ps -> gameManager.addPowerUp(ps.getType(), ps.getSpawnLocation()));
+		npcSpawns.forEach(npc -> gameManager.addNPC(npc.getType(), npc.getSpawnLocation()));
 		gameManager.setPlayerSpawn(playerSpawn);
 		return tiledMap;
 	}
