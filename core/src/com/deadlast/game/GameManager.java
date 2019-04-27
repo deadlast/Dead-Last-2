@@ -32,6 +32,7 @@ import com.deadlast.screens.GameScreen;
 import com.deadlast.stages.Hud;
 import com.deadlast.stages.PauseOverlay;
 import com.deadlast.world.Level;
+import com.deadlast.world.CutsceneLevel;
 import com.deadlast.world.WorldContactListener;
 
 import box2dLight.RayHandler;
@@ -72,10 +73,11 @@ public class GameManager implements Disposable {
 	private Hud hud;
 	private PauseOverlay pauseOverlay;
 	private RayHandler rayHandler;
-
-	private String[] levels = {"Comp Sci","Hes East","DBar","Library","Under Lake","Central Hall","minigame", "Infection"};
+	
+	private String[] levels = {"Cutscene Room","Hes East","DBar","Library","Under Lake","Central Hall","Cutscene Room","minigame"};
 	private Level level;
 	private int levelNum = 0;
+	private boolean isCutscene = true;
 	
 	private int score = 0;
 	private float time;
@@ -123,6 +125,7 @@ public class GameManager implements Disposable {
 		if(minigameActive){
 			levelNum = levels.length - 2;
 		}
+		
 		if (world != null) {
 			world.dispose();
 		}
@@ -144,8 +147,13 @@ public class GameManager implements Disposable {
 		
 		time = 0;
 		
-		level = new Level(game,levels[levelNum]);
-		
+		if(isCutscene) {
+			level = new CutsceneLevel(game, levelNum);
+			pause = true;
+		}else {
+			level = new Level(game,levels[levelNum]);
+		}
+		isCutscene = !isCutscene;
 		this.hud.setLevelName(levels[levelNum]);
 		
 		tiledMapRenderer = new OrthogonalTiledMapRenderer(level.load(), 1/32f);
@@ -527,8 +535,10 @@ public class GameManager implements Disposable {
 	public void transferLevel() {
 		if (levelNum < levels.length - 2) {
 			loadLevel();
-		} else {
-			gameRunning = false;
+//		} else if(this.isCutscene) {
+//			
+		}else {
+			gameRunning  = false;
 			winLevel = 1;
 			this.levelNum = 0;
 			game.changeScreen(DeadLast.END);
