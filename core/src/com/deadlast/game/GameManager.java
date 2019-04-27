@@ -153,7 +153,7 @@ public class GameManager implements Disposable {
 		}else {
 			level = new Level(game,levels[levelNum]);
 		}
-		isCutscene = !isCutscene;
+		
 		this.hud.setLevelName(levels[levelNum]);
 		
 		tiledMapRenderer = new OrthogonalTiledMapRenderer(level.load(), 1/32f);
@@ -259,6 +259,7 @@ public class GameManager implements Disposable {
 			bossEncounter = bossDelFlag = false;
 			levelNum++;
 			transferLevel();
+			
 		}else{
 		}
 	}
@@ -397,9 +398,14 @@ public class GameManager implements Disposable {
 				hud.setRemainingHumans(entities.size() - 1);
 			}
 		}
+		checkPause();
+		
 		handleInput();
-		if (paused) {
-			return;
+		
+		if(!pause){
+			// Step through the physics world simulation
+			world.step(1/60f, 6, 2);
+			time += delta;
 		}
 		// Step through the physics world simulation
 		world.step(1/60f, 6, 2);
@@ -492,6 +498,15 @@ public class GameManager implements Disposable {
 			player.getBody().setLinearVelocity(player.getBody().getLinearVelocity().x, -1 * speed);
 		}
 		if (controller.isSpaceDown) {
+			if (isCutscene) {
+				levelNum++;
+				pause = false;
+				isCutscene = !isCutscene;
+				this.transferLevel();
+				
+				
+				
+			}
 			player.isAttacking(true);
 		} else {
 			player.isAttacking(false);
@@ -533,7 +548,8 @@ public class GameManager implements Disposable {
 	}
 	
 	public void transferLevel() {
-		if (levelNum < levels.length - 2) {
+		if (levelNum < levels.length -1) {
+			
 			loadLevel();
 //		} else if(this.isCutscene) {
 //			
