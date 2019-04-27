@@ -32,12 +32,12 @@ public class Level implements Disposable {
 	private List<SpawnPoint<PowerUp.Type>> powerUpSpawns;
 
 	private GameManager gameManager;
-
 	private String levelName;
 	private TiledMap tiledMap;
 	private int[] backgroundLayers = { 0, 1, 2, 3 };
-	private int[] foregroundLayers = {};
-
+	protected int[] foregroundLayers = {};
+	
+	
 	private LevelEndZone endZone;
 
 	public Level(DeadLast game, String levelName) {
@@ -112,12 +112,12 @@ public class Level implements Disposable {
 				case "STEALTH":
 					powerUpSpawns.add(new SpawnPoint<PowerUp.Type>(PowerUp.Type.STEALTH, new Vector2(x,y)));
 					break;
-        case "COIN":
-          powerUpSpawns.add(new SpawnPoint<PowerUp.Type>(PowerUp.Type.COIN, new Vector2(x,y)));
-          break;
+				case "COIN":
+					powerUpSpawns.add(new SpawnPoint<PowerUp.Type>(PowerUp.Type.COIN, new Vector2(x,y)));
+					break;
 				case "CURE":
 					powerUpSpawns.add(new SpawnPoint<PowerUp.Type>(PowerUp.Type.CURE, new Vector2(x, y)));
-          break;
+					break;
 				default:
 					powerUpSpawns.add(new SpawnPoint<PowerUp.Type>(PowerUp.Type.REGEN, new Vector2(x,y)));
 					break;
@@ -183,5 +183,7 @@ public class Level implements Disposable {
 		tiledMap.dispose();
 //		endZone.delete();
 	}
+	
+	
 
 }
