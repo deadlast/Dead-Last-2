@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="340">
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="599">
  <tileset firstgid="1" source="finaltileset.tsx"/>
  <layer id="1" name="Background" width="100" height="100">
   <data encoding="csv">
@@ -150,16 +150,16 @@
 0,307,261,0,0,0,0,307,261,0,0,0,0,307,261,0,0,0,0,307,261,0,3221225512,0,139,140,141,141,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,3221225512,0,40,0,0,0,3221225512,0,0,0,0,0,3221225512,0,0,0,0,0,3221225512,0,0,0,0,3221225512,0,40,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3221225512,0,139,140,141,141,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,0,0,0,0,0,0,0,0,0,0,3221225512,0,40,284,238,0,3221225512,0,0,284,238,0,3221225512,0,0,284,238,0,3221225512,0,0,284,238,3221225512,0,40,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3221225512,0,139,140,141,141,0,0,0,0,116,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,118,0,116,117,117,117,117,117,118,0,0,0,40,0,284,238,0,0,0,0,284,238,0,3221225512,0,40,307,261,0,3221225512,0,0,307,261,0,3221225512,0,0,307,261,0,3221225512,0,0,307,261,3221225512,0,40,0,
-2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,3221225512,0,139,140,141,141,0,0,0,0,139,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,141,0,139,0,0,0,0,0,141,0,0,0,40,0,307,261,0,0,0,0,307,261,0,3221225512,0,86,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,87,0,40,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3221225512,0,139,140,141,141,0,0,0,0,139,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,141,0,139,0,0,0,0,0,141,0,0,0,40,0,0,0,0,0,0,0,0,0,0,3221225512,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,0,
-0,284,238,0,0,0,0,284,238,0,0,0,0,284,238,0,0,0,0,284,238,0,3221225512,0,139,140,141,141,0,0,0,0,139,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,141,0,139,0,0,0,0,0,141,0,0,0,40,0,0,0,0,0,0,0,0,0,0,3221225512,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,0,
-0,307,261,0,0,0,0,307,261,0,0,0,0,307,261,0,0,0,0,307,261,0,3221225512,0,139,140,141,141,0,0,0,0,139,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,141,0,139,0,0,0,0,0,141,0,0,0,40,0,284,238,0,0,0,0,284,238,0,3221225512,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,0,
-0,284,238,0,0,0,0,284,238,0,0,0,0,284,238,0,0,0,0,284,238,0,3221225512,0,139,140,141,141,0,0,0,0,139,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,141,0,139,0,0,0,0,0,141,0,0,0,40,0,307,261,0,0,0,0,307,261,0,3221225512,0,0,0,0,0,0,63,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,64,0,0,0,0,0,0,40,0,
-0,307,261,0,0,0,0,307,261,0,0,0,0,307,261,0,0,0,0,307,261,0,3221225512,0,139,140,141,141,0,0,0,0,139,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,141,0,139,0,0,0,0,0,141,0,0,0,40,0,0,0,0,0,0,0,0,0,0,3221225512,0,0,0,0,0,0,40,0,0,0,0,0,0,0,0,0,0,3221225512,0,0,0,0,0,0,40,0,
-0,284,238,0,0,0,0,284,238,0,0,0,0,284,238,0,0,0,0,284,238,0,3221225512,0,139,140,141,141,0,0,0,0,139,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,141,0,139,0,0,0,0,0,141,0,0,0,40,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,3221225512,0,0,0,0,0,0,40,0,0,0,0,0,0,0,0,0,0,3221225512,0,0,0,0,0,0,40,0,
-0,307,261,0,0,0,0,307,261,0,0,0,0,307,261,0,0,0,0,307,261,0,3221225512,0,139,140,141,141,0,0,0,0,139,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,141,0,139,0,0,0,0,0,141,0,0,0,40,0,0,0,0,0,0,0,0,0,0,3221225512,0,0,101,0,0,3221225573,40,0,0,0,0,0,0,0,0,0,0,3221225512,101,0,0,3221225573,0,0,40,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3221225512,0,139,140,141,141,0,0,0,0,139,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,141,0,139,0,0,0,0,0,141,0,0,0,40,0,284,238,0,0,0,0,284,238,0,3221225512,0,0,101,0,0,3221225573,40,0,0,0,0,0,0,0,0,0,0,3221225512,101,0,0,3221225573,0,0,40,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3221225512,0,162,163,164,141,0,0,0,0,139,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,141,0,139,0,0,0,0,0,141,0,0,0,40,0,307,261,0,0,0,0,307,261,0,3221225512,0,0,0,0,0,0,40,0,0,0,0,0,0,0,0,0,0,3221225512,0,0,0,0,0,0,40,0,
+2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,3221225512,0,139,140,141,141,0,0,0,0,139,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,141,0,139,0,2684354660,2684354660,0,0,141,0,0,0,40,0,307,261,0,0,0,0,307,261,0,3221225512,0,86,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,87,0,40,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3221225512,0,139,140,141,141,0,0,0,0,139,0,0,0,0,101,3221225573,0,0,0,0,0,101,3221225573,0,0,0,0,141,0,139,0,3221225843,3221225841,0,0,141,0,0,0,40,0,0,0,0,0,0,0,0,0,0,3221225512,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,0,
+0,284,238,0,0,0,0,284,238,0,0,0,0,284,238,0,0,0,0,284,238,0,3221225512,0,139,140,141,141,0,0,0,0,139,0,0,0,0,101,3221225573,0,0,0,0,0,101,3221225573,0,0,0,0,141,0,139,0,3221225797,3221225795,0,0,141,0,0,0,40,0,0,0,0,0,0,0,0,0,0,3221225512,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,0,
+0,307,261,0,0,0,0,307,261,0,0,0,0,307,261,0,0,0,0,307,261,0,3221225512,0,139,140,141,141,0,0,0,0,139,0,0,0,0,101,3221225573,0,0,0,0,0,101,3221225573,0,0,0,0,141,0,139,0,1610612836,1610612836,0,0,141,0,0,0,40,0,284,238,0,0,0,0,284,238,0,3221225512,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,0,
+0,284,238,0,0,0,0,284,238,0,0,0,0,284,238,0,0,0,0,284,238,0,3221225512,0,139,140,141,141,0,0,0,0,139,0,0,0,0,101,3221225573,0,0,0,0,0,101,3221225573,0,0,0,0,141,0,139,0,0,0,0,0,141,0,0,0,40,0,307,261,0,0,0,0,307,261,0,3221225512,0,0,0,0,0,0,63,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,64,0,0,0,0,0,0,40,0,
+0,307,261,0,0,0,0,307,261,0,0,0,0,307,261,0,0,0,0,307,261,0,3221225512,0,139,140,141,141,0,0,0,0,139,0,0,0,0,101,3221225573,0,0,0,0,0,101,3221225573,0,0,0,0,141,0,139,0,0,0,0,0,141,0,0,0,40,0,0,0,0,0,0,0,0,0,0,3221225512,0,0,0,0,0,0,40,0,0,0,0,0,0,0,0,0,0,3221225512,0,0,0,0,0,0,40,0,
+0,284,238,0,0,0,0,284,238,0,0,0,0,284,238,0,0,0,0,284,238,0,3221225512,0,139,140,141,141,0,0,0,0,139,0,0,0,0,101,3221225573,0,0,0,0,0,101,3221225573,0,0,0,0,141,0,139,0,2684354660,2684354660,0,0,141,0,0,0,40,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,3221225512,0,0,0,0,0,0,40,0,0,0,0,0,0,0,0,0,0,3221225512,0,0,0,0,0,0,40,0,
+0,307,261,0,0,0,0,307,261,0,0,0,0,307,261,0,0,0,0,307,261,0,3221225512,0,139,140,141,141,0,0,0,0,139,0,0,0,0,101,3221225573,0,0,0,0,0,101,3221225573,0,0,0,0,141,0,139,0,3221225843,3221225841,0,0,141,0,0,0,40,0,0,0,0,0,0,0,0,0,0,3221225512,0,0,101,0,0,3221225573,40,0,0,0,0,0,0,0,0,0,0,3221225512,101,0,0,3221225573,0,0,40,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3221225512,0,139,140,141,141,0,0,0,0,139,0,0,0,0,101,3221225573,0,0,0,0,0,101,3221225573,0,0,0,0,141,0,139,0,3221225797,3221225795,0,0,141,0,0,0,40,0,284,238,0,0,0,0,284,238,0,3221225512,0,0,101,0,0,3221225573,40,0,0,0,0,0,0,0,0,0,0,3221225512,101,0,0,3221225573,0,0,40,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3221225512,0,162,163,164,141,0,0,0,0,139,0,0,0,0,101,3221225573,0,0,0,0,0,101,3221225573,0,0,0,0,141,0,139,0,1610612836,1610612836,0,0,141,0,0,0,40,0,307,261,0,0,0,0,307,261,0,3221225512,0,0,0,0,0,0,40,0,0,0,0,0,0,0,0,0,0,3221225512,0,0,0,0,0,0,40,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3221225512,0,116,117,118,141,0,0,0,0,139,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,141,0,139,0,0,0,0,0,141,0,0,0,40,0,0,0,0,0,0,0,0,0,0,3221225512,0,0,0,0,0,0,40,0,0,0,0,0,0,0,0,0,0,3221225512,0,0,0,0,0,0,40,0,
 2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,3221225512,0,139,140,141,141,0,0,0,0,162,163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,164,0,162,163,163,163,163,163,164,0,0,0,86,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,87,0,0,101,0,0,3221225573,40,0,0,0,0,0,0,0,0,0,0,3221225512,101,0,0,3221225573,0,0,40,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3221225512,0,139,140,141,141,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,101,0,0,3221225573,40,0,0,0,0,0,0,0,0,0,0,3221225512,101,0,0,3221225573,0,0,40,0,
@@ -178,7 +178,7 @@
 163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,164,141,0,0,139,140,141,141,0,0,0,0,139,0,0,0,0,0,0,0,0,0,141,0,139,0,0,0,0,0,0,0,0,0,0,0,0,0,141,0,0,0,40,0,307,261,0,0,0,0,307,261,0,3221225512,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,163,163,164,0,0,162,163,164,141,0,0,0,0,139,0,0,2684354661,2684354661,2684354661,2684354661,2684354661,0,0,141,0,139,0,0,101,3221225843,3221225841,3221225573,0,0,101,3221225843,3221225841,3221225573,0,141,0,0,0,40,0,0,0,0,0,0,0,0,0,0,3221225512,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,0,
 163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,164,0,0,0,0,139,0,0,0,0,0,0,0,0,0,141,0,139,0,0,101,3221225797,3221225795,3221225573,0,0,101,3221225797,3221225795,3221225573,0,141,0,0,0,86,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,87,0,0,0,0,0,0,0,101,323,325,3221225573,0,0,101,0,0,3221225573,0,0,0,0,0,0,0,86,2684354577,
-0,0,0,0,0,0,0,0,72,72,0,0,0,0,0,0,351,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,139,0,0,0,0,0,0,0,0,0,141,0,139,0,0,0,0,0,0,0,0,0,0,0,0,0,141,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,101,369,371,3221225573,0,0,101,0,0,3221225573,0,0,0,0,0,0,0,0,40,
+0,0,0,0,0,0,0,0,72,72,0,0,0,0,0,0,351,0,0,0,0,0,0,0,0,0,0,0,0,373,0,0,139,0,0,0,0,0,0,0,0,0,141,0,139,0,0,0,0,0,0,0,0,0,0,0,0,0,141,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,101,369,371,3221225573,0,0,101,0,0,3221225573,0,0,0,0,0,0,0,0,40,
 0,0,0,0,0,0,0,0,0,72,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,139,0,0,0,0,0,0,0,0,0,141,0,139,0,0,0,0,0,0,0,0,0,0,0,0,0,141,0,0,0,63,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,64,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,
 0,0,0,0,0,0,0,0,0,0,72,72,239,240,240,240,240,240,240,240,240,240,240,240,240,240,241,0,0,0,0,0,162,163,163,163,163,163,163,163,163,163,164,0,162,163,163,163,163,163,163,163,163,163,163,163,163,163,164,0,0,0,40,1610612794,1610612794,1610612794,1610612794,1610612794,1610612794,1610612794,1610612794,1610612794,1610612794,1610612794,1610612794,3221225512,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,
 0,0,0,0,0,0,0,0,0,0,0,0,262,0,0,0,0,0,0,0,0,330,331,332,0,0,264,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,1610612794,1610612794,1610612794,1610612794,1610612794,1610612794,1610612794,1610612794,1610612794,1610612794,1610612794,1610612794,1610612753,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,2684354600,64,40,
@@ -196,7 +196,7 @@
 0,0,0,0,0,0,0,0,0,72,0,0,262,0,353,354,355,0,353,354,355,0,0,0,0,0,264,0,0,0,0,0,162,163,163,164,0,162,163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,163,164,0,0,0,86,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,1610612776,87,40,
 0,0,0,0,0,0,0,0,0,189,0,0,262,0,376,377,378,0,376,377,378,0,0,0,0,0,264,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,
 0,0,0,0,0,0,0,0,0,261,0,0,262,0,0,0,0,0,0,0,0,0,0,0,0,0,264,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,
-0,0,0,0,0,0,0,0,0,0,0,0,285,286,286,286,286,286,286,286,286,286,286,286,286,286,287,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,
+0,0,0,0,0,0,0,0,0,0,0,0,285,286,286,286,286,286,286,286,286,286,286,286,286,286,287,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,351,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,
 0,0,0,0,349,0,0,116,117,118,0,0,0,0,0,0,0,0,75,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,
 0,0,0,0,0,0,116,165,0,141,0,0,0,0,0,0,0,0,75,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,40,
 286,117,117,117,117,117,165,0,0,119,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,117,
@@ -467,6 +467,39 @@
   <object id="245" x="1728" y="2208">
    <polygon points="0,0 0,64 64,64 64,0"/>
   </object>
+  <object id="586" x="1728" y="1600">
+   <polygon points="0,0 0,64 64,64 64,0"/>
+  </object>
+  <object id="587" x="1728" y="1408">
+   <polygon points="0,0 0,64 64,64 64,0"/>
+  </object>
+  <object id="588" x="1632.04" y="2528.02">
+   <polygon points="0,0 -0.164638,127.652 17.2047,127.735 17.2047,-0.083215"/>
+  </object>
+  <object id="590" x="1423.18" y="1408.1">
+   <polygon points="0,0 -0.325614,287.444 34.0267,287.631 34.0267,-0.187382"/>
+  </object>
+  <object id="591" x="1120" y="1920">
+   <polygon points="0,0 160.157,0 160.127,16.8249 0,16.8906"/>
+  </object>
+  <object id="592" x="1120" y="2063">
+   <polygon points="0,0 160.157,0 160.127,34.2569 0,34.3906"/>
+  </object>
+  <object id="594" x="1199.08" y="1408.17">
+   <polygon points="0,0 -0.325614,287.444 34.0267,287.631 34.0267,-0.187382"/>
+  </object>
+  <object id="595" x="1119.82" y="2223.32">
+   <polygon points="0,0 160.157,0 160.127,16.8249 0,16.8906"/>
+  </object>
+  <object id="596" x="1742.91" y="2528.36">
+   <polygon points="0,0 -0.164638,127.652 17.2047,127.735 17.2047,-0.083215"/>
+  </object>
+  <object id="597" x="1312" y="2528">
+   <polygon points="0,0 -0.164638,127.652 17.2047,127.735 17.2047,-0.083215"/>
+  </object>
+  <object id="598" x="1423.13" y="2527.88">
+   <polygon points="0,0 -0.164638,127.652 17.2047,127.735 17.2047,-0.083215"/>
+  </object>
  </objectgroup>
  <objectgroup id="8" name="Entities">
   <object id="234" name="HEALTH" type="PowerUp.REGEN" x="1524.51" y="2589.24">
@@ -504,7 +537,7 @@
    </properties>
    <point/>
   </object>
-  <object id="246" name="HEALTH" type="PowerUp.REGEN" x="1184.85" y="2000">
+  <object id="246" name="HEALTH" type="PowerUp.REGEN" x="1278.85" y="1992">
    <properties>
     <property name="entityClass" value="PowerUp"/>
     <property name="entityType" value="REGEN"/>
@@ -525,231 +558,231 @@
    </properties>
    <point/>
   </object>
-  <object id="254" name="HOARDLING" type="Enemy.HOARDLING" x="1206.67" y="1501.33">
+  <object id="254" name="HOARDLING" type="Enemy.HOARDLING" x="1148.67" y="2003.33">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="255" name="HOARDLING" type="Enemy.HOARDLING" x="1342.67" y="1509.33">
+  <object id="255" name="HOARDLING" type="Enemy.HOARDLING" x="1284.67" y="2053.33">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="256" name="HOARDLING" type="Enemy.HOARDLING" x="1489.33" y="1568">
+  <object id="256" name="HOARDLING" type="Enemy.HOARDLING" x="1431.33" y="2070">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="257" name="HOARDLING" type="Enemy.HOARDLING" x="1306.67" y="1637.33">
+  <object id="257" name="HOARDLING" type="Enemy.HOARDLING" x="1248.67" y="2139.33">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="258" name="HOARDLING" type="Enemy.HOARDLING" x="1414.67" y="1610.67">
+  <object id="258" name="HOARDLING" type="Enemy.HOARDLING" x="1356.67" y="2112.67">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="259" name="HOARDLING" type="Enemy.HOARDLING" x="1586.67" y="1480">
+  <object id="259" name="HOARDLING" type="Enemy.HOARDLING" x="1528.67" y="1982">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="260" name="HOARDLING" type="Enemy.HOARDLING" x="1616" y="1554.67">
+  <object id="260" name="HOARDLING" type="Enemy.HOARDLING" x="1558" y="2056.67">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="261" name="HOARDLING" type="Enemy.HOARDLING" x="1632" y="1686.67">
+  <object id="261" name="HOARDLING" type="Enemy.HOARDLING" x="1574" y="2188.67">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="262" name="HOARDLING" type="Enemy.HOARDLING" x="1553.33" y="1516">
+  <object id="262" name="HOARDLING" type="Enemy.HOARDLING" x="1495.33" y="2018">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="263" name="HOARDLING" type="Enemy.HOARDLING" x="1486.67" y="1634.67">
+  <object id="263" name="HOARDLING" type="Enemy.HOARDLING" x="1428.67" y="2136.67">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="264" name="HOARDLING" type="Enemy.HOARDLING" x="1545.33" y="1674.67">
+  <object id="264" name="HOARDLING" type="Enemy.HOARDLING" x="1487.33" y="2176.67">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="265" name="HOARDLING" type="Enemy.HOARDLING" x="1370.67" y="1661.33">
+  <object id="265" name="HOARDLING" type="Enemy.HOARDLING" x="1312.67" y="2163.33">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="266" name="HOARDLING" type="Enemy.HOARDLING" x="1613.33" y="1597.33">
+  <object id="266" name="HOARDLING" type="Enemy.HOARDLING" x="1555.33" y="2099.33">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="267" name="HOARDLING" type="Enemy.HOARDLING" x="1357.33" y="1746.67">
+  <object id="267" name="HOARDLING" type="Enemy.HOARDLING" x="1299.33" y="2248.67">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="268" name="HOARDLING" type="Enemy.HOARDLING" x="1246.67" y="1666.67">
+  <object id="268" name="HOARDLING" type="Enemy.HOARDLING" x="1188.67" y="2168.67">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="269" name="HOARDLING" type="Enemy.HOARDLING" x="1334.67" y="1616">
+  <object id="269" name="HOARDLING" type="Enemy.HOARDLING" x="1276.67" y="2118">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="270" name="HOARDLING" type="Enemy.HOARDLING" x="1522.67" y="1713.33">
+  <object id="270" name="HOARDLING" type="Enemy.HOARDLING" x="1464.67" y="2215.33">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="271" name="HOARDLING" type="Enemy.HOARDLING" x="1108" y="1633.33">
+  <object id="271" name="HOARDLING" type="Enemy.HOARDLING" x="1050" y="2135.33">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="272" name="HOARDLING" type="Enemy.HOARDLING" x="1230.67" y="1513.33">
+  <object id="272" name="HOARDLING" type="Enemy.HOARDLING" x="1172.67" y="2015.33">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="273" name="HOARDLING" type="Enemy.HOARDLING" x="1293.33" y="1466.67">
+  <object id="273" name="HOARDLING" type="Enemy.HOARDLING" x="1235.33" y="1968.67">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="274" name="HOARDLING" type="Enemy.HOARDLING" x="1093.33" y="1685.33">
+  <object id="274" name="HOARDLING" type="Enemy.HOARDLING" x="1035.33" y="2187.33">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="275" name="HOARDLING" type="Enemy.HOARDLING" x="1233.33" y="1694.67">
+  <object id="275" name="HOARDLING" type="Enemy.HOARDLING" x="1175.33" y="2196.67">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="276" name="HOARDLING" type="Enemy.HOARDLING" x="1396" y="1486.67">
+  <object id="276" name="HOARDLING" type="Enemy.HOARDLING" x="1338" y="1988.67">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="277" name="HOARDLING" type="Enemy.HOARDLING" x="1214.67" y="1613.33">
+  <object id="277" name="HOARDLING" type="Enemy.HOARDLING" x="1156.67" y="2115.33">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="278" name="HOARDLING" type="Enemy.HOARDLING" x="1206.67" y="1620">
+  <object id="278" name="HOARDLING" type="Enemy.HOARDLING" x="1148.67" y="2122">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="279" name="HOARDLING" type="Enemy.HOARDLING" x="1477.33" y="1472">
+  <object id="279" name="HOARDLING" type="Enemy.HOARDLING" x="1419.33" y="1974">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="280" name="HOARDLING" type="Enemy.HOARDLING" x="1402.67" y="1440">
+  <object id="280" name="HOARDLING" type="Enemy.HOARDLING" x="1344.67" y="1942">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="281" name="HOARDLING" type="Enemy.HOARDLING" x="1164" y="1560">
+  <object id="281" name="HOARDLING" type="Enemy.HOARDLING" x="1106" y="2062">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="282" name="HOARDLING" type="Enemy.HOARDLING" x="1126.67" y="1420">
+  <object id="282" name="HOARDLING" type="Enemy.HOARDLING" x="1068.67" y="1922">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="283" name="HOARDLING" type="Enemy.HOARDLING" x="1289.33" y="1396">
+  <object id="283" name="HOARDLING" type="Enemy.HOARDLING" x="1231.33" y="1898">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="284" name="HOARDLING" type="Enemy.HOARDLING" x="1348" y="1388">
+  <object id="284" name="HOARDLING" type="Enemy.HOARDLING" x="1290" y="1890">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="285" name="HOARDLING" type="Enemy.HOARDLING" x="1052" y="1478.67">
+  <object id="285" name="HOARDLING" type="Enemy.HOARDLING" x="994" y="1980.67">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
    </properties>
    <point/>
   </object>
-  <object id="286" name="HOARDLING" type="Enemy.HOARDLING" x="1129.33" y="1561.33">
+  <object id="286" name="HOARDLING" type="Enemy.HOARDLING" x="1071.33" y="2063.33">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="HOARDLING"/>
@@ -1114,6 +1147,839 @@
    <point/>
   </object>
   <object id="339" name="NORMAL" type="Enemy.NORMAL" x="2666.67" y="784.848">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="406" name="NORMAL" type="Enemy.NORMAL" x="1408" y="1992">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="407" name="NORMAL" type="Enemy.NORMAL" x="1428" y="1794">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="408" name="NORMAL" type="Enemy.NORMAL" x="1218" y="1984">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="409" name="NORMAL" type="Enemy.NORMAL" x="1218" y="2068">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="410" name="NORMAL" type="Enemy.NORMAL" x="1430" y="2238">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="411" name="NORMAL" type="Enemy.NORMAL" x="1436" y="2262">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="412" name="NORMAL" type="Enemy.NORMAL" x="1118" y="2150">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="413" name="NORMAL" type="Enemy.NORMAL" x="1064" y="2086">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="414" name="NORMAL" type="Enemy.NORMAL" x="1342" y="1926">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="415" name="NORMAL" type="Enemy.NORMAL" x="1464" y="1840">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="416" name="NORMAL" type="Enemy.NORMAL" x="1156" y="1864">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="417" name="NORMAL" type="Enemy.NORMAL" x="1334" y="2000">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="418" name="NORMAL" type="Enemy.NORMAL" x="1494" y="2116">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="419" name="NORMAL" type="Enemy.NORMAL" x="1452" y="2162">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="420" name="NORMAL" type="Enemy.NORMAL" x="1254" y="2150">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="470" name="HEALTH" type="PowerUp.REGEN" x="1378.85" y="1572">
+   <properties>
+    <property name="entityClass" value="PowerUp"/>
+    <property name="entityType" value="REGEN"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="471" name="HOARDLING" type="Enemy.HOARDLING" x="1248.67" y="1583.33">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="472" name="HOARDLING" type="Enemy.HOARDLING" x="1384.67" y="1633.33">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="473" name="HOARDLING" type="Enemy.HOARDLING" x="1531.33" y="1650">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="474" name="HOARDLING" type="Enemy.HOARDLING" x="1348.67" y="1719.33">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="475" name="HOARDLING" type="Enemy.HOARDLING" x="1456.67" y="1692.67">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="476" name="HOARDLING" type="Enemy.HOARDLING" x="1628.67" y="1562">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="477" name="HOARDLING" type="Enemy.HOARDLING" x="1658" y="1636.67">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="478" name="HOARDLING" type="Enemy.HOARDLING" x="1674" y="1768.67">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="479" name="HOARDLING" type="Enemy.HOARDLING" x="1595.33" y="1598">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="480" name="HOARDLING" type="Enemy.HOARDLING" x="1528.67" y="1716.67">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="481" name="HOARDLING" type="Enemy.HOARDLING" x="1587.33" y="1756.67">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="482" name="HOARDLING" type="Enemy.HOARDLING" x="1412.67" y="1743.33">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="483" name="HOARDLING" type="Enemy.HOARDLING" x="1655.33" y="1679.33">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="484" name="HOARDLING" type="Enemy.HOARDLING" x="1399.33" y="1828.67">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="485" name="HOARDLING" type="Enemy.HOARDLING" x="1288.67" y="1748.67">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="486" name="HOARDLING" type="Enemy.HOARDLING" x="1376.67" y="1698">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="487" name="HOARDLING" type="Enemy.HOARDLING" x="1564.67" y="1795.33">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="488" name="HOARDLING" type="Enemy.HOARDLING" x="1150" y="1715.33">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="489" name="HOARDLING" type="Enemy.HOARDLING" x="1272.67" y="1595.33">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="490" name="HOARDLING" type="Enemy.HOARDLING" x="1335.33" y="1548.67">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="491" name="HOARDLING" type="Enemy.HOARDLING" x="1135.33" y="1767.33">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="492" name="HOARDLING" type="Enemy.HOARDLING" x="1275.33" y="1776.67">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="493" name="HOARDLING" type="Enemy.HOARDLING" x="1438" y="1568.67">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="494" name="HOARDLING" type="Enemy.HOARDLING" x="1256.67" y="1695.33">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="495" name="HOARDLING" type="Enemy.HOARDLING" x="1248.67" y="1702">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="496" name="HOARDLING" type="Enemy.HOARDLING" x="1519.33" y="1554">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="497" name="HOARDLING" type="Enemy.HOARDLING" x="1444.67" y="1522">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="498" name="HOARDLING" type="Enemy.HOARDLING" x="1206" y="1642">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="499" name="HOARDLING" type="Enemy.HOARDLING" x="1168.67" y="1502">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="500" name="HOARDLING" type="Enemy.HOARDLING" x="1331.33" y="1478">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="501" name="HOARDLING" type="Enemy.HOARDLING" x="1390" y="1470">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="502" name="HOARDLING" type="Enemy.HOARDLING" x="1094" y="1560.67">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="503" name="HOARDLING" type="Enemy.HOARDLING" x="1171.33" y="1643.33">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="504" name="NORMAL" type="Enemy.NORMAL" x="1508" y="1572">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="505" name="NORMAL" type="Enemy.NORMAL" x="1528" y="1374">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="506" name="NORMAL" type="Enemy.NORMAL" x="1318" y="1564">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="507" name="NORMAL" type="Enemy.NORMAL" x="1318" y="1648">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="508" name="NORMAL" type="Enemy.NORMAL" x="1530" y="1818">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="509" name="NORMAL" type="Enemy.NORMAL" x="1536" y="1842">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="510" name="NORMAL" type="Enemy.NORMAL" x="1218" y="1730">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="511" name="NORMAL" type="Enemy.NORMAL" x="1164" y="1666">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="512" name="NORMAL" type="Enemy.NORMAL" x="1442" y="1506">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="513" name="NORMAL" type="Enemy.NORMAL" x="1564" y="1420">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="514" name="NORMAL" type="Enemy.NORMAL" x="1256" y="1444">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="515" name="NORMAL" type="Enemy.NORMAL" x="1434" y="1580">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="516" name="NORMAL" type="Enemy.NORMAL" x="1594" y="1696">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="517" name="NORMAL" type="Enemy.NORMAL" x="1552" y="1742">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="518" name="NORMAL" type="Enemy.NORMAL" x="1354" y="1730">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="519" name="HEALTH" type="PowerUp.REGEN" x="1320.85" y="1286">
+   <properties>
+    <property name="entityClass" value="PowerUp"/>
+    <property name="entityType" value="REGEN"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="520" name="HOARDLING" type="Enemy.HOARDLING" x="1190.67" y="1297.33">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="521" name="HOARDLING" type="Enemy.HOARDLING" x="1326.67" y="1347.33">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="522" name="HOARDLING" type="Enemy.HOARDLING" x="1473.33" y="1364">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="523" name="HOARDLING" type="Enemy.HOARDLING" x="1290.67" y="1433.33">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="524" name="HOARDLING" type="Enemy.HOARDLING" x="1398.67" y="1406.67">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="525" name="HOARDLING" type="Enemy.HOARDLING" x="1570.67" y="1276">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="526" name="HOARDLING" type="Enemy.HOARDLING" x="1600" y="1350.67">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="527" name="HOARDLING" type="Enemy.HOARDLING" x="1616" y="1482.67">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="528" name="HOARDLING" type="Enemy.HOARDLING" x="1537.33" y="1312">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="529" name="HOARDLING" type="Enemy.HOARDLING" x="1470.67" y="1430.67">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="530" name="HOARDLING" type="Enemy.HOARDLING" x="1529.33" y="1470.67">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="531" name="HOARDLING" type="Enemy.HOARDLING" x="1354.67" y="1457.33">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="532" name="HOARDLING" type="Enemy.HOARDLING" x="1597.33" y="1393.33">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="533" name="HOARDLING" type="Enemy.HOARDLING" x="1341.33" y="1542.67">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="534" name="HOARDLING" type="Enemy.HOARDLING" x="1230.67" y="1462.67">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="535" name="HOARDLING" type="Enemy.HOARDLING" x="1318.67" y="1412">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="536" name="HOARDLING" type="Enemy.HOARDLING" x="1506.67" y="1509.33">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="537" name="HOARDLING" type="Enemy.HOARDLING" x="1092" y="1429.33">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="538" name="HOARDLING" type="Enemy.HOARDLING" x="1214.67" y="1309.33">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="539" name="HOARDLING" type="Enemy.HOARDLING" x="1277.33" y="1262.67">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="540" name="HOARDLING" type="Enemy.HOARDLING" x="1077.33" y="1481.33">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="541" name="HOARDLING" type="Enemy.HOARDLING" x="1217.33" y="1490.67">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="542" name="HOARDLING" type="Enemy.HOARDLING" x="1380" y="1282.67">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="543" name="HOARDLING" type="Enemy.HOARDLING" x="1198.67" y="1409.33">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="544" name="HOARDLING" type="Enemy.HOARDLING" x="1190.67" y="1416">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="545" name="HOARDLING" type="Enemy.HOARDLING" x="1461.33" y="1268">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="546" name="HOARDLING" type="Enemy.HOARDLING" x="1386.67" y="1236">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="547" name="HOARDLING" type="Enemy.HOARDLING" x="1148" y="1356">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="548" name="HOARDLING" type="Enemy.HOARDLING" x="1110.67" y="1216">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="549" name="HOARDLING" type="Enemy.HOARDLING" x="1273.33" y="1192">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="550" name="HOARDLING" type="Enemy.HOARDLING" x="1332" y="1184">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="551" name="HOARDLING" type="Enemy.HOARDLING" x="1036" y="1274.67">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="552" name="HOARDLING" type="Enemy.HOARDLING" x="1113.33" y="1357.33">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="HOARDLING"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="553" name="NORMAL" type="Enemy.NORMAL" x="1450" y="1286">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="554" name="NORMAL" type="Enemy.NORMAL" x="1470" y="1088">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="555" name="NORMAL" type="Enemy.NORMAL" x="1260" y="1278">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="556" name="NORMAL" type="Enemy.NORMAL" x="1260" y="1362">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="557" name="NORMAL" type="Enemy.NORMAL" x="1472" y="1532">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="558" name="NORMAL" type="Enemy.NORMAL" x="1478" y="1556">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="559" name="NORMAL" type="Enemy.NORMAL" x="1160" y="1444">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="560" name="NORMAL" type="Enemy.NORMAL" x="1106" y="1380">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="561" name="NORMAL" type="Enemy.NORMAL" x="1384" y="1220">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="562" name="NORMAL" type="Enemy.NORMAL" x="1506" y="1134">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="563" name="NORMAL" type="Enemy.NORMAL" x="1198" y="1158">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="564" name="NORMAL" type="Enemy.NORMAL" x="1376" y="1294">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="565" name="NORMAL" type="Enemy.NORMAL" x="1536" y="1410">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="566" name="NORMAL" type="Enemy.NORMAL" x="1494" y="1456">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="567" name="NORMAL" type="Enemy.NORMAL" x="1296" y="1444">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="579" name="NORMAL" type="Enemy.NORMAL" x="2261.69" y="2800.73">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="580" name="NORMAL" type="Enemy.NORMAL" x="2323.21" y="2939.52">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="581" name="NORMAL" type="Enemy.NORMAL" x="1931.09" y="2926.43">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="583" name="NORMAL" type="Enemy.NORMAL" x="2567.03" y="2888">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="584" name="NORMAL" type="Enemy.NORMAL" x="2692" y="2794.67">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="585" name="NORMAL" type="Enemy.NORMAL" x="2882" y="2898">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="NORMAL"/>

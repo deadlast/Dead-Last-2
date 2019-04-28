@@ -32,11 +32,13 @@ public class EnemyFactory {
 		Enemy.Builder builder = new Enemy.Builder().setGame(game);
 		switch (type) {
 		case BOMBER:
+
 			builder.setHealthStat(8).setSpeedStat(5).setStrengthStat(10).setDetectionStat(9)
 					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/bomber_zombie.png"))))
 					.setScoreValue(60).setBodyRadius(0.4f).setDensity(10);
 			break;
 		case FAST:
+
 			builder.setHealthStat(4).setSpeedStat(8).setStrengthStat(5).setDetectionStat(7)
 					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/fast_zombie.png"))))
 					.setScoreValue(20).setBodyRadius(0.4f).setDensity(7);
@@ -52,11 +54,13 @@ public class EnemyFactory {
 					.setScoreValue(5).setBodyRadius(0.2f).setDensity(5);
 			break;
 		case JOCKEY:
+
 			builder.setHealthStat(10).setSpeedStat(7).setStrengthStat(4).setDetectionStat(9)
 					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/jockey_zombie.png"))))
 					.setScoreValue(80).setBodyRadius(0.6f).setDensity(10);
 			break;
 		case NORMAL:
+
 			builder.setHealthStat(6).setSpeedStat(5).setStrengthStat(6).setDetectionStat(6)
 					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/normal_zombie.png"))))
 					.setScoreValue(10).setBodyRadius(0.4f).setDensity(10);

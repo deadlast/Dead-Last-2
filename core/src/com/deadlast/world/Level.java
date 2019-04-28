@@ -35,12 +35,12 @@ public class Level implements Disposable {
 	private List<SpawnPoint<NPC.Type>> npcSpawns;
 
 	private GameManager gameManager;
-
-	private String levelName;
+	public String levelName;
 	private TiledMap tiledMap;
 	private int[] backgroundLayers = { 0, 1, 2, 3 };
-	private int[] foregroundLayers = {};
-
+	protected int[] foregroundLayers = {};
+	
+	
 	private LevelEndZone endZone;
 
 	public Level(DeadLast game, String levelName) {
@@ -191,5 +191,7 @@ public class Level implements Disposable {
 		tiledMap.dispose();
 //		endZone.delete();
 	}
+	
+	
 
 }

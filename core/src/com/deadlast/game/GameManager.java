@@ -29,9 +29,11 @@ import com.deadlast.entities.PlayerType;
 import com.deadlast.entities.PowerUp;
 import com.deadlast.entities.PowerUpFactory;
 import com.deadlast.screens.GameScreen;
+import com.deadlast.stages.CutsceneOverlay;
 import com.deadlast.stages.Hud;
 import com.deadlast.stages.PauseOverlay;
 import com.deadlast.world.Level;
+import com.deadlast.world.CutsceneLevel;
 import com.deadlast.world.WorldContactListener;
 
 import box2dLight.RayHandler;
@@ -71,11 +73,13 @@ public class GameManager implements Disposable {
 	
 	private Hud hud;
 	private PauseOverlay pauseOverlay;
+	private CutsceneOverlay cutsceneOverlay;
 	private RayHandler rayHandler;
-
-	private String[] levels = {"Comp Sci","Hes East","DBar","Library","Under Lake","Central Hall","minigame", "Infection"};
+	
+	private String[] levels = {"Comp Sci","Hes East","DBar","Library","Under Lake","Central Hall","minigame","Infection"};
 	private Level level;
 	private int levelNum = 0;
+	private boolean isCutscene = true;
 	
 	private int score = 0;
 	private float time;
@@ -123,6 +127,7 @@ public class GameManager implements Disposable {
 		if(minigameActive){
 			levelNum = levels.length - 2;
 		}
+		
 		if (world != null) {
 			world.dispose();
 		}
@@ -136,20 +141,30 @@ public class GameManager implements Disposable {
 		
 		hud = new Hud(game);
 		
-		pauseOverlay = new PauseOverlay(game);
+		if (isCutscene) {
+			cutsceneOverlay = new CutsceneOverlay(game,levelNum);
+		}else {
+			pauseOverlay = new PauseOverlay(game);
+			pauseOverlay.pickBlurb(levelNum);
+		}
 		
 		this.entities = new ArrayList<>();
 		this.enemies = new ArrayList<>();
 		this.powerUps = new ArrayList<>();
 		
 		time = 0;
-		
-		level = new Level(game,levels[levelNum]);
-		
-		this.hud.setLevelName(levels[levelNum]);
-		
+		System.out.println(this.levelNum);
+		if(isCutscene) {
+			level = new CutsceneLevel(game, levelNum);
+			paused = true;
+		}else {
+			level = new Level(game,levels[levelNum]);
+			pauseOverlay.setMapName(level.levelName);
+		}
 		tiledMapRenderer = new OrthogonalTiledMapRenderer(level.load(), 1/32f);
 		tiledMapRenderer.setView(gameCamera);
+		this.hud.setLevelName(level.levelName);
+		
 
 		player = new Player.Builder()
 				.setGame(game)
@@ -175,7 +190,6 @@ public class GameManager implements Disposable {
 		levelLoaded = false;
 		controller.down = controller.left = controller.right = controller.up = false;
 		hud.dispose();
-		pauseOverlay.dispose();
 		debugRenderer.dispose();
 		rayHandler.dispose();
 		level.dispose();
@@ -251,6 +265,7 @@ public class GameManager implements Disposable {
 			bossEncounter = bossDelFlag = false;
 			levelNum++;
 			transferLevel();
+			
 		}else{
 		}
 	}
@@ -389,9 +404,13 @@ public class GameManager implements Disposable {
 				hud.setRemainingHumans(entities.size() - 1);
 			}
 		}
+		
 		handleInput();
-		if (paused) {
-			return;
+		
+		if(!paused){
+			// Step through the physics world simulation
+			world.step(1/60f, 6, 2);
+			time += delta;
 		}
 		// Step through the physics world simulation
 		world.step(1/60f, 6, 2);
@@ -401,7 +420,10 @@ public class GameManager implements Disposable {
 		gameCamera.position.y = player.getBody().getPosition().y;
 		gameCamera.update();
 		tiledMapRenderer.setView(gameCamera);
-		entities.forEach(entity -> entity.update(delta));
+		if (!paused) {
+			entities.forEach(entity -> entity.update(delta));
+		}
+		
 		// Fetch and delete dead entities
 		List<Entity> deadEntities = entities.stream().filter(e -> (!e.isAlive() && !(e instanceof Player))).collect(Collectors.toList());
 		deadEntities.forEach(e -> {
@@ -453,6 +475,13 @@ public class GameManager implements Disposable {
 			paused = !paused;
 		}
 		
+		if (controller.isSpaceDown) {
+			if (isCutscene) {
+				paused = false;
+				this.endCutscene();		
+			}
+		}
+		
 		if (paused) {
 			return;
 		}
@@ -484,6 +513,10 @@ public class GameManager implements Disposable {
 			player.getBody().setLinearVelocity(player.getBody().getLinearVelocity().x, -1 * speed);
 		}
 		if (controller.isSpaceDown) {
+			if (isCutscene) {
+				paused = false;
+				this.endCutscene();		
+			}
 			player.isAttacking(true);
 		} else {
 			player.isAttacking(false);
@@ -519,16 +552,25 @@ public class GameManager implements Disposable {
 	}
 	
 	public void levelComplete() {
-//		levelLoaded = false;
 		clearLevel();
-		levelNum += 1;
+		levelNum+=1;
+		
+	}
+	
+	public void endCutscene() {
+		clearLevel();
+		
 	}
 	
 	public void transferLevel() {
-		if (levelNum < levels.length - 2) {
+		isCutscene = !isCutscene;
+		if (levelNum < levels.length -1) {
+			
 			loadLevel();
-		} else {
-			gameRunning = false;
+//		} else if(this.isCutscene) {
+//			
+		}else {
+			gameRunning  = false;
 			winLevel = 1;
 			this.levelNum = 0;
 			game.changeScreen(DeadLast.END);
@@ -560,7 +602,12 @@ public class GameManager implements Disposable {
 		if (!paused) {
 			hud.stage.draw();
 		} else {
-			pauseOverlay.stage.draw();
+			if(!isCutscene) {
+				pauseOverlay.stage.draw();
+			}else {
+				cutsceneOverlay.stage.draw();
+			}
+			
 		}
 	}
 
