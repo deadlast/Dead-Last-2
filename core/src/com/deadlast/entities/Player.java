@@ -152,7 +152,7 @@ public class Player extends Mob {
 		b2body.createFixture(fDef).setUserData(FixtureType.PLAYER);
 		
 		BodyFactory bFactory = BodyFactory.getInstance(world);
-		bFactory.makeMeleeSensor(b2body, 7, 50, 1f);
+		bFactory.makeMeleeSensor(b2body, 7, 60, 1.5f);
 		
 		coneLight = new ConeLight(gameManager.getRayHandler(), 7, Color.BLUE, 2, b2body.getPosition().x, b2body.getPosition().y, b2body.getAngle() + 90, 35);
 		coneLight.attachToBody(b2body, 0, 0, 90);
@@ -248,7 +248,6 @@ public class Player extends Mob {
 		if (isAttacking) {
 			if (!attkCooldown) {
 				mobsInRange.forEach(m -> m.applyDamage(this.getStrength() * getDamageMultiplier()));
-				mobsInRange.forEach(m -> m.knockback(this.getStrength()));
 				attackCooldown = 0.5f;
 				attkCooldown = true;
 				this.sprite = attackSprite;
