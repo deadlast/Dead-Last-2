@@ -57,11 +57,16 @@ public class Enemy extends Mob {
 	 * Whether the player is close enough to the player to attack
 	 */
 	private boolean inMeleeRange = false;
+	
+	private int density = 10;
+	
+	private float stunTimer;
 
 	public Enemy(DeadLast game, int scoreValue, Sprite sprite, float bRadius, Vector2 initialPos,
-			int healthStat, int speedStat, int strengthStat, int detectionStat) {
+			int healthStat, int speedStat, int strengthStat, int detectionStat, int density) {
 		super(game, scoreValue, sprite, bRadius, initialPos, healthStat, speedStat, strengthStat);
 		this.detectionStat = detectionStat;
+		this.density = density;
 	}
 	
 	public int getDetectionStat() {
@@ -79,6 +84,7 @@ public class Enemy extends Mob {
 		CircleShape shape = new CircleShape();
 		shape.setRadius(this.bRadius);
 		fBodyDef.shape = shape;
+		fBodyDef.density = density;
 		fBodyDef.filter.categoryBits = Entity.ENEMY;
 		fBodyDef.filter.maskBits = Entity.BOUNDARY | Entity.PLAYER | Entity.PLAYER_MELEE | Entity.NPC;
 		
@@ -97,7 +103,8 @@ public class Enemy extends Mob {
 
 		shape.dispose();
 		
-		b2body.setLinearDamping(5.0f);
+		b2body.setLinearDamping(5f);
+		b2body.setAngularDamping(5f);
 	}
 	
 	/**
@@ -137,7 +144,7 @@ public class Enemy extends Mob {
 	public void followPlayer(){
 		Vector2 playerLoc = gameManager.getPlayer().getPos();
 		Vector2 movementVector = playerLoc.sub(b2body.getPosition()).nor();
-		this.b2body.setLinearVelocity(movementVector.x * this.getSpeed(), movementVector.y * this.getSpeed());
+		this.b2body.applyLinearImpulse(movementVector.scl(this.getSpeed()), getPos(), true);
 	}
 
 	public void roam(){
@@ -174,10 +181,12 @@ public class Enemy extends Mob {
 	@Override
 	public void update(float delta) {
 		super.update(delta);
-		if (this.getHealth() <= 0) {
-			this.setAlive(false);
+		
+		if (stunTimer > 0) {
+			stunTimer -= delta;
 			return;
 		}
+
 		if (knowsPlayerLocation && playerVisible()) {
 			Vector2 playerLoc = gameManager.getPlayer().getPos();
 			double angle = Math.toDegrees(Math.atan2(playerLoc.y - b2body.getPosition().y, playerLoc.x - b2body.getPosition().x)) - 90;
@@ -202,6 +211,17 @@ public class Enemy extends Mob {
 		}
 	}
 	
+	@Override
+	public void applyDamage(int damage) {
+		super.applyDamage(damage);
+		Vector2 playerPos = gameManager.getPlayer().getPos();
+		Vector2 playerVector = playerPos.sub(b2body.getPosition()).nor();
+		
+		b2body.applyLinearImpulse(playerVector.scl(-5f * b2body.getMass() * gameManager.getPlayer().getStrength()), getPos(), true);
+		
+		stunTimer = 0.5f;
+	}
+	
 	/**
 	 * Utility for building Enemy instances.
 	 * @author Xzytl
@@ -218,6 +238,7 @@ public class Enemy extends Mob {
 		private int speedStat;
 		private int strengthStat;
 		private int detectionStat;
+		private int density;
 		
 		public Builder setGame(DeadLast game) {
 			this.game = game;
@@ -264,6 +285,11 @@ public class Enemy extends Mob {
 			return this;
 		}
 		
+		public Builder setDensity(int density) {
+			this.density = density;
+			return this;
+		}
+		
 		/**
 		 * Converts builder object into instance of Enemy
 		 * @return an instance of Enemy with the provided parameters
@@ -284,9 +310,12 @@ public class Enemy extends Mob {
 			if (initialPos == null) {
 				throw new IllegalArgumentException("Invalid 'initialPos' parameter");
 			}
+			if (density == 0) {
+				density = 10;
+			}
 			return new Enemy(
 					game, scoreValue, sprite, bRadius, initialPos, healthStat, speedStat,
-					strengthStat, detectionStat
+					strengthStat, detectionStat, density
 			);
 		}
 	}
