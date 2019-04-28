@@ -33,7 +33,7 @@ public class EnemyFactory {
 		switch(type) {
 		case BOMBER:
 			builder.setHealthStat(8)
-					.setSpeedStat(6)
+					.setSpeedStat(3)
 					.setStrengthStat(10)
 					.setDetectionStat(9)
 					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/bomber_zombie.png"))))
@@ -42,7 +42,7 @@ public class EnemyFactory {
 			break;
 		case FAST:
 			builder.setHealthStat(4)
-				.setSpeedStat(10)
+				.setSpeedStat(3)
 				.setStrengthStat(5)
 				.setDetectionStat(7)
 				.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/fast_zombie.png"))))
@@ -51,7 +51,7 @@ public class EnemyFactory {
 			break;
 		case HEAVY:
 			builder.setHealthStat(10)
-				.setSpeedStat(6)
+				.setSpeedStat(3)
 				.setStrengthStat(10)
 				.setDetectionStat(9)
 				.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/heavy_zombie.png"))))
@@ -60,7 +60,7 @@ public class EnemyFactory {
 			break;
 		case HORDLING:
 			builder.setHealthStat(2)
-					.setSpeedStat(10)
+					.setSpeedStat(3)
 					.setStrengthStat(2)
 					.setDetectionStat(10)
 					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/hordling_zombie.png"))))
@@ -69,7 +69,7 @@ public class EnemyFactory {
 			break;
 		case JOCKEY:
 			builder.setHealthStat(10)
-					.setSpeedStat(9)
+					.setSpeedStat(3)
 					.setStrengthStat(4)
 					.setDetectionStat(9)
 					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/jockey_zombie.png"))))
@@ -78,7 +78,7 @@ public class EnemyFactory {
 			break;
 		case NORMAL:
 			builder.setHealthStat(6)
-					.setSpeedStat(6)
+					.setSpeedStat(3)
 					.setStrengthStat(6)
 					.setDetectionStat(6)
 					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/normal_zombie.png"))))
@@ -87,7 +87,7 @@ public class EnemyFactory {
 			break;
 		case BOSS:
 			builder.setHealthStat(20)
-					.setSpeedStat(2)
+					.setSpeedStat(3)
 					.setStrengthStat(4)
 					.setDetectionStat(10)
 					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/boss1.png"))))
@@ -96,7 +96,7 @@ public class EnemyFactory {
 			break;
 		case BOSS2:
 			builder.setHealthStat(40)
-					.setSpeedStat(4)
+					.setSpeedStat(3)
 					.setStrengthStat(3)
 					.setDetectionStat(10)
 					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/boss2.png"))))
