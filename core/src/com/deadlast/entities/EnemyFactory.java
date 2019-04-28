@@ -32,44 +32,44 @@ public class EnemyFactory {
 		Enemy.Builder builder = new Enemy.Builder().setGame(game);
 		switch (type) {
 		case BOMBER:
-			builder.setHealthStat(8).setSpeedStat(5).setStrengthStat(10).setDetectionStat(9)
+			builder.setHealthStat(8).setSpeedStat(2).setStrengthStat(10).setDetectionStat(9)
 					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/bomber_zombie.png"))))
 					.setScoreValue(60).setBodyRadius(0.4f).setDensity(10);
 			break;
 		case FAST:
-			builder.setHealthStat(4).setSpeedStat(8).setStrengthStat(5).setDetectionStat(7)
+			builder.setHealthStat(4).setSpeedStat(5).setStrengthStat(5).setDetectionStat(7)
 					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/fast_zombie.png"))))
 					.setScoreValue(20).setBodyRadius(0.4f).setDensity(7);
 			break;
 		case HEAVY:
-			builder.setHealthStat(10).setSpeedStat(4).setStrengthStat(10).setDetectionStat(9)
+			builder.setHealthStat(10).setSpeedStat(2).setStrengthStat(10).setDetectionStat(9)
 					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/heavy_zombie.png"))))
 					.setScoreValue(50).setBodyRadius(0.75f).setDensity(12);
 			break;
 		case HORDLING:
-			builder.setHealthStat(2).setSpeedStat(8).setStrengthStat(1).setDetectionStat(10)
+			builder.setHealthStat(2).setSpeedStat(5).setStrengthStat(1).setDetectionStat(10)
 					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/hordling_zombie.png"))))
 					.setScoreValue(5).setBodyRadius(0.2f).setDensity(7);
 			break;
 		case JOCKEY:
 
-			builder.setHealthStat(10).setSpeedStat(7).setStrengthStat(4).setDetectionStat(9)
+			builder.setHealthStat(10).setSpeedStat(4).setStrengthStat(4).setDetectionStat(9)
 					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/jockey_zombie.png"))))
 					.setScoreValue(80).setBodyRadius(0.6f).setDensity(10);
 			break;
 		case NORMAL:
 
-			builder.setHealthStat(6).setSpeedStat(5).setStrengthStat(6).setDetectionStat(6)
+			builder.setHealthStat(6).setSpeedStat(3).setStrengthStat(6).setDetectionStat(6)
 					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/normal_zombie.png"))))
 					.setScoreValue(10).setBodyRadius(0.4f).setDensity(10);
 			break;
 		case BOSS:
-			builder.setHealthStat(20).setSpeedStat(2).setStrengthStat(4).setDetectionStat(10)
+			builder.setHealthStat(20).setSpeedStat(1).setStrengthStat(4).setDetectionStat(10)
 					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/boss1.png")))).setScoreValue(100)
 					.setBodyRadius(1.5f).setDensity(15);
 			break;
 		case BOSS2:
-			builder.setHealthStat(40).setSpeedStat(4).setStrengthStat(3).setDetectionStat(10)
+			builder.setHealthStat(40).setSpeedStat(3).setStrengthStat(3).setDetectionStat(10)
 					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/boss2.png")))).setScoreValue(200)
 					.setBodyRadius(1.5f).setDensity(15);
 			break;
