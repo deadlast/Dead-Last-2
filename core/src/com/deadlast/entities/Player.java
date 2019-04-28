@@ -249,7 +249,7 @@ public class Player extends Mob {
 			if (!attkCooldown) {
 				mobsInRange.forEach(m -> m.applyDamage(this.getStrength() * getDamageMultiplier()));
 				mobsInRange.forEach(m -> m.knockback(this.getStrength()));
-				attackCooldown = 1f;
+				attackCooldown = 0.5f;
 				attkCooldown = true;
 				this.sprite = attackSprite;
 			}
