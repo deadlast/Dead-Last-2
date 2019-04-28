@@ -35,7 +35,7 @@ public class Level implements Disposable {
 	private List<SpawnPoint<NPC.Type>> npcSpawns;
 
 	private GameManager gameManager;
-	private String levelName;
+	public String levelName;
 	private TiledMap tiledMap;
 	private int[] backgroundLayers = { 0, 1, 2, 3 };
 	protected int[] foregroundLayers = {};

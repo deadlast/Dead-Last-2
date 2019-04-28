@@ -74,7 +74,7 @@ public class GameManager implements Disposable {
 	private PauseOverlay pauseOverlay;
 	private RayHandler rayHandler;
 	
-	private String[] levels = {"Cutscene Room","Hes East","DBar","Library","Under Lake","Central Hall","Cutscene Room","minigame"};
+	private String[] levels = {"Comp Sci","Hes East","DBar","Library","Under Lake","Central Hall","minigame"};
 	private Level level;
 	private int levelNum = 0;
 	private boolean isCutscene = true;
@@ -146,7 +146,7 @@ public class GameManager implements Disposable {
 		this.powerUps = new ArrayList<>();
 		
 		time = 0;
-		
+		System.out.println(this.levelNum);
 		if(isCutscene) {
 			level = new CutsceneLevel(game, levelNum);
 			pause = true;
@@ -154,7 +154,7 @@ public class GameManager implements Disposable {
 			level = new Level(game,levels[levelNum]);
 		}
 		
-		this.hud.setLevelName(levels[levelNum]);
+		this.hud.setLevelName(level.levelName);
 		
 		tiledMapRenderer = new OrthogonalTiledMapRenderer(level.load(), 1/32f);
 		tiledMapRenderer.setView(gameCamera);
@@ -183,7 +183,6 @@ public class GameManager implements Disposable {
 		levelLoaded = false;
 		controller.down = controller.left = controller.right = controller.up = false;
 		hud.dispose();
-		pauseOverlay.dispose();
 		debugRenderer.dispose();
 		rayHandler.dispose();
 		level.dispose();
@@ -499,13 +498,8 @@ public class GameManager implements Disposable {
 		}
 		if (controller.isSpaceDown) {
 			if (isCutscene) {
-				levelNum++;
 				pause = false;
-				isCutscene = !isCutscene;
-				this.transferLevel();
-				
-				
-				
+				this.endCutscene();		
 			}
 			player.isAttacking(true);
 		} else {
@@ -542,12 +536,18 @@ public class GameManager implements Disposable {
 	}
 	
 	public void levelComplete() {
-//		levelLoaded = false;
 		clearLevel();
-		levelNum += 1;
+		levelNum+=1;
+		
+	}
+	
+	public void endCutscene() {
+		clearLevel();
+		
 	}
 	
 	public void transferLevel() {
+		isCutscene = !isCutscene;
 		if (levelNum < levels.length -1) {
 			
 			loadLevel();

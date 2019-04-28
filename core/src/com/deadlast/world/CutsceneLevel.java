@@ -11,7 +11,9 @@ public class CutsceneLevel extends Level{
 			this.foregroundLayers = new int[] {0};
 			
 		}
-		
+		public int getLevelNum() {
+			return this.textNum;
+		}
 		public String pickText() {
 			
 			switch (textNum){
