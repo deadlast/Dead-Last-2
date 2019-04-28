@@ -95,7 +95,7 @@ public class CutsceneOverlay implements Disposable {
 			line1 = new Label("The lift brings you up to the roof of Central Hall, and you are brought face to face with an abomination.",skin);
 			line2 = new Label("The massive creature introduces himself as Dr. G Reylag, leader of the EMPR project.",skin);
 			line3 = new Label("'GOOSE FOUNDED THIS UNIVERSITY, HUMANS PUSH GOOSE OUT. EMPR MAKE GOOSE STRONG. EMPR MAKE HUMANS DEAD. HONK'",skin);
-			line4 = new Label("He loudly continues his monologue, consisting of nasty comments about humans, honks, and a tangent about how he knows geese aren't technically poultry but it made the name of the project more inclusive. ",skin);
+			line4 = new Label("He loudly continues a tirdade of nasty comments about humans, honks, and that he knows geese aren't technically poultry but the name sounded cooler. ",skin);
 			line5 = new Label("While he laments, you notice a box behind him labelled 'CURE, HONK'. It seems the only way to cure the virus is to take down Reylag.",skin);
 			break;
 		}
