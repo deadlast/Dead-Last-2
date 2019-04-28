@@ -18,7 +18,7 @@ public class PlayerTest {
 	
 	@BeforeEach
 	public void init() {
-		player  = new Player(null, null, 0.4f, new Vector2(5,5), 50, 4, 50, 50);
+		player  = new Player(null, null, null, 0.4f, new Vector2(5,5), 50, 4, 50, 50);
 	}
 	
 	@Test
@@ -79,7 +79,7 @@ public class PlayerTest {
 	
 	@Test
 	public void playerInvalidPosition() {
-		assertThrows(IllegalArgumentException.class, () -> new Player(null, null, 0.4f, null, 50, 4, 50, 50));
+		assertThrows(IllegalArgumentException.class, () -> new Player(null, null, null, 0.4f, null, 50, 4, 50, 50));
 	}
 
     @Test

@@ -41,7 +41,7 @@ class GameManagerTest {
 
     @Test
     void getMinigame() {
-        manager.setMinigame();
+        manager.setMinigameActive(true);
         assertNotNull(manager.isMinigameActive());
     }
 }

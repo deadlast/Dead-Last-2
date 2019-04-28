@@ -17,7 +17,7 @@ public class EnemyTest {
 
 	@BeforeEach
 	public void init() {
-		enemy = new Enemy(null, 10, null, 0.4f, new Vector2(5,5), 4, 10, 5, 7);
+		enemy = new Enemy(null, 10, null, 0.4f, new Vector2(5,5), 4, 10, 5, 7, 10);
 	}
 	
 	@Test
@@ -78,7 +78,7 @@ public class EnemyTest {
 	
 	@Test
 	public void enemyInvalidPosition() {
-		assertThrows(IllegalArgumentException.class, () -> new Enemy(null, 10, null, 0.4f, null, 4, 10, 5, 7));
+		assertThrows(IllegalArgumentException.class, () -> new Enemy(null, 10, null, 0.4f, null, 4, 10, 5, 7, 10));
 	}
 
     @Test

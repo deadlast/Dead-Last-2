@@ -15,7 +15,7 @@ public class PowerUpTest {
 	
 	@BeforeEach
 	public void init() {
-		player  = new Player(null, null, 0.4f, new Vector2(5,5), 50, 4, 50, 50);
+		player  = new Player(null, null, null, 0.4f, new Vector2(5,5), 50, 4, 50, 50);
 	}
 	
 	@Test
