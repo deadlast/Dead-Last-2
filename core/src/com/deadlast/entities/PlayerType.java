@@ -4,7 +4,7 @@ public enum PlayerType {
 	
 	TANK(0.5f, 200, 5, 8, 20, new String[] {"entities/boxer.png","entities/boxer_attack.png"}),
 	STEALTH(0.3f, 80, 6, 4, 90, new String[] {"entities/ninja.png","entities/ninja_attack.png"}),
-	RUNNER(0.3f, 30, 80, 4, 40, new String[] {"entities/runner.png","entities/runner_attack.png"}),
+	RUNNER(0.3f, 60, 8, 4, 40, new String[] {"entities/runner.png","entities/runner_attack.png"}),
 	STANDARD(0.4f, 100, 6, 5, 50, new String[] {"entities/student.png","entities/student_attack.png"}),
 	ZOMBIE(0.4f, 200, 6, 8, 0, new String[] {"entities/normal_zombie.png","entities/normal_zombie.png"});
 	
