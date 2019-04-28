@@ -32,7 +32,7 @@ public class Level implements Disposable {
 	private List<SpawnPoint<PowerUp.Type>> powerUpSpawns;
 
 	private GameManager gameManager;
-	private String levelName;
+	public String levelName;
 	private TiledMap tiledMap;
 	private int[] backgroundLayers = { 0, 1, 2, 3 };
 	protected int[] foregroundLayers = {};
