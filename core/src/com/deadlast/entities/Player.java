@@ -17,6 +17,7 @@ import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.deadlast.game.DeadLast;
 import com.deadlast.game.GameManager;
 import com.deadlast.stages.Hud;
+import com.deadlast.util.EffectDuration;
 import com.deadlast.world.BodyFactory;
 import com.deadlast.world.FixtureType;
 import com.deadlast.world.WorldContactListener;
@@ -51,7 +52,7 @@ public class Player extends Mob {
 	 * Contains the power-ups currently active on the player.
 	 * Float is the number of seconds remaining until the effect expires.
 	 */
-	private Map<PowerUp.Type, Float> activePowerUps;
+	private Map<PowerUp.Type, EffectDuration> activePowerUps;
 	
 	/**
 	 * The time until the player can next be healed by a regen power-up.
@@ -183,7 +184,7 @@ public class Player extends Mob {
 	 * @param powerUp the power-up the user obtained
 	 */
 	public void onPickup(PowerUp powerUp) {
-		activePowerUps.put(powerUp.getType(), 15f);
+		activePowerUps.put(powerUp.getType(), new EffectDuration(powerUp.getDuration()));
 	}
 	
 	/**
@@ -228,10 +229,15 @@ public class Player extends Mob {
 				healCooldown = 1f;
 			} 
 		}
-		for(Map.Entry<PowerUp.Type, Float> entry : activePowerUps.entrySet()) {
-			if (entry.getValue() - delta >= 0) {
-				activePowerUps.put(entry.getKey(), entry.getValue() - delta);
-			} else {
+		for(Map.Entry<PowerUp.Type, EffectDuration> entry : activePowerUps.entrySet()) {
+			EffectDuration effectDuration = entry.getValue();
+//			if (entry.getValue() - delta >= 0) {
+//				activePowerUps.put(entry.getKey(), entry.getValue() - delta);
+//			} else {
+//				activePowerUps.remove(entry.getKey());
+//			}
+			effectDuration.update(delta);
+			if (entry.getValue().isZero()) {
 				activePowerUps.remove(entry.getKey());
 			}
 		}
