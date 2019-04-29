@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="96">
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="102">
  <tileset firstgid="1" source="finaltileset.tsx"/>
  <layer id="1" name="Background" width="100" height="100">
   <data encoding="base64">
@@ -23,7 +23,7 @@
   </object>
  </objectgroup>
  <objectgroup id="5" name="Entities">
-  <object id="63" name="EnemySpawn1" type="Enemy.BOSS2" x="1622.67" y="1591.33">
+  <object id="63" name="EnemySpawn1" type="Enemy.BOSS2" x="1620.67" y="1692.33">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="BOSS2"/>
@@ -44,63 +44,63 @@
    </properties>
    <point/>
   </object>
-  <object id="67" name="EnemySpawn3" type="Enemy.FAST" x="1702.67" y="1761.33">
+  <object id="67" name="EnemySpawn3" type="Enemy.FAST" x="1790.67" y="1936.33">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="FAST"/>
    </properties>
    <point/>
   </object>
-  <object id="68" name="EnemySpawn3" type="Enemy.FAST" x="1500" y="1695.34">
+  <object id="68" name="EnemySpawn3" type="Enemy.FAST" x="1465" y="1864.34">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="FAST"/>
    </properties>
    <point/>
   </object>
-  <object id="69" name="EnemySpawn3" type="Enemy.FAST" x="1541.33" y="1530.67">
+  <object id="69" name="EnemySpawn3" type="Enemy.FAST" x="1551.33" y="1684.67">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="FAST"/>
    </properties>
    <point/>
   </object>
-  <object id="71" name="EnemySpawn3" type="Enemy.FAST" x="1472" y="1602.67">
+  <object id="71" name="EnemySpawn3" type="Enemy.FAST" x="1441" y="1776.67">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="FAST"/>
    </properties>
    <point/>
   </object>
-  <object id="72" name="EnemySpawn3" type="Enemy.FAST" x="1605.33" y="1498.67">
+  <object id="72" name="EnemySpawn3" type="Enemy.FAST" x="1627.33" y="1633.67">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="FAST"/>
    </properties>
    <point/>
   </object>
-  <object id="73" name="EnemySpawn3" type="Enemy.FAST" x="1758.67" y="1560">
+  <object id="73" name="EnemySpawn3" type="Enemy.FAST" x="1796.67" y="1731">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="FAST"/>
    </properties>
    <point/>
   </object>
-  <object id="75" name="EnemySpawn3" type="Enemy.FAST" x="1540" y="1738.67">
+  <object id="75" name="EnemySpawn3" type="Enemy.FAST" x="1505" y="1907.67">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="FAST"/>
    </properties>
    <point/>
   </object>
-  <object id="76" name="EnemySpawn3" type="Enemy.FAST" x="1758.67" y="1656">
+  <object id="76" name="EnemySpawn3" type="Enemy.FAST" x="1796.67" y="1827">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="FAST"/>
    </properties>
    <point/>
   </object>
-  <object id="79" name="EnemySpawn3" type="Enemy.FAST" x="1605.33" y="1738.67">
+  <object id="79" name="EnemySpawn3" type="Enemy.FAST" x="1667.33" y="1695.67">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="FAST"/>
@@ -205,6 +205,34 @@
    </properties>
    <point/>
   </object>
+  <object id="96" name="EnemySpawn3" type="Enemy.FAST" x="1481" y="1998.67">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="FAST"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="97" name="EnemySpawn3" type="Enemy.FAST" x="1565" y="2043">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="FAST"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="98" name="EnemySpawn3" type="Enemy.FAST" x="1682" y="2059.33">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="FAST"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="99" name="EnemySpawn3" type="Enemy.FAST" x="1776" y="2002">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="FAST"/>
+   </properties>
+   <point/>
+  </object>
  </objectgroup>
  <objectgroup id="6" name="Walls">
   <object id="40" x="1120" y="1248">
@@ -242,6 +270,12 @@
   </object>
   <object id="51" x="2208" y="1280">
    <polygon points="0,0 -64,0 -64,32 0,32"/>
+  </object>
+  <object id="100" x="1344" y="1280">
+   <polygon points="0,0 0,32 192,32 192,0"/>
+  </object>
+  <object id="101" x="1472" y="1312">
+   <polygon points="0,0 0,32 32,32 32,0"/>
   </object>
  </objectgroup>
  <objectgroup id="7" name="Furniture"/>

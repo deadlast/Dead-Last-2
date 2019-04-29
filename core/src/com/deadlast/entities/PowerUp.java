@@ -56,7 +56,7 @@ public class PowerUp extends Entity {
 		b2body.createFixture(fDef).setUserData(FixtureType.POWERUP);
 		b2body.setUserData(this);
 		
-		pointLight = new PointLight(gameManager.getRayHandler(), 32, Color.GOLD, 3, b2body.getPosition().x, b2body.getPosition().y);
+		pointLight = new PointLight(gameManager.getRayHandler(), 32, Color.GOLD, 1, b2body.getPosition().x, b2body.getPosition().y);
 		pointLight.attachToBody(b2body);
 
 		shape.dispose();

@@ -43,8 +43,10 @@ public class PowerUpFactory {
 			builder.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/coin_powerup.png"))));
 			break;
 		case STEALTH:
+			builder.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/stealth_powerup.png"))));
 			break;
 		case DOUBLE_DAMAGE:
+			builder.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/dmg_powerup.png"))));
 			break;
 		default:
 			builder.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/blank_powerup.png"))));

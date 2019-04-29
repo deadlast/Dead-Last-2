@@ -171,7 +171,7 @@ public class GameManager implements Disposable {
 				.setSprites(playerType.getSprites())
 				.setBodyRadius(playerType.getBodyRadius())
 				.setInitialPosition(playerSpawn)
-				.setHealthStat(50)
+				.setHealthStat(playerType.getHealth())
 				.setSpeedStat(playerType.getSpeed())
 				.setStealthStat(playerType.getStealth())
 				.setStrengthStat(playerType.getStrength())

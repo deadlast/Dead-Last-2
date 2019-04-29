@@ -39,7 +39,7 @@ public class EnemyFactory {
 		case FAST:
 			builder.setHealthStat(4).setSpeedStat(5).setStrengthStat(5).setDetectionStat(7)
 					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/fast_zombie.png"))))
-					.setScoreValue(20).setBodyRadius(0.4f).setDensity(7);
+					.setScoreValue(20).setBodyRadius(0.5f).setDensity(8);
 			break;
 		case HEAVY:
 			builder.setHealthStat(10).setSpeedStat(2).setStrengthStat(10).setDetectionStat(9)
@@ -49,7 +49,7 @@ public class EnemyFactory {
 		case HORDLING:
 			builder.setHealthStat(2).setSpeedStat(5).setStrengthStat(1).setDetectionStat(10)
 					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/hordling_zombie.png"))))
-					.setScoreValue(5).setBodyRadius(0.2f).setDensity(7);
+					.setScoreValue(5).setBodyRadius(0.3f).setDensity(7);
 			break;
 		case JOCKEY:
 

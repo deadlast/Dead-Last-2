@@ -131,6 +131,7 @@ public class Player extends Mob {
 		Vector2 mousePos = GameManager.getInstance(this.game).getMouseWorldPos();
 		double angle = Math.toDegrees(Math.atan2(mousePos.y - b2body.getPosition().y, mousePos.x - b2body.getPosition().x));
 		this.setAngle(angle - 90);
+		this.setOpacity();
 		super.render(batch);
 	}
 	
@@ -271,6 +272,14 @@ public class Player extends Mob {
 			return 2;
 		} else {
 			return 1;
+		}
+	}
+	
+	public void setOpacity() {
+		if(this.isPowerUpActive(PowerUp.Type.STEALTH)) {
+			this.sprite.setAlpha(0.4f);
+		}else {
+			this.sprite.setAlpha(1f);
 		}
 	}
 
