@@ -56,7 +56,12 @@ public class PowerUp extends Entity {
 		b2body.createFixture(fDef).setUserData(FixtureType.POWERUP);
 		b2body.setUserData(this);
 		
-		pointLight = new PointLight(gameManager.getRayHandler(), 32, Color.GOLD, 1, b2body.getPosition().x, b2body.getPosition().y);
+		if (this.type == PowerUp.Type.COIN) {
+			pointLight = new PointLight(gameManager.getRayHandler(), 32, Color.WHITE, 0.5f, b2body.getPosition().x, b2body.getPosition().y);
+		} else {
+			pointLight = new PointLight(gameManager.getRayHandler(), 32, Color.GOLD, 1, b2body.getPosition().x, b2body.getPosition().y);
+		}
+		
 		pointLight.attachToBody(b2body);
 
 		shape.dispose();

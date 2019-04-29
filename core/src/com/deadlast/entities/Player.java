@@ -282,6 +282,8 @@ public class Player extends Mob {
 			this.sprite.setAlpha(1f);
 		}
 	}
+	
+	
 
 	public boolean getCooldown() {
 		return this.attkCooldown;

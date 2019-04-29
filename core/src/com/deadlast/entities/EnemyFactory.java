@@ -34,15 +34,15 @@ public class EnemyFactory {
 		case BOMBER:
 			builder.setHealthStat(8).setSpeedStat(2).setStrengthStat(10).setDetectionStat(9)
 					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/bomber_zombie.png"))))
-					.setScoreValue(60).setBodyRadius(0.4f).setDensity(10);
+					.setScoreValue(60).setBodyRadius(0.5f).setDensity(10);
 			break;
 		case FAST:
 			builder.setHealthStat(4).setSpeedStat(5).setStrengthStat(5).setDetectionStat(7)
 					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/fast_zombie.png"))))
-					.setScoreValue(20).setBodyRadius(0.5f).setDensity(8);
+					.setScoreValue(20).setBodyRadius(0.4f).setDensity(8);
 			break;
 		case HEAVY:
-			builder.setHealthStat(10).setSpeedStat(2).setStrengthStat(10).setDetectionStat(9)
+			builder.setHealthStat(10).setSpeedStat(3).setStrengthStat(10).setDetectionStat(9)
 					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/heavy_zombie.png"))))
 					.setScoreValue(50).setBodyRadius(0.75f).setDensity(12);
 			break;
@@ -55,7 +55,7 @@ public class EnemyFactory {
 
 			builder.setHealthStat(10).setSpeedStat(4).setStrengthStat(4).setDetectionStat(9)
 					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/jockey_zombie.png"))))
-					.setScoreValue(80).setBodyRadius(0.6f).setDensity(10);
+					.setScoreValue(80).setBodyRadius(0.4f).setDensity(10);
 			break;
 		case NORMAL:
 

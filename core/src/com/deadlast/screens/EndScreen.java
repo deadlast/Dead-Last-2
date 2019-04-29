@@ -54,7 +54,7 @@ public class EndScreen extends DefaultScreen {
 
 		String blurbText;
 		if (won) {
-			blurbText = "You have successfully eliminated the zombie threat!";
+			blurbText = "Congratulations Agent! Dr G. Reylag has been defeated and you can begin distributing the cure!";
 		} else {
 			blurbText = "You have been turned, and the zombie threat is rapidly expanding outside the University.";
 		}

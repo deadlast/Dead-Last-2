@@ -564,7 +564,7 @@ public class GameManager implements Disposable {
 	
 	public void transferLevel() {
 		isCutscene = !isCutscene;
-		if (levelNum < levels.length -1) {
+		if (levelNum < levels.length -2) {
 			
 			loadLevel();
 //		} else if(this.isCutscene) {

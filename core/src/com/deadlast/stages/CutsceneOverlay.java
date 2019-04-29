@@ -61,8 +61,8 @@ public class CutsceneOverlay implements Disposable {
 			map = new Label("Chapter 2: Hes East", skin);
 			line1 = new Label("After scraping the University servers for data on the outbreak, you've discovered information about the origin of the virus.",skin);
 			line2 = new Label("Everything seems to point to one Dr. G. Reylag, a suspicous member of the the Biology Department.",skin);
-			line3 = new Label("His emails seem to indicate he was scheduled to conduct an experiment the day the outbreak occurred.",skin);
-			line4 = new Label("They also seem to indicate he is in possession of a cure for the virus.",skin);
+			line3 = new Label("His emails indicate he was scheduled to conduct an experiment the day the outbreak occurred.",skin);
+			line4 = new Label("They also imply that he is in possession of a cure for the virus.",skin);
 			line5 = new Label("To get to West Campus, you should catch a bus from the edge of Heslington East.",skin);
 			break;
 		case 2:
@@ -95,7 +95,7 @@ public class CutsceneOverlay implements Disposable {
 			line1 = new Label("The lift brings you up to the roof of Central Hall, and you are brought face to face with an abomination.",skin);
 			line2 = new Label("The massive creature introduces himself as Dr. G Reylag, leader of the EMPR project.",skin);
 			line3 = new Label("'GOOSE FOUNDED THIS UNIVERSITY, HUMANS PUSH GOOSE OUT. EMPR MAKE GOOSE STRONG. EMPR MAKE HUMANS DEAD. HONK'",skin);
-			line4 = new Label("He loudly continues a tirdade of nasty comments about humans, honks, and that he knows geese aren't technically poultry but the name sounded cooler. ",skin);
+			line4 = new Label("He loudly continues a tirdade of nasty comments about humans.",skin);
 			line5 = new Label("While he laments, you notice a box behind him labelled 'CURE, HONK'. It seems the only way to cure the virus is to take down Reylag.",skin);
 			break;
 		}
