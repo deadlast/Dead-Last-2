@@ -9,6 +9,7 @@ import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.CircleShape;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.deadlast.game.DeadLast;
+import com.deadlast.util.EffectDuration;
 import com.deadlast.world.FixtureType;
 
 import box2dLight.PointLight;
@@ -25,17 +26,31 @@ public class PowerUp extends Entity {
 	}
 
 	public enum Type {
-		STEALTH,
-		DOUBLE_DAMAGE,
-		DOUBLE_POINTS,
-		REGEN,
-		SPEED,
-		COIN,
-		CURE
+		STEALTH(EffectDuration.Time.SHORT),
+		DOUBLE_DAMAGE(EffectDuration.Time.NORMAL),
+		DOUBLE_POINTS(EffectDuration.Time.LONG),
+		REGEN(EffectDuration.Time.NORMAL),
+		SPEED(EffectDuration.Time.NORMAL),
+		COIN(EffectDuration.Time.INSTANT),
+		CURE(EffectDuration.Time.INFINITE);
+		
+		private EffectDuration.Time duration;
+		
+		Type(EffectDuration.Time duration) {
+			this.duration = duration;
+		}
+		
+		public EffectDuration.Time getDuration() {
+			return duration;
+		}
 	}
 	
 	public Type getType() {
 		return type;
+	}
+	
+	public EffectDuration.Time getDuration() {
+		return type.duration;
 	}
 
 	@Override
