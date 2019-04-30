@@ -57,12 +57,17 @@ public class EndScreen extends DefaultScreen {
 		String blurbText;
 		if (won) {
 			if (wasMiniGame) {
-				blurbText = "Either the time ran out or you managed to escape the maze!";
+				blurbText = "Congrats! You escaped the maze!";
 			}else {
 				blurbText = "Congratulations Agent! Dr G. Reylag has been defeated and you can begin distributing the cure!";
 			}
 		} else {
-				blurbText = "You have been turned, and the zombie threat is rapidly expanding outside the University.";		
+			if (wasMiniGame) {
+				blurbText = "Times Up!";
+			}else {
+				blurbText = "You have been turned, and the zombie threat is rapidly expanding outside the University.";	
+			}
+					
 		}
 		Label blurb = new Label(blurbText, skin);
 		table.add(blurb).align(Align.center).row();

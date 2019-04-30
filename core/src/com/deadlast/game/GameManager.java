@@ -367,7 +367,11 @@ public class GameManager implements Disposable {
 	public void minigameTimeLimit(){
 		if(levelNum < levels.length) {
 			if ((levels[levelNum].equals("minigame") && time > 45)) {
-				levelComplete();
+				winLevel = -1;
+				minigameActive = false;
+				gameRunning = false;
+				game.changeScreen(DeadLast.END);
+				
 			}
 		}
 	}
