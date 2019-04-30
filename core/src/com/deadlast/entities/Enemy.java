@@ -170,7 +170,7 @@ public class Enemy extends Mob {
         }
     }
 
-    public boolean playerVisible(){
+    public boolean isPlayerVisible(){
     	Player player = gameManager.getPlayer();
 		if(player == null || player.isPowerUpActive(PowerUp.Type.STEALTH)){
 			return false;
@@ -188,7 +188,7 @@ public class Enemy extends Mob {
 			return;
 		}
 
-		if (knowsPlayerLocation && playerVisible()) {
+		if (knowsPlayerLocation && isPlayerVisible()) {
 			Vector2 playerLoc = gameManager.getPlayer().getPos();
 			double angle = Math.toDegrees(Math.atan2(playerLoc.y - b2body.getPosition().y, playerLoc.x - b2body.getPosition().x)) - 90;
 			this.setAngle(angle);
@@ -196,7 +196,7 @@ public class Enemy extends Mob {
 		} else{
 		    roam();
         }
-		if (inMeleeRange && playerVisible()) {
+		if (inMeleeRange && isPlayerVisible()) {
 		    if(!GameManager.getInstance(game).isPaused()){
                 if (attackCooldown == 0) {
                     Player player = gameManager.getPlayer();
