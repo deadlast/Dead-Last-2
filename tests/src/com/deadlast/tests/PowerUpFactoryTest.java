@@ -10,8 +10,8 @@ import com.deadlast.entities.PowerUpFactory;
 @RunWith(GdxTestRunner.class)
 public class PowerUpFactoryTest {
 
-    @Test
-    public void getInstance() {
-        assertNotNull(PowerUpFactory.getInstance(null));
-    }
+	@Test
+	public void getInstance() {
+		assertNotNull(PowerUpFactory.getInstance(null));
+	}
 }

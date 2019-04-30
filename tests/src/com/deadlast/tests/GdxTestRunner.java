@@ -45,7 +45,7 @@ public class GdxTestRunner extends BlockJUnit4ClassRunner implements Application
 		Gdx.gl = mock(GL20.class);
 	}
 
-	public static void main (String[] arg) {
+	public static void main(String[] arg) {
 		JUnitCore.main("com.deadlast.tests.TestSuite");
 	}
 
