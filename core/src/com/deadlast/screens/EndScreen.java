@@ -85,9 +85,11 @@ public class EndScreen extends DefaultScreen {
 		String dateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss dd-MM-yyyy"));
 		FileHandle file = Gdx.files.local("data/scores.csv");
 		if (file.exists()) {
-			file.writeString(score + "," + dateTime , true);
+			file.writeString("\n" + score + "," + dateTime , true);
 		} else {
-			System.out.println("Warning: could not write to score file - file does not exist.");
+			file.writeString("score,date", false);
+			file.writeString("\n" + score + "," + dateTime , true);
+			System.out.println("Warning: score file does not exist - attempting to create...");
 		}
 //		GameManager.getInstance(game).dispose();
 	}
