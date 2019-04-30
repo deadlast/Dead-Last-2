@@ -4,7 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.deadlast.game.DeadLast;
-import com.deadlast.game.GameManager;
 
 public class PowerUpFactory {
 	
@@ -43,8 +42,10 @@ public class PowerUpFactory {
 			builder.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/coin_powerup.png"))));
 			break;
 		case STEALTH:
+			builder.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/stealth_powerup.png"))));
 			break;
 		case DOUBLE_DAMAGE:
+			builder.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/dmg_powerup.png"))));
 			break;
 		default:
 			builder.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/blank_powerup.png"))));

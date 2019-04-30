@@ -1,6 +1,7 @@
 package com.deadlast.entities;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.math.Vector2;
@@ -8,11 +9,16 @@ import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.CircleShape;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.deadlast.game.DeadLast;
+import com.deadlast.util.EffectDuration;
 import com.deadlast.world.FixtureType;
+
+import box2dLight.PointLight;
 
 public class PowerUp extends Entity {
 	
 	private Type type;
+	
+	private PointLight pointLight;
 	
 	public PowerUp(DeadLast game, int scoreValue, Sprite sprite, float bRadius, Vector2 initialPos, Type type) {
 		super(game, scoreValue, sprite, bRadius, initialPos);
@@ -20,16 +26,31 @@ public class PowerUp extends Entity {
 	}
 
 	public enum Type {
-		STEALTH,
-		DOUBLE_DAMAGE,
-		DOUBLE_POINTS,
-		REGEN,
-		SPEED,
-		COIN
+		STEALTH(EffectDuration.Time.SHORT),
+		DOUBLE_DAMAGE(EffectDuration.Time.NORMAL),
+		DOUBLE_POINTS(EffectDuration.Time.LONG),
+		REGEN(EffectDuration.Time.NORMAL),
+		SPEED(EffectDuration.Time.NORMAL),
+		COIN(EffectDuration.Time.INSTANT),
+		CURE(EffectDuration.Time.INFINITE);
+		
+		private EffectDuration.Time duration;
+		
+		Type(EffectDuration.Time duration) {
+			this.duration = duration;
+		}
+		
+		public EffectDuration.Time getDuration() {
+			return duration;
+		}
 	}
 	
 	public Type getType() {
 		return type;
+	}
+	
+	public EffectDuration.Time getDuration() {
+		return type.duration;
 	}
 
 	@Override
@@ -49,14 +70,30 @@ public class PowerUp extends Entity {
 		b2body = world.createBody(bDef);
 		b2body.createFixture(fDef).setUserData(FixtureType.POWERUP);
 		b2body.setUserData(this);
+		
+		if (this.type == PowerUp.Type.COIN) {
+			pointLight = new PointLight(gameManager.getRayHandler(), 32, Color.WHITE, 0.3f, b2body.getPosition().x, b2body.getPosition().y);
+		} else {
+			pointLight = new PointLight(gameManager.getRayHandler(), 32, Color.GOLD, 1, b2body.getPosition().x, b2body.getPosition().y);
+		}
+		
+		pointLight.attachToBody(b2body);
 
 		shape.dispose();
 	}
-
+	
 	@Override
 	public void update(float delta) {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	@Override
+	public void delete() {
+		super.delete();
+		if (pointLight != null) {
+			pointLight.remove(true);
+		}
 	}
 	
 	public static class Builder {

@@ -5,19 +5,21 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import com.badlogic.gdx.math.Vector2;
 import com.deadlast.entities.Enemy;
 
+@RunWith(GdxTestRunner.class)
 public class EnemyTest {
 	
 	private Enemy enemy;
 
-	@BeforeEach
+	@Before
 	public void init() {
-		enemy = new Enemy(null, 10, null, 0.4f, new Vector2(5,5), 4, 10, 5, 7);
+		enemy = new Enemy(null, 10, null, 0.4f, new Vector2(5,5), 4, 10, 5, 7, 10);
 	}
 	
 	@Test
@@ -53,7 +55,7 @@ public class EnemyTest {
 	}
 	
 	@Test
-	public void playerDies() {
+	public void enemyDies() {
 		assertNotNull(enemy.getHealth());
 		enemy.setHealth(5);
 		enemy.applyDamage(5);
@@ -78,11 +80,11 @@ public class EnemyTest {
 	
 	@Test
 	public void enemyInvalidPosition() {
-		assertThrows(IllegalArgumentException.class, () -> new Enemy(null, 10, null, 0.4f, null, 4, 10, 5, 7));
+		assertThrows(IllegalArgumentException.class, () -> new Enemy(null, 10, null, 0.4f, null, 4, 10, 5, 7, 10));
 	}
 
     @Test
-    void playerVisible() {
+    public void playerVisible() {
 	    assertNotNull(enemy.playerVisible());
     }
 }

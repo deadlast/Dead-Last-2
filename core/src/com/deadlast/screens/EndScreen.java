@@ -1,6 +1,10 @@
 package com.deadlast.screens;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
@@ -18,12 +22,13 @@ public class EndScreen extends DefaultScreen {
 	private Stage stage;
 
 	private boolean won;
-	
+	private int finalScore;
 	public EndScreen(DeadLast game) {
 		super(game);
 		stage = new Stage(new ScreenViewport());
 		won = GameManager.getInstance(game).getWinLevel() == 1 ? true : false;
-
+		this.finalScore = GameManager.getInstance(game).getScore();
+		
 	}
 
 	@Override
@@ -35,7 +40,7 @@ public class EndScreen extends DefaultScreen {
 		table.center();
 		table.pad(15);
 		
-		table.setDebug(true);
+		// table.setDebug(true);
 		Skin skin = new Skin(Gdx.files.internal("ui/uiskin.json"));
 
 		String titleText;
@@ -45,25 +50,26 @@ public class EndScreen extends DefaultScreen {
 			titleText = "You lost.";
 		}
 		Label title = new Label(titleText, skin);
-		table.add(title).align(Align.center).expandX().fillX().row();
+		table.add(title).align(Align.center).row();
 
 		String blurbText;
 		if (won) {
-			blurbText = "You have successfully escaped with all of your vital functions intact!";
+			blurbText = "Congratulations Agent! Dr G. Reylag has been defeated and you can begin distributing the cure!";
 		} else {
-			blurbText = "Due to the forced cessation of several of your vital functions, you have ceased to be alive.";
+			blurbText = "You have been turned, and the zombie threat is rapidly expanding outside the University.";
 		}
 		Label blurb = new Label(blurbText, skin);
 		table.add(blurb).align(Align.center).row();
 
 
-		table.add(new Label("Your end score: " + GameManager.getInstance(game).getTotalScore(),skin)).align(Align.center).row();
+		table.add(new Label("Your end score: " + this.finalScore,skin)).align(Align.center).row();
 
 		
 		TextButton returnButton = new TextButton("Menu", skin);
 		returnButton.addListener(new ClickListener() {
 			@Override
 			public void clicked(InputEvent event, float x, float y) {
+				GameManager.getInstance(game).resetScore();
 				table.reset();
 				game.changeScreen(DeadLast.MENU);
 			}
@@ -74,6 +80,16 @@ public class EndScreen extends DefaultScreen {
 		stage.addActor(table);
 
 		GameManager.getInstance(game).clearLevel();
+		
+		int score = GameManager.getInstance(game).getScore();
+		String dateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss dd-MM-yyyy"));
+		FileHandle file = Gdx.files.local("data/scores.csv");
+		if (file.exists()) {
+			file.writeString(score + "," + dateTime , true);
+		} else {
+			System.out.println("Warning: could not write to score file - file does not exist.");
+		}
+//		GameManager.getInstance(game).dispose();
 	}
 
 	@Override

@@ -53,14 +53,11 @@ public class ScoreboardScreen extends DefaultScreen {
 		scoreTable.defaults().padLeft(5).padRight(5);
 		//scoreTable.setDebug(true);
 		
-		Label nameLabel = new Label("Name", skin);
-		nameLabel.setAlignment(Align.center);
 		Label scoreLabel = new Label("Score", skin);
 		scoreLabel.setAlignment(Align.center);
 		Label dateLabel = new Label("Date", skin);
 		dateLabel.setAlignment(Align.center);
 		
-		scoreTable.add(nameLabel).minWidth(100);
 		scoreTable.add(scoreLabel).minWidth(45);
 		scoreTable.add(dateLabel).minWidth(200);
 		scoreTable.row();
@@ -68,7 +65,6 @@ public class ScoreboardScreen extends DefaultScreen {
 		try {
 			Scoreboard scores = Util.parseScoreFile();
 			scores.getSortedEntries().forEach(entry -> {
-				scoreTable.add(entry.getName());
 				scoreTable.add(entry.getScoreString());
 				scoreTable.add(entry.getDate());
 				scoreTable.row();

@@ -8,6 +8,7 @@ import com.badlogic.gdx.physics.box2d.Manifold;
 import com.deadlast.entities.Enemy;
 import com.deadlast.entities.Player;
 import com.deadlast.entities.PowerUp;
+import com.deadlast.entities.NPC;
 
 /**
  * Handles contact interactions with world bodies.
@@ -47,6 +48,10 @@ public class WorldContactListener implements ContactListener {
 			break;
 		case END_ZONE:
 			endZoneContactBegun(fA, fTypeB, fB);
+			break;
+		case NPC:
+			npcContactBegun(fA, fTypeB, fB);
+			break;
 		default:
 			break;
 		}
@@ -59,6 +64,9 @@ public class WorldContactListener implements ContactListener {
 			break;
 		case MELEE_SENSOR:
 			((Player)fB.getBody().getUserData()).onMeleeRangeEntered((Enemy)fA.getBody().getUserData());
+			break;
+		case NPC:
+			((NPC)fB.getBody().getUserData()).applyDamage(((Enemy)fA.getBody().getUserData()).getStrength());
 			break;
 		default:
 			break;
@@ -80,6 +88,7 @@ public class WorldContactListener implements ContactListener {
 			break;
 		case END_ZONE:
 			((Player)fA.getBody().getUserData()).onEndZoneReached();
+			break;
 		default:
 			break;
 		}
@@ -111,6 +120,9 @@ public class WorldContactListener implements ContactListener {
 		case ENEMY:
 			((Player)fA.getBody().getUserData()).onMeleeRangeEntered((Enemy)fB.getBody().getUserData());
 			break;
+		case NPC:
+			((Player)fA.getBody().getUserData()).onMeleeRangeEntered((NPC)fB.getBody().getUserData());
+			break;
 		default:
 			break;
 		}
@@ -120,6 +132,19 @@ public class WorldContactListener implements ContactListener {
 		switch(fTypeB) {
 		case PLAYER:
 			((Player)fB.getBody().getUserData()).onEndZoneReached();
+			break;
+		default:
+			break;
+		}
+	}
+	
+	public void npcContactBegun(Fixture fA, FixtureType fTypeB, Fixture fB) {
+		switch(fTypeB) {
+		case MELEE_SENSOR:
+			((Player)fB.getBody().getUserData()).onMeleeRangeEntered((NPC)fA.getBody().getUserData());
+			break;
+		case ENEMY:
+			((NPC)fA.getBody().getUserData()).applyDamage(((Enemy)fB.getBody().getUserData()).getStrength());
 			break;
 		default:
 			break;
@@ -150,6 +175,9 @@ public class WorldContactListener implements ContactListener {
 			break;
 		case MELEE_SENSOR:
 			meleeSensorContactEnded(fA, fTypeB, fB);
+			break;
+		case NPC:
+			npcContactEnded(fA, fTypeB, fB);
 			break;
 		default:
 			break;
@@ -196,6 +224,19 @@ public class WorldContactListener implements ContactListener {
 		switch(fTypeB) {
 		case ENEMY:
 			((Player)fA.getBody().getUserData()).onMeleeRangeLeft((Enemy)fB.getBody().getUserData());
+			break;
+		case NPC:
+			((Player)fA.getBody().getUserData()).onMeleeRangeLeft((NPC)fB.getBody().getUserData());
+			break;
+		default:
+			break;
+		}
+	}
+	
+	public void npcContactEnded(Fixture fA, FixtureType fTypeB, Fixture fB) {
+		switch(fTypeB) {
+		case MELEE_SENSOR:
+			((Player)fB.getBody().getUserData()).onMeleeRangeLeft((NPC)fA.getBody().getUserData());
 			break;
 		default:
 			break;
