@@ -368,7 +368,7 @@ public class GameManager implements Disposable {
 		if(levelNum < levels.length) {
 			if ((levels[levelNum].equals("minigame") && time > 45)) {
 				winLevel = -1;
-				minigameActive = false;
+				
 				gameRunning = false;
 				game.changeScreen(DeadLast.END);
 				
@@ -401,6 +401,7 @@ public class GameManager implements Disposable {
 		}
 		if (playerType == PlayerType.ZOMBIE) {
 			if (entities.size() == 1) {
+				minigameActive = false;
 				gameRunning = false;
 				game.changeScreen(DeadLast.END);
 			} else {
