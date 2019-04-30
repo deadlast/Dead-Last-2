@@ -57,16 +57,12 @@ public class EndScreen extends DefaultScreen {
 		String blurbText;
 		if (won) {
 			if (wasMiniGame) {
-				blurbText = "Congratulations! You've escaped the maze!";
+				blurbText = "Either the time ran out or you managed to escape the maze!";
 			}else {
 				blurbText = "Congratulations Agent! Dr G. Reylag has been defeated and you can begin distributing the cure!";
 			}
 		} else {
-			if (wasMiniGame) {
-				blurbText = "You failed to escape the maze in 45 seconds!";
-			}else {
-				blurbText = "You have been turned, and the zombie threat is rapidly expanding outside the University.";
-			}
+				blurbText = "You have been turned, and the zombie threat is rapidly expanding outside the University.";		
 		}
 		Label blurb = new Label(blurbText, skin);
 		table.add(blurb).align(Align.center).row();
@@ -82,6 +78,7 @@ public class EndScreen extends DefaultScreen {
 				GameManager.getInstance(game).resetScore();
 				table.reset();
 				game.changeScreen(DeadLast.MENU);
+				
 			}
 		});
 		
