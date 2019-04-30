@@ -2,35 +2,38 @@ package com.deadlast.tests;
 
 import com.deadlast.entities.Enemy;
 import com.deadlast.game.GameManager;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
 import com.badlogic.gdx.math.Vector2;
 
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class GameManagerTest {
+@RunWith(GdxTestRunner.class)
+public class GameManagerTest {
 
     GameManager manager;
     Enemy boss;
 
-    @BeforeEach
-     public void setUp() {
+    @Before
+     public void init() {
         manager  = GameManager.getInstance(null);
     }
 
     @Test
-    void addEnemy() {
+    public void addEnemy() {
         manager.addEnemy(Enemy.Type.BOSS2, new Vector2(5, 5));
     }
 
     @Test
-    void getPlayer(){
+    public void getPlayer(){
         assertNotNull(manager.getPlayer());
     }
 
     @Test
-    void checkBoss() {
+    public void checkBoss() {
         String CurrentLevel = manager.getLevelName();
         manager.addEnemy(Enemy.Type.BOSS2, new Vector2(5, 5));
         manager.update(1);
@@ -40,7 +43,7 @@ class GameManagerTest {
 
 
     @Test
-    void getMinigame() {
+    public void getMinigame() {
         manager.setMinigameActive(true);
         assertNotNull(manager.isMinigameActive());
     }
