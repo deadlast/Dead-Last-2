@@ -124,6 +124,7 @@ public class GameManager implements Disposable {
 	public void loadLevel() {
 		if(minigameActive){
 			levelNum = levels.length - 2;
+			this.isCutscene = false;
 		}
 		
 		if (world != null) {
@@ -558,7 +559,10 @@ public class GameManager implements Disposable {
 	}
 	
 	public void transferLevel() {
-		isCutscene = !isCutscene;
+		if(!minigameActive) {
+			isCutscene = !isCutscene;
+		}
+		
 		if (levelNum < levels.length -2) {
 			
 			loadLevel();

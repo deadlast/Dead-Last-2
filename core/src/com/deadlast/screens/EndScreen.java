@@ -22,11 +22,13 @@ public class EndScreen extends DefaultScreen {
 	private Stage stage;
 
 	private boolean won;
+	private boolean wasMiniGame;
 	private int finalScore;
 	public EndScreen(DeadLast game) {
 		super(game);
 		stage = new Stage(new ScreenViewport());
 		won = GameManager.getInstance(game).getWinLevel() == 1 ? true : false;
+		wasMiniGame = GameManager.getInstance(game).isMinigameActive();
 		this.finalScore = GameManager.getInstance(game).getScore();
 		
 	}
@@ -54,7 +56,11 @@ public class EndScreen extends DefaultScreen {
 
 		String blurbText;
 		if (won) {
+			if (wasMiniGame) {
+				blurbText = "Congratulations! You've escaped the maze!";
+			}else {
 			blurbText = "Congratulations Agent! Dr G. Reylag has been defeated and you can begin distributing the cure!";
+			}
 		} else {
 			blurbText = "You have been turned, and the zombie threat is rapidly expanding outside the University.";
 		}
