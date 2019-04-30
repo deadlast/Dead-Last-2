@@ -16,7 +16,6 @@ import com.badlogic.gdx.physics.box2d.CircleShape;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.deadlast.game.DeadLast;
 import com.deadlast.game.GameManager;
-import com.deadlast.stages.Hud;
 import com.deadlast.util.EffectDuration;
 import com.deadlast.world.BodyFactory;
 import com.deadlast.world.FixtureType;
@@ -72,10 +71,6 @@ public class Player extends Mob {
 	 */
 	private Sprite attackSprite; 
 	/**
-	 * The sprite currently being rendered.
-	 */
-	private Sprite currentSprite; 
-	/**
 	 * Contains the enemies currently in range and in front of the player that will be
 	 * damaged when the attack ability is used.
 	 */
@@ -83,8 +78,6 @@ public class Player extends Mob {
 	
 	private PointLight effectRadius;
 	private double effectTimer;
-
-	private Hud hud;
 	
 	/**
 	 * Default constructor
