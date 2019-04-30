@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="703">
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" infinite="0" nextlayerid="9" nextobjectid="729">
  <tileset firstgid="1" source="finaltileset.tsx"/>
  <layer id="1" name="Background" width="100" height="100">
   <data encoding="csv">
@@ -537,7 +537,7 @@
    </properties>
    <point/>
   </object>
-  <object id="247" name="HEALTH" type="PowerUp.REGEN" x="1769.7" y="1463.64">
+  <object id="247" name="HEALTH" type="PowerUp.REGEN" x="1760" y="1536">
    <properties>
     <property name="entityClass" value="PowerUp"/>
     <property name="entityType" value="REGEN"/>
@@ -572,7 +572,7 @@
    </properties>
    <point/>
   </object>
-  <object id="290" name="NORMAL" type="Enemy.NORMAL" x="952" y="2446.67">
+  <object id="290" name="NORMAL" type="Enemy.NORMAL" x="990" y="2402">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="NORMAL"/>
@@ -775,7 +775,7 @@
    </properties>
    <point/>
   </object>
-  <object id="320" name="NORMAL" type="Enemy.NORMAL" x="951.515" y="2509.09">
+  <object id="320" name="NORMAL" type="Enemy.NORMAL" x="998.848" y="2467.76">
    <properties>
     <property name="entityClass" value="Enemy"/>
     <property name="entityType" value="NORMAL"/>
@@ -1237,27 +1237,6 @@
    </properties>
    <point/>
   </object>
-  <object id="639" name="COIN" type="PowerUp.COIN" x="928" y="2304">
-   <properties>
-    <property name="entityClass" value="PowerUp"/>
-    <property name="entityType" value="COIN"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="640" name="COIN" type="PowerUp.COIN" x="928" y="2336">
-   <properties>
-    <property name="entityClass" value="PowerUp"/>
-    <property name="entityType" value="COIN"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="641" name="COIN" type="PowerUp.COIN" x="928" y="2368">
-   <properties>
-    <property name="entityClass" value="PowerUp"/>
-    <property name="entityType" value="COIN"/>
-   </properties>
-   <point/>
-  </object>
   <object id="642" name="COIN" type="PowerUp.COIN" x="736" y="1376">
    <properties>
     <property name="entityClass" value="PowerUp"/>
@@ -1356,41 +1335,6 @@
    </properties>
    <point/>
   </object>
-  <object id="657" name="COIN" type="PowerUp.COIN" x="928" y="2400">
-   <properties>
-    <property name="entityClass" value="PowerUp"/>
-    <property name="entityType" value="COIN"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="658" name="COIN" type="PowerUp.COIN" x="928" y="2432">
-   <properties>
-    <property name="entityClass" value="PowerUp"/>
-    <property name="entityType" value="COIN"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="659" name="COIN" type="PowerUp.COIN" x="928" y="2464">
-   <properties>
-    <property name="entityClass" value="PowerUp"/>
-    <property name="entityType" value="COIN"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="660" name="COIN" type="PowerUp.COIN" x="928" y="2496">
-   <properties>
-    <property name="entityClass" value="PowerUp"/>
-    <property name="entityType" value="COIN"/>
-   </properties>
-   <point/>
-  </object>
-  <object id="661" name="COIN" type="PowerUp.COIN" x="928" y="2528">
-   <properties>
-    <property name="entityClass" value="PowerUp"/>
-    <property name="entityType" value="COIN"/>
-   </properties>
-   <point/>
-  </object>
   <object id="662" name="COIN" type="PowerUp.COIN" x="928" y="2112">
    <properties>
     <property name="entityClass" value="PowerUp"/>
@@ -1398,7 +1342,7 @@
    </properties>
    <point/>
   </object>
-  <object id="663" name="COIN" type="PowerUp.COIN" x="928" y="2144">
+  <object id="663" name="COIN" type="PowerUp.COIN" x="928" y="2368">
    <properties>
     <property name="entityClass" value="PowerUp"/>
     <property name="entityType" value="COIN"/>
@@ -1412,7 +1356,7 @@
    </properties>
    <point/>
   </object>
-  <object id="665" name="COIN" type="PowerUp.COIN" x="928" y="2208">
+  <object id="665" name="COIN" type="PowerUp.COIN" x="928" y="2432">
    <properties>
     <property name="entityClass" value="PowerUp"/>
     <property name="entityType" value="COIN"/>
@@ -1675,6 +1619,160 @@
    <properties>
     <property name="entityClass" value="PowerUp"/>
     <property name="entityType" value="COIN"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="705" name="COIN" type="PowerUp.COIN" x="928" y="2496">
+   <properties>
+    <property name="entityClass" value="PowerUp"/>
+    <property name="entityType" value="COIN"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="706" name="COIN" type="PowerUp.COIN" x="928" y="2560">
+   <properties>
+    <property name="entityClass" value="PowerUp"/>
+    <property name="entityType" value="COIN"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="707" name="COIN" type="PowerUp.COIN" x="928" y="2624">
+   <properties>
+    <property name="entityClass" value="PowerUp"/>
+    <property name="entityType" value="COIN"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="708" name="COIN" type="PowerUp.COIN" x="928" y="2688">
+   <properties>
+    <property name="entityClass" value="PowerUp"/>
+    <property name="entityType" value="COIN"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="709" name="COIN" type="PowerUp.COIN" x="928" y="2752">
+   <properties>
+    <property name="entityClass" value="PowerUp"/>
+    <property name="entityType" value="COIN"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="710" name="COIN" type="PowerUp.COIN" x="928" y="2816">
+   <properties>
+    <property name="entityClass" value="PowerUp"/>
+    <property name="entityType" value="COIN"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="711" name="COIN" type="PowerUp.COIN" x="928" y="1920">
+   <properties>
+    <property name="entityClass" value="PowerUp"/>
+    <property name="entityType" value="COIN"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="712" name="COIN" type="PowerUp.COIN" x="928" y="1984">
+   <properties>
+    <property name="entityClass" value="PowerUp"/>
+    <property name="entityType" value="COIN"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="713" name="COIN" type="PowerUp.COIN" x="928" y="2048">
+   <properties>
+    <property name="entityClass" value="PowerUp"/>
+    <property name="entityType" value="COIN"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="714" name="HEALTH" type="PowerUp.REGEN" x="2752" y="1472">
+   <properties>
+    <property name="entityClass" value="PowerUp"/>
+    <property name="entityType" value="REGEN"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="715" name="DOUBLE_DAMAGE" type="PowerUp.DOUBLE_DAMAGE" x="1216" y="2016">
+   <properties>
+    <property name="entityClass" value="PowerUp"/>
+    <property name="entityType" value="DOUBLE_DAMAGE"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="716" name="DOUBLE_DAMAGE" type="PowerUp.DOUBLE_DAMAGE" x="1312" y="1536">
+   <properties>
+    <property name="entityClass" value="PowerUp"/>
+    <property name="entityType" value="DOUBLE_DAMAGE"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="717" name="NORMAL" type="Enemy.NORMAL" x="2112" y="416">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="718" name="NORMAL" type="Enemy.NORMAL" x="2281.69" y="497.819">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="719" name="NORMAL" type="Enemy.NORMAL" x="2154.42" y="588.728">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="720" name="NORMAL" type="Enemy.NORMAL" x="2493.81" y="519.031">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="721" name="COIN" type="PowerUp.COIN" x="1920" y="384">
+   <properties>
+    <property name="entityClass" value="PowerUp"/>
+    <property name="entityType" value="COIN"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="722" name="COIN" type="PowerUp.COIN" x="1952" y="384">
+   <properties>
+    <property name="entityClass" value="PowerUp"/>
+    <property name="entityType" value="COIN"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="723" name="COIN" type="PowerUp.COIN" x="1952" y="448">
+   <properties>
+    <property name="entityClass" value="PowerUp"/>
+    <property name="entityType" value="COIN"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="724" name="COIN" type="PowerUp.COIN" x="1920" y="448">
+   <properties>
+    <property name="entityClass" value="PowerUp"/>
+    <property name="entityType" value="COIN"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="726" name="NORMAL" type="Enemy.NORMAL" x="1240.85" y="660.243">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="728" name="NORMAL" type="Enemy.NORMAL" x="1322.67" y="736">
+   <properties>
+    <property name="entityClass" value="Enemy"/>
+    <property name="entityType" value="NORMAL"/>
    </properties>
    <point/>
   </object>

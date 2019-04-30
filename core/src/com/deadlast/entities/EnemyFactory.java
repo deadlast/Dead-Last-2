@@ -47,7 +47,7 @@ public class EnemyFactory {
 					.setScoreValue(50).setBodyRadius(0.75f).setDensity(12);
 			break;
 		case HORDLING:
-			builder.setHealthStat(2).setSpeedStat(5).setStrengthStat(1).setDetectionStat(10)
+			builder.setHealthStat(2).setSpeedStat(4).setStrengthStat(1).setDetectionStat(10)
 					.setSprite(new Sprite(new Texture(Gdx.files.internal("entities/hordling_zombie.png"))))
 					.setScoreValue(5).setBodyRadius(0.3f).setDensity(7);
 			break;

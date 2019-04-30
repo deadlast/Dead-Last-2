@@ -217,7 +217,7 @@ public class Enemy extends Mob {
 		Vector2 playerPos = gameManager.getPlayer().getPos();
 		Vector2 playerVector = playerPos.sub(b2body.getPosition()).nor();
 		
-		b2body.applyLinearImpulse(playerVector.scl(-5f * b2body.getMass() * gameManager.getPlayer().getStrength()), getPos(), true);
+		b2body.applyLinearImpulse(playerVector.scl(-5f *  gameManager.getPlayer().getStrength() / b2body.getMass()), getPos(), true);
 		stunTimer = 0.5f;
 	}
 	
