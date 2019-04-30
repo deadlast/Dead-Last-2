@@ -165,7 +165,7 @@
   <object id="30" x="1312" y="1856">
    <polygon points="0,0 64,0 64,64 0,64"/>
   </object>
-  <object id="35" x="1085.33" y="1102.67" width="857.333" height="266.667"/>
+  <object id="35" x="1056" y="1152" width="857.333" height="259.667"/>
   <object id="70" x="1696" y="1536" width="96.2131" height="63.1818"/>
   <object id="71" x="1696" y="1632" width="96.2131" height="63.1818"/>
  </objectgroup>
