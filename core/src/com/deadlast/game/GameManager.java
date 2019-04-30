@@ -481,7 +481,10 @@ public class GameManager implements Disposable {
 		}
 		
 		if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
-			paused = !paused;
+			if(!isCutscene) {
+				paused = !paused;
+			}
+			
 		}
 		
 		if (Gdx.input.isKeyJustPressed(Input.Keys.PERIOD)) {
