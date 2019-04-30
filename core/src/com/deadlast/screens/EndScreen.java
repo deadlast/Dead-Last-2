@@ -29,6 +29,7 @@ public class EndScreen extends DefaultScreen {
 		stage = new Stage(new ScreenViewport());
 		won = GameManager.getInstance(game).getWinLevel() == 1 ? true : false;
 		wasMiniGame = GameManager.getInstance(game).isMinigameActive();
+		GameManager.getInstance(game).setMinigameActive(false);
 		this.finalScore = GameManager.getInstance(game).getScore();
 		
 	}

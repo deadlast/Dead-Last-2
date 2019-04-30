@@ -187,6 +187,7 @@ public class GameManager implements Disposable {
 			return;
 		}
 		levelLoaded = false;
+		paused = false;
 		controller.down = controller.left = controller.right = controller.up = false;
 		hud.dispose();
 		debugRenderer.dispose();
