@@ -412,9 +412,6 @@ public class GameManager implements Disposable {
 			world.step(1/60f, 6, 2);
 			time += delta;
 		}
-		// Step through the physics world simulation
-		world.step(1/60f, 6, 2);
-		time += delta;
 		// Centre the camera on the player character
 		gameCamera.position.x = player.getBody().getPosition().x;
 		gameCamera.position.y = player.getBody().getPosition().y;
