@@ -423,6 +423,9 @@ public class GameManager implements Disposable {
 		// Fetch and delete dead entities
 		List<Entity> deadEntities = entities.stream().filter(e -> (!e.isAlive() && !(e instanceof Player))).collect(Collectors.toList());
 		deadEntities.forEach(e -> {
+			
+			this.score += (e.getScoreValue() * getScoreMultiplier());
+			
 			if (e instanceof Mob) {
 				((Mob)e).delete();
 			} else if (e instanceof PowerUp) {
@@ -431,12 +434,16 @@ public class GameManager implements Disposable {
 				e.delete();
 			}
 			
+			if (e instanceof Enemy) {
+				enemies.remove(e);
+			}
+			
 			if((bossEncounter) && e.equals(boss)){
 				bossDelFlag = true;
 			}
+			
+			entities.remove(e);
 		});
-		deadEntities.forEach(e -> this.score += (e.getScoreValue() * getScoreMultiplier()));
-		deadEntities.forEach(e -> entities.remove(e));
 		
 		if (showDebugRenderer) {
 			debugRenderer.render(world, gameCamera.combined);
@@ -470,6 +477,11 @@ public class GameManager implements Disposable {
 		if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
 			paused = !paused;
 		}
+		
+		if (Gdx.input.isKeyJustPressed(Input.Keys.PERIOD)) {
+			levelComplete();
+		}
+
 		
 		if (controller.isSpaceDown) {
 			if (isCutscene) {
