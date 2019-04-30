@@ -113,8 +113,6 @@ public class Player extends Mob {
 		this.isHidden = true;
 		this.activePowerUps = new ConcurrentHashMap<>();
 		this.mobsInRange = new HashSet<>();
-		
-		hud = new Hud(game);
 	}
 	
 	public int getStealthStat() {

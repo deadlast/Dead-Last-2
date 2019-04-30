@@ -2,7 +2,6 @@ package com.deadlast.tests;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
@@ -79,9 +78,9 @@ public class PlayerTest {
 		assertEquals(player.getHealth(), health + 5);
 	}
 	
-	@Test
+	@Test(expected = IllegalArgumentException.class)
 	public void playerInvalidPosition() {
-		assertThrows(IllegalArgumentException.class, () -> new Player(null, null, null, 0.4f, null, 50, 4, 50, 50));
+		new Player(null, null, null, 0.4f, null, 50, 4, 50, 50);
 	}
 
     @Test

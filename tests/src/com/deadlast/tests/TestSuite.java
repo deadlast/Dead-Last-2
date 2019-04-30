@@ -7,7 +7,6 @@ import org.junit.runners.Suite;
 
 @Suite.SuiteClasses({
 	EnemyTest.class,
-	GameManagerTest.class,
 	PlayerTest.class,
 	PowerUpTest.class,
 	PowerUpFactoryTest.class

@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 import com.deadlast.entities.PowerUpFactory;
 
 @RunWith(GdxTestRunner.class)
-class PowerUpFactoryTest {
+public class PowerUpFactoryTest {
 
     @Test
     public void getInstance() {

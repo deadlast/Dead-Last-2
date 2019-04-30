@@ -55,7 +55,7 @@ public class EnemyTest {
 	}
 	
 	@Test
-	public void playerDies() {
+	public void enemyDies() {
 		assertNotNull(enemy.getHealth());
 		enemy.setHealth(5);
 		enemy.applyDamage(5);
