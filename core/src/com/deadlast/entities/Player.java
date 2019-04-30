@@ -16,7 +16,6 @@ import com.badlogic.gdx.physics.box2d.CircleShape;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.deadlast.game.DeadLast;
 import com.deadlast.game.GameManager;
-import com.deadlast.stages.Hud;
 import com.deadlast.util.EffectDuration;
 import com.deadlast.world.BodyFactory;
 import com.deadlast.world.FixtureType;
@@ -72,10 +71,6 @@ public class Player extends Mob {
 	 */
 	private Sprite attackSprite; 
 	/**
-	 * The sprite currently being rendered.
-	 */
-	private Sprite currentSprite; 
-	/**
 	 * Contains the enemies currently in range and in front of the player that will be
 	 * damaged when the attack ability is used.
 	 */
@@ -83,8 +78,6 @@ public class Player extends Mob {
 	
 	private PointLight effectRadius;
 	private double effectTimer;
-
-	private Hud hud;
 	
 	/**
 	 * Default constructor
@@ -103,16 +96,16 @@ public class Player extends Mob {
 	) {
 		super(game, 0, defaultSprite, bRadius, initialPos, healthStat, speedStat, strengthStat);
 		this.attackSprite = attackSprite;
-		attackSprite.setSize(bRadius * 2, bRadius * 2);
-		attackSprite.setOrigin(bRadius, bRadius);
+		if (attackSprite != null) {
+			attackSprite.setSize(bRadius * 2, bRadius * 2);
+			attackSprite.setOrigin(bRadius, bRadius);
+		}
 		this.defaultSprite = defaultSprite;
 		this.sprite = defaultSprite;
 		this.stealthStat = stealthStat;
 		this.isHidden = true;
 		this.activePowerUps = new ConcurrentHashMap<>();
 		this.mobsInRange = new HashSet<>();
-		
-		hud = new Hud(game);
 	}
 	
 	public int getStealthStat() {

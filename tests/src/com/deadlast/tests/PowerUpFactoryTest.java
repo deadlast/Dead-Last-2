@@ -1,15 +1,17 @@
 package com.deadlast.tests;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.Assert.assertNotNull;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import com.deadlast.entities.PowerUpFactory;
 
-class PowerUpFactoryTest {
+@RunWith(GdxTestRunner.class)
+public class PowerUpFactoryTest {
 
     @Test
-    void getInstance() {
+    public void getInstance() {
         assertNotNull(PowerUpFactory.getInstance(null));
     }
 }

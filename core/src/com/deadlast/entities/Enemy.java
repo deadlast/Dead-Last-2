@@ -171,7 +171,8 @@ public class Enemy extends Mob {
     }
 
     public boolean playerVisible(){
-		if(gameManager.getPlayer().isPowerUpActive(PowerUp.Type.STEALTH)){
+    	Player player = gameManager.getPlayer();
+		if(player == null || player.isPowerUpActive(PowerUp.Type.STEALTH)){
 			return false;
 		} else {
 			return true;
@@ -214,7 +215,9 @@ public class Enemy extends Mob {
 	@Override
 	public void applyDamage(int damage) {
 		super.applyDamage(damage);
-		Vector2 playerPos = gameManager.getPlayer().getPos();
+		Player player = gameManager.getPlayer();
+		if (player == null) return;
+		Vector2 playerPos = player.getPos();
 		Vector2 playerVector = playerPos.sub(b2body.getPosition()).nor();
 		
 		b2body.applyLinearImpulse(playerVector.scl(-5f *  gameManager.getPlayer().getStrength() / b2body.getMass()), getPos(), true);

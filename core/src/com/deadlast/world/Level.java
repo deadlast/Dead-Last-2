@@ -3,7 +3,6 @@ package com.deadlast.world;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.badlogic.ashley.core.Entity;
 import com.badlogic.gdx.maps.MapLayer;
 import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.MapProperties;

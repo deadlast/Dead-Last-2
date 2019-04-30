@@ -4,7 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.deadlast.game.DeadLast;
-import com.deadlast.game.GameManager;
 
 public class PowerUpFactory {
 	

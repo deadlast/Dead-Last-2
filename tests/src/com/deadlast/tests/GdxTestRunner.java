@@ -46,7 +46,7 @@ public class GdxTestRunner extends BlockJUnit4ClassRunner implements Application
 	}
 
 	public static void main (String[] arg) {
-		JUnitCore.main("com.geeselightning.zepr.tests.TestSuite");
+		JUnitCore.main("com.deadlast.tests.TestSuite");
 	}
 
 	@Override
