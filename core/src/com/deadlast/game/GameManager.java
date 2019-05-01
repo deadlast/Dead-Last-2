@@ -329,6 +329,10 @@ public class GameManager implements Disposable {
 	public int getWinLevel() {
 		return winLevel;
 	}
+	
+	public void setWinLevel(int level) {
+		this.winLevel = level;
+	}
 
 	public String getLevelName() {return levels[levelNum];}
 	

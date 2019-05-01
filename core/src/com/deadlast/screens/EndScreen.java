@@ -24,19 +24,25 @@ public class EndScreen extends DefaultScreen {
 	private boolean won;
 	private boolean wasMiniGame;
 	private int finalScore;
+	
+	
 	public EndScreen(DeadLast game) {
 		super(game);
 		stage = new Stage(new ScreenViewport());
-		won = GameManager.getInstance(game).getWinLevel() == 1 ? true : false;
-		wasMiniGame = GameManager.getInstance(game).isMinigameActive();
-		GameManager.getInstance(game).setMinigameActive(false);
-		this.finalScore = GameManager.getInstance(game).getScore();
-		
 	}
 
 	@Override
 	public void show() {
+		stage.clear();
 		Gdx.input.setInputProcessor(stage);
+		
+		GameManager gameManager = GameManager.getInstance(game);
+		
+		won = gameManager.getWinLevel() == 1 ? true : false;
+		wasMiniGame = gameManager.isMinigameActive();
+		gameManager.setMinigameActive(false);
+		
+		this.finalScore = gameManager.getScore();
 
 		Table table = new Table();
 		table.setFillParent(true);
@@ -92,18 +98,20 @@ public class EndScreen extends DefaultScreen {
 
 		stage.addActor(table);
 
-		GameManager.getInstance(game).clearLevel();
+		gameManager.clearLevel();
+		gameManager.setWinLevel(0);
 		
-		int score = GameManager.getInstance(game).getScore();
 		String dateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss dd-MM-yyyy"));
 		FileHandle file = Gdx.files.local("data/scores.csv");
 		if (file.exists()) {
-			file.writeString("\n" + score + "," + dateTime , true);
+			file.writeString("\n" + finalScore + "," + dateTime , true);
 		} else {
 			file.writeString("score,date", false);
-			file.writeString("\n" + score + "," + dateTime , true);
+			file.writeString("\n" + finalScore + "," + dateTime , true);
 			System.out.println("Warning: score file does not exist - attempting to create...");
 		}
+		
+		
 //		GameManager.getInstance(game).dispose();
 	}
 
