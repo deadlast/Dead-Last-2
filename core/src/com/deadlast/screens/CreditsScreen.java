@@ -54,6 +54,10 @@ public class CreditsScreen extends DefaultScreen {
 		table.add(new Label("Map Design", skin)).row();
 		table.add(new Label("Liam Devine", skin)).row();
 		table.add(new Label("Matt Aalen", skin)).row();
+		table.row();
+		table.add("").expandX().fillX().row();
+		table.add(new Label("...moral support?", skin)).row();
+		table.add(new Label("Panos Papathanasiou", skin)).row();
 		
 		TextButton backButton = new TextButton("Back", skin);
 		backButton.addListener(new ClickListener() {
