@@ -86,6 +86,14 @@ public class MenuScreen extends DefaultScreen {
 			}
 		});
 		
+		TextButton creditsButton = new TextButton("Credits", skin);
+		creditsButton.addListener(new ClickListener() {
+			@Override
+			public void clicked(InputEvent event, float x, float y) {
+				game.changeScreen(DeadLast.CREDITS);
+			}
+		});
+		
 		TextButton exitButton = new TextButton("Exit", skin);
 		exitButton.addListener(new ClickListener() {
 			@Override
@@ -102,6 +110,8 @@ public class MenuScreen extends DefaultScreen {
 		mainTable.row().pad(10, 0, 10, 0);
 		mainTable.add(miniButton).fillX().uniformX();
 		mainTable.row();
+		mainTable.add(creditsButton).fillX().uniformX();
+		mainTable.row().pad(10, 0, 10, 0);
 		mainTable.add(exitButton).fillX().uniformX();
 		
 		stage.addActor(mainTable);
