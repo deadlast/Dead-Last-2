@@ -62,6 +62,12 @@ public class PauseOverlay implements Disposable {
 		case 5:
 			this.blurb.setText("Defeat Dr. G. Reylag to stop the zombie outbreak.");
 			break;
+		case 6:
+			this.blurb.setText("Collect the coins and escape the maze!");
+			break;
+		case 7:
+			this.blurb.setText("Blerrgh!!! Brains!!! Eat students!!!");
+			break;
 		}
 	}
 	

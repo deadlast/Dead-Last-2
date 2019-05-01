@@ -29,12 +29,12 @@ public class ScoreboardScreen extends DefaultScreen {
 
 	public ScoreboardScreen(DeadLast game) {
 		super(game);
-		stage = new Stage(new ScreenViewport());
-		Gdx.input.setInputProcessor(stage);
 	}
 
 	@Override
 	public void show() {
+		stage = new Stage(new ScreenViewport());
+		
 		// TODO: Replace with an asset manager
 		Skin skin = new Skin(Gdx.files.internal("ui/uiskin.json"));
 		
@@ -73,10 +73,13 @@ public class ScoreboardScreen extends DefaultScreen {
 			StringWriter sw = new StringWriter();
 			e.printStackTrace(new PrintWriter(sw));
 			scoreTable.add(new Label("Unable to load scores from file", skin)).colspan(3);
+			System.out.println(e);
 		}
 		
 		stage.addActor(scoreTable);
 		stage.addActor(backButton);
+		
+		Gdx.input.setInputProcessor(stage);
 		
 	}
 

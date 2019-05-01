@@ -22,18 +22,27 @@ public class EndScreen extends DefaultScreen {
 	private Stage stage;
 
 	private boolean won;
+	private boolean wasMiniGame;
 	private int finalScore;
+	
+	
 	public EndScreen(DeadLast game) {
 		super(game);
 		stage = new Stage(new ScreenViewport());
-		won = GameManager.getInstance(game).getWinLevel() == 1 ? true : false;
-		this.finalScore = GameManager.getInstance(game).getScore();
-		
 	}
 
 	@Override
 	public void show() {
+		stage.clear();
 		Gdx.input.setInputProcessor(stage);
+		
+		GameManager gameManager = GameManager.getInstance(game);
+		
+		won = gameManager.getWinLevel() == 1 ? true : false;
+		wasMiniGame = gameManager.isMinigameActive();
+		gameManager.setMinigameActive(false);
+		
+		this.finalScore = gameManager.getScore();
 
 		Table table = new Table();
 		table.setFillParent(true);
@@ -54,9 +63,18 @@ public class EndScreen extends DefaultScreen {
 
 		String blurbText;
 		if (won) {
-			blurbText = "Congratulations Agent! Dr G. Reylag has been defeated and you can begin distributing the cure!";
+			if (wasMiniGame) {
+				blurbText = "Congrats! You escaped the maze!";
+			}else {
+				blurbText = "Congratulations Agent! Dr G. Reylag has been defeated and you can begin distributing the cure!";
+			}
 		} else {
-			blurbText = "You have been turned, and the zombie threat is rapidly expanding outside the University.";
+			if (wasMiniGame) {
+				blurbText = "Times Up!";
+			}else {
+				blurbText = "You have been turned, and the zombie threat is rapidly expanding outside the University.";	
+			}
+					
 		}
 		Label blurb = new Label(blurbText, skin);
 		table.add(blurb).align(Align.center).row();
@@ -72,6 +90,7 @@ public class EndScreen extends DefaultScreen {
 				GameManager.getInstance(game).resetScore();
 				table.reset();
 				game.changeScreen(DeadLast.MENU);
+				
 			}
 		});
 		
@@ -79,16 +98,20 @@ public class EndScreen extends DefaultScreen {
 
 		stage.addActor(table);
 
-		GameManager.getInstance(game).clearLevel();
+		gameManager.clearLevel();
+		gameManager.setWinLevel(0);
 		
-		int score = GameManager.getInstance(game).getScore();
 		String dateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss dd-MM-yyyy"));
 		FileHandle file = Gdx.files.local("data/scores.csv");
 		if (file.exists()) {
-			file.writeString(score + "," + dateTime , true);
+			file.writeString("\n" + finalScore + "," + dateTime , true);
 		} else {
-			System.out.println("Warning: could not write to score file - file does not exist.");
+			file.writeString("score,date", false);
+			file.writeString("\n" + finalScore + "," + dateTime , true);
+			System.out.println("Warning: score file does not exist - attempting to create...");
 		}
+		
+		
 //		GameManager.getInstance(game).dispose();
 	}
 

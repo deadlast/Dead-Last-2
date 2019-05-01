@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="535">
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="100" height="100" tilewidth="32" tileheight="32" infinite="0" nextlayerid="11" nextobjectid="536">
  <tileset firstgid="1" source="finaltileset.tsx"/>
  <layer id="1" name="Background" width="100" height="100">
   <data encoding="base64">
@@ -44,7 +44,7 @@
    </properties>
    <point/>
   </object>
-  <object id="25" name="PowerUpSpawn2" type="PowerUp.REGEN" x="1666.43" y="1842.06">
+  <object id="25" name="PowerUpSpawn2" type="PowerUp.REGEN" x="1937.1" y="1784.73">
    <properties>
     <property name="entityClass" value="PowerUp"/>
     <property name="entityType" value="REGEN"/>
@@ -1413,6 +1413,13 @@
    <properties>
     <property name="entityClass" value="PowerUp"/>
     <property name="entityType" value="COIN"/>
+   </properties>
+   <point/>
+  </object>
+  <object id="535" name="CURE" type="PowerUp.CURE" x="1664" y="1824">
+   <properties>
+    <property name="entityClass" value="PowerUp"/>
+    <property name="entityType" value="CURE"/>
    </properties>
    <point/>
   </object>
